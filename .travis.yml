@@ -21,6 +21,7 @@ addons:
       - dotnet-sdk-2.0.0
 
 install:
+  - pip install --upgrade setuptools
   - pip install pycparser
   - pip install git+https://github.com/pythonnet/pythonnet -U --force
 

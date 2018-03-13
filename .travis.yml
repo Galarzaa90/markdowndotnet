@@ -26,5 +26,5 @@ install:
   - pip install --egg git+https://github.com/pythonnet/pythonnet -U --force
 
 script:
-  - mono ExampleSolution/ExampleSolution.sln
+  - xbuild ExampleSolution/ExampleSolution.sln
   - python markdowndotnet.py

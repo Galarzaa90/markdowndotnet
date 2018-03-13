@@ -23,7 +23,7 @@ addons:
 install:
   - pip install --upgrade setuptools
   - pip install pycparser
-  - pip install git+https://github.com/pythonnet/pythonnet -U --force
+  - pip install --egg git+https://github.com/pythonnet/pythonnet -U --force
 
 script:
   - mono ExampleSolution/ExampleSolution.sln

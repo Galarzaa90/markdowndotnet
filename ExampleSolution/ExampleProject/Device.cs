@@ -51,6 +51,23 @@ namespace ExampleProject
         {
         }
 
+        /// <summary>
+        /// Restarts the device with the default configuration
+        /// </summary>
+        public void Restart()
+        {
+
+        }
+
+        /// <summary>
+        /// Restarts the device.
+        /// </summary>
+        /// <param name="flags">Configuration flags to start the device with.</param>
+        public void Restart(int flags)
+        {
+
+        }
+
 
     }
 }

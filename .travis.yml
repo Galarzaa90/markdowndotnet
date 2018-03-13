@@ -2,6 +2,9 @@ dist: trusty
 sudo: false
 language: python
 
+cache:
+  apt: true
+
 python: 3.6
 addons:
   apt:
@@ -18,7 +21,8 @@ addons:
       - dotnet-sdk-2.0.0
 
 install:
-  - pip install pycparser pythonnet
+  - pip install pycparser
+  - pip install pythonnet
 
 script:
   - mono ExampleSolution/ExampleSolution.sln

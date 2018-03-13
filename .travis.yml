@@ -18,7 +18,7 @@ addons:
       - dotnet-sdk-2.0.0
 
 install:
-  - pip install pythonnet
+  - pip install pycparser pythonnet
 
 script:
   - mono ExampleSolution/ExampleSolution.sln

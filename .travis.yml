@@ -28,6 +28,7 @@ install:
 script:
   - xbuild ExampleSolution/ExampleSolution.sln
   - python markdowndotnet.py
+  - mkdir docs
   - mv output.md docs/api.md
   - mv README.md docs/index.md
   - python -m mkdocs build

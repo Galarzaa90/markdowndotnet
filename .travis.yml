@@ -5,7 +5,8 @@ language: python
 cache:
   apt: true
 
-python: 3.6
+python:
+  - "3.6"
 addons:
   apt:
     sources:
@@ -22,9 +23,23 @@ addons:
 
 install:
   - pip install --upgrade setuptools
-  - pip install pycparser
+  - pip install pycparser mkdocs mkdocs-material
   - pip install --egg git+https://github.com/pythonnet/pythonnet -U --force
-
 script:
   - xbuild ExampleSolution/ExampleSolution.sln
   - python markdowndotnet.py
+  - mv output.md docs/api.md
+  - mv README.md docs/index.md
+  - python -m mkdocs build
+
+deploy:
+  edge:
+    branch: v1.8.47
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local-dir: site
+  keep-history: true
+  verbose: true
+  on:
+    branch: master

@@ -11,13 +11,14 @@ markdown_extensions:
 - pymdownx.superfences
 - pymdownx.details
 - pymdownx.inlinehilite
-- pymdownx.tilde
 pages:
 - Home: index.md
 - ExampleProject:
   - ApiClient: ExampleProject.ApiClient.md
 - ExampleProject.Models:
   - Channel: ExampleProject.Models.Channel.md
+  - Guild: ExampleProject.Models.Guild.md
+  - User: ExampleProject.Models.User.md
 repo_url: https://github.com/Galarzaa90/markdowndotnet
 site_author: Allan Galarza
 site_name: markdowndotnet
@@ -27,5 +28,5 @@ theme:
     tabs: true
   name: material
   palette:
-    accent: orange
-    primary: deep purple
+    accent: green
+    primary: red

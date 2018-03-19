@@ -14,10 +14,7 @@ with open("_mkdocs.yml", "r") as f:
 with open("docs/index.yml", 'r') as f:
     new_pages = yaml.load(f)
 
-print(config["pages"])
-
 config["pages"].extend(new_pages)
-
 
 with open("mkdocs.yml", "w") as f:
     yaml.dump(config, f, default_flow_style=False)

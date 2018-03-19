@@ -19,9 +19,13 @@ namespace ExampleProject.Models
         {
         }
 
-
-        public Message[] GetMessages(){
-            return new Message[0];
+        /// <summary>
+        /// Gets the message with the specified id.
+        /// </summary>
+        /// <returns>The message.</returns>
+        /// <param name="messageId">Message id.</param>
+        public Message GetMessage(int messageId){
+            return new Message();
         }
 
     }

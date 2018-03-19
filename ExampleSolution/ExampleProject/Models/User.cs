@@ -6,32 +6,26 @@ namespace ExampleProject.Models
     /// </summary>
     public class User
     {
-        public string Name { get; set; }
-        public string LastName { get; set; }
-        public int Age { get; set; }
-        public Gender Gender { get; set; }
+        /// <summary>
+        /// Gets the id.
+        /// </summary>
+        /// <value>The user's id.</value>
+        public int Id { get; private set; }
 
-        public User()
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>The name of the user.</value>
+        public int Name { get; set; }
+
+        /// <summary>
+        /// Gets all guilds the user is in.
+        /// </summary>
+        /// <returns>The guild the user belongs to</returns>
+        public Guild[] GetGuilds()
         {
-
+            return new Guild[0];
         }
     }
 
-    /// <summary>
-    /// Representes a user's gender.
-    /// </summary>
-    public enum Gender{
-        /// <summary>
-        /// Unspecified.
-        /// </summary>
-        UNSPECIFIED,
-        /// <summary>
-        /// Male.
-        /// </summary>
-        MALE, 
-        /// <summary>
-        /// Female.
-        /// </summary>
-        FEMALE
-    }
 }

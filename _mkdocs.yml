@@ -1,0 +1,31 @@
+site_name: 'markdowndotnet'
+site_author: 'Allan Galarza'
+site_url: 'https://galarzaa90.github.io/markdowndotnet/'
+
+theme:
+  name: material
+  palette:
+    primary: red
+    accent: green
+  feature:
+    tabs: true
+
+markdown_extensions:
+  - toc:
+        permalink: true
+  - admonition
+  - codehilite
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.tilde
+
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/galarzaa90'
+
+repo_url: https://github.com/Galarzaa90/markdowndotnet
+edit_uri: ""
+pages:
+    - Home: index.md

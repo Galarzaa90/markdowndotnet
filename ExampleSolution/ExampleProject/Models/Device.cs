@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExampleProject
+namespace ExampleProject.Models
 {
     /// <summary>
     /// Represents a device

@@ -1,32 +1,31 @@
-site_name: 'markdowndotnet'
-site_author: 'Allan Galarza'
-site_url: 'https://galarzaa90.github.io/markdowndotnet/'
-
-theme:
-  name: material
-  palette:
-    primary: 'deep purple'
-    accent: 'orange'
-  feature:
-    tabs: true
-
-markdown_extensions:
-  - toc:
-        permalink: true
-  - admonition
-  - codehilite
-  - pymdownx.superfences
-  - pymdownx.details
-  - pymdownx.inlinehilite
-  - pymdownx.tilde
-
+edit_uri: ''
 extra:
   social:
-    - type: 'github'
-      link: 'https://github.com/galarzaa90'
-
-repo_url: https://github.com/Galarzaa90/markdowndotnet
-edit_uri: ""
+  - link: https://github.com/galarzaa90
+    type: github
+markdown_extensions:
+- toc:
+    permalink: true
+- admonition
+- codehilite
+- pymdownx.superfences
+- pymdownx.details
+- pymdownx.inlinehilite
+- pymdownx.tilde
 pages:
-    - Home: index.md
-    - API: api.md
+- Home: index.md
+- ExampleProject:
+  - ApiClient: ExampleProject.ApiClient.md
+- ExampleProject.Models:
+  - Channel: ExampleProject.Models.Channel.md
+repo_url: https://github.com/Galarzaa90/markdowndotnet
+site_author: Allan Galarza
+site_name: markdowndotnet
+site_url: https://galarzaa90.github.io/markdowndotnet/
+theme:
+  feature:
+    tabs: true
+  name: material
+  palette:
+    accent: orange
+    primary: deep purple

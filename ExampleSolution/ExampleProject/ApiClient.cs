@@ -34,10 +34,26 @@ namespace ExampleProject
         /// <summary>
         /// Gets the guild by id.
         /// </summary>
-        /// <returns>Guild with the specified id</returns>
         /// <param name="guildId">Guild id.</param>
+        /// <returns>Guild with the specified id</returns>
         public Guild GetGuildById(int guildId){
             return new Guild();
+        }
+        /// <summary>
+        /// Gets the user of the requester's account
+        /// </summary>
+        /// <returns>The current user</returns>
+        public User GetMe(){
+            return new User();
+        }
+
+        /// <summary>
+        /// Gets the current user's guilds
+        /// </summary>
+        /// <returns>Guilds the token's user is in</returns>
+        public Guild[] GetGuilds()
+        {
+            return new Guild[0];
         }
     }
 }

@@ -52,7 +52,7 @@ def build_table(headers : List[str], rows : List[List[str]]) -> str:
     output = f"\n| {' | '.join(headers)} |\n"
     output += f"| {' | '.join(['---']*len(headers))} |\n"
     for row in rows:
-        output += f"| {' | '.join(row)} |\n"
+        output += f"| {' | '.join(row)} |\n\n"
     return output
 
 
@@ -138,16 +138,41 @@ for namespace, members in hierarchy.items():
                     if "fields" not in _temp:
                         _temp["fields"] = []
                     _content = f'### {name}\n'
+                    field = _type.GetField(name)
                     if "summary" in documentation:
                         _content += f"{documentation['summary']}\n"
+                    if field is not None:
+                        field_type = field.FieldType
+                        declaration = f"\n**Declaration**\n" \
+                                      f"```csharp\n" \
+                                      f"public {field_type} {name}\n" \
+                                      f"```\n"
+                        _content += declaration
+                        _content += "**Field Value**\n"
+                        table = build_table(["Type", "Description"], [[str(field_type), documentation.get("value", "")]])
+                        _content += table
                     _temp["fields"].append(_content)
 
                 if subcontent["type"] == "P":
                     if "properties" not in _temp:
                         _temp["properties"] = []
                     _content = f"### {name}\n"
+                    prop = _type.GetProperty(name)
                     if "summary" in documentation:
                         _content += f"{documentation['summary']}\n"
+                    if prop is not None:
+                        property_type = prop.PropertyType
+                        getter = "" if prop.GetMethod is None else "get; "
+                        setter = "" if prop.SetMethod is None else "set; "
+                        declaration = f"\n**Declaration**\n" \
+                                      f"```csharp\n" \
+                                      f"public {property_type} {name} {{{getter}{setter}}}\n" \
+                                      f"```\n"
+                        _content += declaration
+                        _content += "**Property Value**\n"
+                        table = build_table(["Type", "Description"], [[str(property_type), documentation.get("value","")]])
+                        _content += table
+
                     _temp["properties"].append(_content)
 
                 if subcontent["type"] == "M":
@@ -169,32 +194,38 @@ for namespace, members in hierarchy.items():
                     if "summary" in documentation:
                         _content += f"{documentation['summary']}\n"
                     if method is not None:
-                        _content += f"\n```csharp\npublic {method.ReturnType} {complete_name}\n```\n"
+                        _content += f"\n```csharp\n" \
+                                    f"public {method.ReturnType} {complete_name}\n" \
+                                    f"```\n"
                     if len(paramsInfo) > 0 and "param" in documentation:
-                        _content += "Parameters\n"
+                        _content += "**Parameters**\n"
                         headers = ["Type", "Name", "Description"]
                         rows = []
                         for param in paramsInfo:
                             description = documentation["param"][param.Name]
                             rows.append([str(param.ParameterType), param.Name, description])
                         _content += build_table(headers, rows)
-
+                    if method is not None:
+                        _content += "Returns\n"
+                        table = build_table(["Type", "Description"], [[str(method.ReturnType), documentation.get("returns","")]])
+                        _content += table
 
                     _temp["methods"].append(_content)
+
             if "constructors" in _temp:
-                file.write("## Constructors\n")
+                file.write("## Constructors\n----\n")
                 file.write("\n".join(_temp["constructors"]))
 
             if "fields" in _temp:
-                file.write("## Fields\n")
+                file.write("## Fields\n----\n")
                 file.write("\n".join(_temp["fields"]))
 
             if "properties" in _temp:
-                file.write("## Properties\n")
+                file.write("## Properties\n----\n")
                 file.write("\n".join(_temp["properties"]))
 
             if "methods" in _temp:
-                file.write("## Methods\n")
+                file.write("## Methods\n----\n")
                 file.write("\n".join(_temp["methods"]))
     index.append({namespace: index_files})
 

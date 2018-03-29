@@ -116,7 +116,7 @@ def parse_documentation(path):
 
 
 def build_documentation(dll_path, hierarchy):
-    log.info("Building docuemntation")
+    log.info("Building documentation")
     dll_file = FileInfo(dll_path)
     dll = Assembly.LoadFile(dll_file.FullName)
     # Iterate through all namespaces
@@ -126,9 +126,12 @@ def build_documentation(dll_path, hierarchy):
     for namespace, members in hierarchy.items():
         index_files = []
         for member, content in members.items():
-            with open(os.path.join(output_dir, f"{namespace}.{member}.md    "), "w") as file:
+            filename = f"{(namespace+'/'+member).replace('.','/')}.md"
+            filepath = os.path.join(output_dir, filename)
+            os.makedirs(os.path.dirname(filepath), exist_ok=True)
+            with open(filepath, "w") as file:
                 log.debug(f"Building {file.name}")
-                index_files.append({member: f"{namespace}.{member}.md"})
+                index_files.append({member: filename})
                 _type = dll.GetType(f"{namespace}.{member}")
                 file.write(f"# Class {member}\n")
                 file.write(f"{content.get('summary','')}")

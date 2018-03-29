@@ -6,26 +6,24 @@ extra:
 markdown_extensions:
 - toc:
     permalink: true
-- admonition
-- codehilite
-- pymdownx.superfences
-- pymdownx.details
-- pymdownx.inlinehilite
 pages:
 - Home: index.md
 - ExampleProject:
-  - ApiClient: ExampleProject.ApiClient.md
+  - ApiClient: ExampleProject/ApiClient.md
 - ExampleProject.Models:
-  - Channel: ExampleProject.Models.Channel.md
-  - Guild: ExampleProject.Models.Guild.md
-  - User: ExampleProject.Models.User.md
+  - Channel: ExampleProject/Models/Channel.md
+  - Guild: ExampleProject/Models/Guild.md
+  - User: ExampleProject/Models/User.md
 repo_url: https://github.com/Galarzaa90/markdowndotnet
 site_author: Allan Galarza
+site_description: A Python markdown generator for C# libraries documentation
 site_name: markdowndotnet
 site_url: https://galarzaa90.github.io/markdowndotnet/
 theme:
   feature:
     tabs: true
+  logo:
+    icon: assignment
   name: material
   palette:
     accent: green

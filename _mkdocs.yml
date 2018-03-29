@@ -1,6 +1,10 @@
 site_name: 'markdowndotnet'
+site_description: 'A Python markdown generator for C# libraries documentation'
 site_author: 'Allan Galarza'
 site_url: 'https://galarzaa90.github.io/markdowndotnet/'
+
+repo_url: 'https://github.com/Galarzaa90/markdowndotnet'
+edit_uri: ''
 
 theme:
   name: material
@@ -9,22 +13,17 @@ theme:
     accent: green
   feature:
     tabs: true
+  logo:
+    icon: assignment
 
 markdown_extensions:
   - toc:
-        permalink: true
-  - admonition
-  - codehilite
-  - pymdownx.superfences
-  - pymdownx.details
-  - pymdownx.inlinehilite
+      permalink: true
 
 extra:
   social:
     - type: 'github'
       link: 'https://github.com/galarzaa90'
 
-repo_url: https://github.com/Galarzaa90/markdowndotnet
-edit_uri: ""
 pages:
-    - Home: index.md
+  - Home: index.md

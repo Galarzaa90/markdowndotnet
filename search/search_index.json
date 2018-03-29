@@ -1,0 +1,184 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "This project is currently in early development and is still not usable\n\n\nmarkdowndotnet\n\u00b6\n\n\nPython command line tool to generate markdown documents from C# Library files and their XML documentation.\n\n\nRequirements\n\u00b6\n\n\n\n\nPython 3.6 or higher\n\n\npythonnet\n\n\nPyYAML\n\n\nclick\n\n\n\n\nThe generated files markdown files are meant to be used with \nmkdocs\n \n(with the \nmaterial theme\n), but may be compatible with other site generators.\n\n\nFeatures\n\u00b6\n\n\n\n\nGenerates markdown documents from a compiled binary (dll) and it's documentation file.\n\n\nDisplays all public fields, properties and methods, along with their parameters and return types.\n\n\n\n\nPlanned features\n\u00b6\n\n\n\n\nGenerate internal links between members\n\n\nExternal links to system classes",
+            "title": "Home"
+        },
+        {
+            "location": "/#markdowndotnet",
+            "text": "Python command line tool to generate markdown documents from C# Library files and their XML documentation.",
+            "title": "markdowndotnet"
+        },
+        {
+            "location": "/#requirements",
+            "text": "Python 3.6 or higher  pythonnet  PyYAML  click   The generated files markdown files are meant to be used with  mkdocs  \n(with the  material theme ), but may be compatible with other site generators.",
+            "title": "Requirements"
+        },
+        {
+            "location": "/#features",
+            "text": "Generates markdown documents from a compiled binary (dll) and it's documentation file.  Displays all public fields, properties and methods, along with their parameters and return types.",
+            "title": "Features"
+        },
+        {
+            "location": "/#planned-features",
+            "text": "Generate internal links between members  External links to system classes",
+            "title": "Planned features"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/",
+            "text": "Class ApiClient\n\u00b6\n\n\nConstructors\n\u00b6\n\n\n\n\nApiClient()\n\u00b6\n\n\nInitializes a new instance of the \n class.\n\n\nFields\n\u00b6\n\n\n\n\ntoken\n\u00b6\n\n\nAuthentication token\n\n\nDeclaration\n\n\npublic System.String token\n\n\n\n\nField Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nSystem.String\n\n\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nGetChannelById(System.Int32)\n\u00b6\n\n\nGets a channel with the specified id.\n\n\npublic ExampleProject.Models.Channel GetChannelById(System.Int32 channelId)\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nSystem.Int32\n\n\nchannelId\n\n\nThe id of the channel.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nExampleProject.Models.Channel\n\n\nChannel with the specified id\n\n\n\n\n\n\n\n\nGetGuildById(System.Int32)\n\u00b6\n\n\nGets the guild by id.\n\n\npublic ExampleProject.Models.Guild GetGuildById(System.Int32 guildId)\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nSystem.Int32\n\n\nguildId\n\n\nGuild id.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nExampleProject.Models.Guild\n\n\nGuild with the specified id\n\n\n\n\n\n\n\n\nGetMe()\n\u00b6\n\n\nGets the user of the requester's account\n\n\npublic ExampleProject.Models.User GetMe()\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nExampleProject.Models.User\n\n\nThe current user\n\n\n\n\n\n\n\n\nGetGuilds()\n\u00b6\n\n\nGets the current user's guilds\n\n\npublic ExampleProject.Models.Guild[] GetGuilds()\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nExampleProject.Models.Guild[]\n\n\nGuilds the token's user is in",
+            "title": "ApiClient"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#class-apiclient",
+            "text": "",
+            "title": "Class ApiClient"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#constructors",
+            "text": "",
+            "title": "Constructors"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#apiclient",
+            "text": "Initializes a new instance of the   class.",
+            "title": "ApiClient()"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#fields",
+            "text": "",
+            "title": "Fields"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#token",
+            "text": "Authentication token  Declaration  public System.String token  Field Value     Type  Description      System.String",
+            "title": "token"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#methods",
+            "text": "",
+            "title": "Methods"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#getchannelbyidsystemint32",
+            "text": "Gets a channel with the specified id.  public ExampleProject.Models.Channel GetChannelById(System.Int32 channelId)  Parameters     Type  Name  Description      System.Int32  channelId  The id of the channel.     Returns     Type  Description      ExampleProject.Models.Channel  Channel with the specified id",
+            "title": "GetChannelById(System.Int32)"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#getguildbyidsystemint32",
+            "text": "Gets the guild by id.  public ExampleProject.Models.Guild GetGuildById(System.Int32 guildId)  Parameters     Type  Name  Description      System.Int32  guildId  Guild id.     Returns     Type  Description      ExampleProject.Models.Guild  Guild with the specified id",
+            "title": "GetGuildById(System.Int32)"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#getme",
+            "text": "Gets the user of the requester's account  public ExampleProject.Models.User GetMe()  Returns     Type  Description      ExampleProject.Models.User  The current user",
+            "title": "GetMe()"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#getguilds",
+            "text": "Gets the current user's guilds  public ExampleProject.Models.Guild[] GetGuilds()  Returns     Type  Description      ExampleProject.Models.Guild[]  Guilds the token's user is in",
+            "title": "GetGuilds()"
+        },
+        {
+            "location": "/ExampleProject/Models/Channel/",
+            "text": "Class Channel\n\u00b6\n\n\nConstructors\n\u00b6\n\n\n\n\nChannel()\n\u00b6\n\n\nInitializes a new instance of the \n class.\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the channel's id\n\n\nDeclaration\n\n\npublic System.Int32 Id {get; set; }\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nSystem.Int32\n\n\nThe channel's id.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nGetMessage(System.Int32)\n\u00b6\n\n\nGets the message with the specified id.\n\n\npublic ExampleProject.Models.Message GetMessage(System.Int32 messageId)\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nSystem.Int32\n\n\nmessageId\n\n\nMessage id.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nExampleProject.Models.Message\n\n\nThe message.",
+            "title": "Channel"
+        },
+        {
+            "location": "/ExampleProject/Models/Channel/#class-channel",
+            "text": "",
+            "title": "Class Channel"
+        },
+        {
+            "location": "/ExampleProject/Models/Channel/#constructors",
+            "text": "",
+            "title": "Constructors"
+        },
+        {
+            "location": "/ExampleProject/Models/Channel/#channel",
+            "text": "Initializes a new instance of the   class.",
+            "title": "Channel()"
+        },
+        {
+            "location": "/ExampleProject/Models/Channel/#properties",
+            "text": "",
+            "title": "Properties"
+        },
+        {
+            "location": "/ExampleProject/Models/Channel/#id",
+            "text": "Gets the channel's id  Declaration  public System.Int32 Id {get; set; }  Property Value     Type  Description      System.Int32  The channel's id.",
+            "title": "Id"
+        },
+        {
+            "location": "/ExampleProject/Models/Channel/#methods",
+            "text": "",
+            "title": "Methods"
+        },
+        {
+            "location": "/ExampleProject/Models/Channel/#getmessagesystemint32",
+            "text": "Gets the message with the specified id.  public ExampleProject.Models.Message GetMessage(System.Int32 messageId)  Parameters     Type  Name  Description      System.Int32  messageId  Message id.     Returns     Type  Description      ExampleProject.Models.Message  The message.",
+            "title": "GetMessage(System.Int32)"
+        },
+        {
+            "location": "/ExampleProject/Models/Guild/",
+            "text": "Class Guild\n\u00b6\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the id.\n\n\nDeclaration\n\n\npublic System.Int32 Id {get; set; }\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nSystem.Int32\n\n\nThe guild's id.\n\n\n\n\n\n\n\n\nName\n\u00b6\n\n\nGets or sets the name.\n\n\nDeclaration\n\n\npublic System.Int32 Name {get; set; }\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nSystem.Int32\n\n\nThe name of the guild.",
+            "title": "Guild"
+        },
+        {
+            "location": "/ExampleProject/Models/Guild/#class-guild",
+            "text": "",
+            "title": "Class Guild"
+        },
+        {
+            "location": "/ExampleProject/Models/Guild/#properties",
+            "text": "",
+            "title": "Properties"
+        },
+        {
+            "location": "/ExampleProject/Models/Guild/#id",
+            "text": "Gets the id.  Declaration  public System.Int32 Id {get; set; }  Property Value     Type  Description      System.Int32  The guild's id.",
+            "title": "Id"
+        },
+        {
+            "location": "/ExampleProject/Models/Guild/#name",
+            "text": "Gets or sets the name.  Declaration  public System.Int32 Name {get; set; }  Property Value     Type  Description      System.Int32  The name of the guild.",
+            "title": "Name"
+        },
+        {
+            "location": "/ExampleProject/Models/User/",
+            "text": "Class User\n\u00b6\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the id.\n\n\nDeclaration\n\n\npublic System.Int32 Id {get; set; }\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nSystem.Int32\n\n\nThe user's id.\n\n\n\n\n\n\n\n\nName\n\u00b6\n\n\nGets or sets the name.\n\n\nDeclaration\n\n\npublic System.Int32 Name {get; set; }\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nSystem.Int32\n\n\nThe name of the user.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nGetGuilds()\n\u00b6\n\n\nGets all guilds the user is in.\n\n\npublic ExampleProject.Models.Guild[] GetGuilds()\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nExampleProject.Models.Guild[]\n\n\nThe guild the user belongs to",
+            "title": "User"
+        },
+        {
+            "location": "/ExampleProject/Models/User/#class-user",
+            "text": "",
+            "title": "Class User"
+        },
+        {
+            "location": "/ExampleProject/Models/User/#properties",
+            "text": "",
+            "title": "Properties"
+        },
+        {
+            "location": "/ExampleProject/Models/User/#id",
+            "text": "Gets the id.  Declaration  public System.Int32 Id {get; set; }  Property Value     Type  Description      System.Int32  The user's id.",
+            "title": "Id"
+        },
+        {
+            "location": "/ExampleProject/Models/User/#name",
+            "text": "Gets or sets the name.  Declaration  public System.Int32 Name {get; set; }  Property Value     Type  Description      System.Int32  The name of the user.",
+            "title": "Name"
+        },
+        {
+            "location": "/ExampleProject/Models/User/#methods",
+            "text": "",
+            "title": "Methods"
+        },
+        {
+            "location": "/ExampleProject/Models/User/#getguilds",
+            "text": "Gets all guilds the user is in.  public ExampleProject.Models.Guild[] GetGuilds()  Returns     Type  Description      ExampleProject.Models.Guild[]  The guild the user belongs to",
+            "title": "GetGuilds()"
+        }
+    ]
+}

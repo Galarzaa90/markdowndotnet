@@ -1,6 +1,6 @@
 - ExampleProject:
-  - ApiClient: ExampleProject.ApiClient.md
+  - ApiClient: ExampleProject/ApiClient.md
 - ExampleProject.Models:
-  - Channel: ExampleProject.Models.Channel.md
-  - Guild: ExampleProject.Models.Guild.md
-  - User: ExampleProject.Models.User.md
+  - Channel: ExampleProject/Models/Channel.md
+  - Guild: ExampleProject/Models/Guild.md
+  - User: ExampleProject/Models/User.md

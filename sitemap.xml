@@ -12,7 +12,7 @@
     
         
     <url>
-     <loc>https://galarzaa90.github.io/markdowndotnet//ExampleProject.ApiClient/</loc>
+     <loc>https://galarzaa90.github.io/markdowndotnet//ExampleProject/ApiClient/</loc>
      <lastmod>2018-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -22,19 +22,19 @@
     
         
     <url>
-     <loc>https://galarzaa90.github.io/markdowndotnet//ExampleProject.Models.Channel/</loc>
+     <loc>https://galarzaa90.github.io/markdowndotnet//ExampleProject/Models/Channel/</loc>
      <lastmod>2018-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://galarzaa90.github.io/markdowndotnet//ExampleProject.Models.Guild/</loc>
+     <loc>https://galarzaa90.github.io/markdowndotnet//ExampleProject/Models/Guild/</loc>
      <lastmod>2018-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://galarzaa90.github.io/markdowndotnet//ExampleProject.Models.User/</loc>
+     <loc>https://galarzaa90.github.io/markdowndotnet//ExampleProject/Models/User/</loc>
      <lastmod>2018-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>

@@ -1,0 +1,85 @@
+# Class ApiClient
+## Constructors
+----
+### ApiClient()
+Initializes a new instance of the <see cref="T:ExampleProject.ApiClient" /> class.
+## Fields
+----
+### token
+Authentication token
+
+**Declaration**
+```csharp
+public System.String token
+```
+**Field Value**
+
+| Type | Description |
+| --- | --- |
+| System.String |  |
+
+## Methods
+----
+### GetChannelById(System.Int32)
+Gets a channel with the specified id.
+
+```csharp
+public ExampleProject.Models.Channel GetChannelById(System.Int32 channelId)
+```
+**Parameters**
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Int32 | channelId | The id of the channel. |
+
+Returns
+
+| Type | Description |
+| --- | --- |
+| ExampleProject.Models.Channel | Channel with the specified id |
+
+
+### GetGuildById(System.Int32)
+Gets the guild by id.
+
+```csharp
+public ExampleProject.Models.Guild GetGuildById(System.Int32 guildId)
+```
+**Parameters**
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Int32 | guildId | Guild id. |
+
+Returns
+
+| Type | Description |
+| --- | --- |
+| ExampleProject.Models.Guild | Guild with the specified id |
+
+
+### GetMe()
+Gets the user of the requester's account
+
+```csharp
+public ExampleProject.Models.User GetMe()
+```
+Returns
+
+| Type | Description |
+| --- | --- |
+| ExampleProject.Models.User | The current user |
+
+
+### GetGuilds()
+Gets the current user's guilds
+
+```csharp
+public ExampleProject.Models.Guild[] GetGuilds()
+```
+Returns
+
+| Type | Description |
+| --- | --- |
+| ExampleProject.Models.Guild[] | Guilds the token's user is in |
+

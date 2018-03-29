@@ -1,0 +1,145 @@
+{
+    "ExampleProject": {
+        "ApiClient": {
+            "children": {
+                "token": {
+                    "documentation": {
+                        "summary": "Authentication token"
+                    },
+                    "type": "F"
+                },
+                ".ctor(System.String)": {
+                    "documentation": {
+                        "summary": "Initializes a new instance of the <see cref=\"T:ExampleProject.ApiClient\" /> class.",
+                        "param": {
+                            "token": "Authentication token."
+                        }
+                    },
+                    "type": "C"
+                },
+                "GetChannelById(System.Int32)": {
+                    "documentation": {
+                        "summary": "Gets a channel with the specified id.",
+                        "returns": "Channel with the specified id",
+                        "param": {
+                            "channelId": "The id of the channel."
+                        }
+                    },
+                    "type": "M"
+                },
+                "GetGuildById(System.Int32)": {
+                    "documentation": {
+                        "summary": "Gets the guild by id.",
+                        "param": {
+                            "guildId": "Guild id."
+                        },
+                        "returns": "Guild with the specified id"
+                    },
+                    "type": "M"
+                },
+                "GetMe": {
+                    "documentation": {
+                        "summary": "Gets the user of the requester's account",
+                        "returns": "The current user"
+                    },
+                    "type": "M"
+                },
+                "GetGuilds": {
+                    "documentation": {
+                        "summary": "Gets the current user's guilds",
+                        "returns": "Guilds the token's user is in"
+                    },
+                    "type": "M"
+                }
+            },
+            "documentation": {
+                "summary": "Represents a connection to the client"
+            },
+            "type": "T"
+        }
+    },
+    "ExampleProject.Models": {
+        "Channel": {
+            "children": {
+                "Id": {
+                    "documentation": {
+                        "summary": "Gets the channel's id",
+                        "value": "The channel's id."
+                    },
+                    "type": "P"
+                },
+                ".ctor": {
+                    "documentation": {
+                        "summary": "Initializes a new instance of the <see cref=\"T:ExampleProject.Models.Channel\" /> class."
+                    },
+                    "type": "C"
+                },
+                "GetMessage(System.Int32)": {
+                    "documentation": {
+                        "summary": "Gets the message with the specified id.",
+                        "returns": "The message.",
+                        "param": {
+                            "messageId": "Message id."
+                        }
+                    },
+                    "type": "M"
+                }
+            },
+            "documentation": {
+                "summary": "Represents a channel"
+            },
+            "type": "T"
+        },
+        "Guild": {
+            "children": {
+                "Id": {
+                    "documentation": {
+                        "summary": "Gets the id.",
+                        "value": "The guild's id."
+                    },
+                    "type": "P"
+                },
+                "Name": {
+                    "documentation": {
+                        "summary": "Gets or sets the name.",
+                        "value": "The name of the guild."
+                    },
+                    "type": "P"
+                }
+            },
+            "documentation": {
+                "summary": "Represents a guild."
+            },
+            "type": "T"
+        },
+        "User": {
+            "children": {
+                "Id": {
+                    "documentation": {
+                        "summary": "Gets the id.",
+                        "value": "The user's id."
+                    },
+                    "type": "P"
+                },
+                "Name": {
+                    "documentation": {
+                        "summary": "Gets or sets the name.",
+                        "value": "The name of the user."
+                    },
+                    "type": "P"
+                },
+                "GetGuilds": {
+                    "documentation": {
+                        "summary": "Gets all guilds the user is in.",
+                        "returns": "The guild the user belongs to"
+                    },
+                    "type": "M"
+                }
+            },
+            "documentation": {
+                "summary": "Represents a User"
+            },
+            "type": "T"
+        }
+    }
+}

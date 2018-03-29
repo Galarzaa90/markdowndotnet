@@ -1,0 +1,40 @@
+# Class Channel
+## Constructors
+----
+### Channel()
+Initializes a new instance of the <see cref="T:ExampleProject.Models.Channel" /> class.
+## Properties
+----
+### Id
+Gets the channel's id
+
+**Declaration**
+```csharp
+public System.Int32 Id {get; set; }
+```
+**Property Value**
+
+| Type | Description |
+| --- | --- |
+| System.Int32 | The channel's id. |
+
+## Methods
+----
+### GetMessage(System.Int32)
+Gets the message with the specified id.
+
+```csharp
+public ExampleProject.Models.Message GetMessage(System.Int32 messageId)
+```
+**Parameters**
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Int32 | messageId | Message id. |
+
+Returns
+
+| Type | Description |
+| --- | --- |
+| ExampleProject.Models.Message | The message. |
+

@@ -52,8 +52,8 @@ def build_table(headers : List[str], rows : List[List[str]]) -> str:
     output = f"\n| {' | '.join(headers)} |\n"
     output += f"| {' | '.join(['---']*len(headers))} |\n"
     for row in rows:
-        output += f"| {' | '.join(row)} |\n\n"
-    return output
+        output += f"| {' | '.join(row)} |\n"
+    return output+'\n'
 
 
 def parse_documentation(path):
@@ -133,9 +133,21 @@ def build_documentation(dll_path, hierarchy):
                 log.debug(f"Building {file.name}")
                 index_files.append({member: filename})
                 _type = dll.GetType(f"{namespace}.{member}")
-                file.write(f"# Class {member}\n")
-                file.write(f"{content.get('summary','')}")
+                object_type = "Class"
+                if _type.IsEnum:
+                    object_type = "Enum"
+                file.write(f"# {object_type} {member}\n")
+                file.write(f"{content.get('documentation',{}).get('summary')}\n")
                 _temp = {}
+                # Enums are represented differently
+                if object_type == "Enum":
+                    rows = []
+                    for field, subcontent in content["children"].items():
+                        documentation = subcontent["documentation"]
+                        rows.append([field, documentation.get("summary", "")])
+                    enum_table = build_table(["Field", "Description"], rows)
+                    file.write(enum_table)
+                    continue
                 for name, subcontent in content['children'].items():
                     if "documentation" not in subcontent:
                         continue

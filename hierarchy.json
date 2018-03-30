@@ -4,7 +4,8 @@
             "children": {
                 "token": {
                     "documentation": {
-                        "summary": "Authentication token"
+                        "summary": "Authentication token",
+                        "value": "Authentication token for the account or Application."
                     },
                     "type": "F"
                 },
@@ -87,6 +88,20 @@
             },
             "documentation": {
                 "summary": "Represents a channel"
+            },
+            "type": "T"
+        },
+        "Message": {
+            "children": {
+                "Id": {
+                    "documentation": {
+                        "summary": "The message's id."
+                    },
+                    "type": "F"
+                }
+            },
+            "documentation": {
+                "summary": "Represents a message."
             },
             "type": "T"
         },

@@ -2,6 +2,7 @@
   - ApiClient: ExampleProject/ApiClient.md
 - ExampleProject.Models:
   - Channel: ExampleProject/Models/Channel.md
+  - Message: ExampleProject/Models/Message.md
   - Guild: ExampleProject/Models/Guild.md
   - User: ExampleProject/Models/User.md
   - ChannelTypes: ExampleProject/Models/ChannelTypes.md

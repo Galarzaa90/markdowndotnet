@@ -17,10 +17,18 @@ namespace ExampleProject
         /// <summary>
         /// Initializes a new instance of the <see cref="T:ExampleProject.ApiClient"/> class.
         /// </summary>
-        /// <param name="token">Authentication token.</param>
-        public ApiClient(string token)
+        public ApiClient()
         {
+        }
+
+        /// <summary>
+        /// Logs in to the API
+        /// </summary>
+        /// <param name="token">The authentication token to use for login.</param>
+		/// <returns><c>true</c> if login was successful, <c>false</c> otherwise.</returns>
+        public bool Login(string token){
             this.token = token;
+            return true;
         }
 
         /// <summary>
@@ -28,7 +36,7 @@ namespace ExampleProject
         /// </summary>
         /// <returns>Channel with the specified id</returns>
         /// <param name="channelId">The id of the channel.</param>
-        public Channel GetChannelById(int channelId){
+        public Channel GetChannel(int channelId){
             return new Channel();
         }
 

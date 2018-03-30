@@ -19,6 +19,12 @@ namespace ExampleProject.Models
         public int Name { get; set; }
 
         /// <summary>
+        /// Gets the user's creation date.
+        /// </summary>
+        /// <value>The creation date in UTC.</value>
+        public DateTime CreationDate { get; }
+
+        /// <summary>
         /// Gets all guilds the user is in.
         /// </summary>
         /// <returns>The guild the user belongs to</returns>

@@ -3,7 +3,7 @@ import logging
 import os
 import re
 from xml.etree import ElementTree
-from typing import Dict, List
+from typing import Dict, List, Any
 
 import click
 # noinspection PyUnresolvedReferences,PyPackageRequirements
@@ -43,42 +43,148 @@ def get_params(func) -> List[str]:
         return m.group(1).replace("(", "").replace(")", "").split(",")
 
 
-def get_type(type_str, assembly) -> Type:
-    local_type = assembly.GetType(type_str)
+def get_type(local_assembly: Assembly, type_name: str) -> Type:
+    """Gets the type's class via reflection
+
+    The type is looked for in the local assembly first,
+    if not found, it will be looked in the system assembly.
+
+    :param Assembly local_assembly:  Assembly object to look for.
+    :param str type_name: The full name of the type.
+    :return: A C# Type object.
+    :rtype: Type
+    """
+    local_type = local_assembly.GetType(type_name)
     if local_type is None:
-        return Type.GetType(type_str)
+        return Type.GetType(type_name)
     return local_type
 
 
-def get_link(local_assembly, *, type_name: str=None, cs_type=None, current_file=None):
+def get_link(local_assembly: Assembly, *, type_name: str=None, cs_type: Type=None, current_file: str=None) -> str:
+    """Gets a link in markdown format for the type
+
+    If type_name is supplied, cs_type will be obtained from it.
+    If the type is in the local assembly, a relative link to type's markdown file will be generated
+    Otherwise, a link to docs.microsoft will be returned
+
+    :param Assembly local_assembly: The local C# Assembly object.
+    :param str type_name: The full name of the type.
+    :param Type cs_type: The C# Type object.
+    :param str current_file: The path of the file where the type is being referenced from.
+    :return: A markdown syntax link to the type's documentation.
+    :rtype: str
+    :raises ValueError: if both type_name and cs_type are None.
+    """
     if not type_name and not cs_type:
         raise ValueError("Both type_name and cs_type can't be None")
     if type_name is not None:
-        cs_type = get_type(type_name, local_assembly)
+        cs_type = get_type(local_assembly, type_name)
     if cs_type is None:
         log.warning(f"Couldn't find type: {type_name}")
         return type_name
+    suffix = ""
+    if cs_type.IsArray:
+        cs_type = cs_type.GetElementType()
+        suffix = "[]"
     # Type belongs to the assembly, so link will be relative
     if cs_type.Assembly.FullName == local_assembly.FullName:
         current_path = os.path.dirname(current_file) + "/"
         target_file = os.path.join(output_dir, str(cs_type).replace('.', '/') + ".md")
         relative_path = os.path.relpath(target_file, current_path)
-        return f"[{cs_type.Name}]({relative_path})"
+        return f"[{cs_type.Name}]({relative_path}){suffix}"
     else:
         r = requests.get('https://xref.docs.microsoft.com/query', params={"uid": cs_type.FullName})
         data = json.loads(r.text)
         if len(data) < 0:
             log.warning(f"Couldn't find documentation reference for {cs_type.FullName}.")
             return cs_type.FullName
-        return f"[{data[0]['name']}]({data[0]['href']})"
+        return f"[{data[0]['name']}]({data[0]['href']}){suffix}"
 
 
-def build_table(headers : List[str], rows : List[List[str]]) -> str:
+def build_table(headers: List[str], rows : List[List[str]]) -> str:
+    """Builds a markdown syntax table
+
+    :param List[str] headers: The table's header
+    :param List[List[str]] rows: A list of rows to put in the table, where each row is a list of columns.
+    :return: The table in markdown syntax
+    :rtype: str
+    """
     output = f"\n| {' | '.join(headers)} |\n"
     output += f"| {' | '.join(['---']*len(headers))} |\n"
     for row in rows:
         output += f"| {' | '.join(row)} |\n"
     return output+'\n'
+
+
+def parse_field(member_type: Type, name: str, documentation: Dict[str, Any], file_path: str):
+    """Generates markdown content for an object's field
+
+    :param Type member_type: The C# type of the member containing the field
+    :param str name: The name of the field
+    :param Dict documentation: A dictionary containing the XML documentation.
+    :param file_path: The file path of the markdown file containing the member.
+    :return: A string containing the field's formatted documentation
+    """
+    assembly = member_type.Assembly
+    field = member_type.GetField(name)
+    if field is None:
+        log.warning(f"Field '{name}' not found in assembly.")
+        return ""
+
+    field_type = field.FieldType
+    type_link = get_link(assembly, cs_type=field_type, current_file=file_path)
+    # Show a level 3 header with the field's name
+    content = f'### {name}\n'
+    # Show the field's summary if available
+    if "summary" in documentation:
+        content += f"{documentation['summary']}  \n"
+    # Show the field's declaration
+    declaration = f"**Declaration**\n" \
+                  f"```csharp\n" \
+                  f"public {field_type.Name} {name};\n" \
+                  f"```\n"
+    content += declaration
+    # Show a table containing the field's type and value
+    content += "**Field Value**\n"
+    table = build_table(["Type", "Description"], [[type_link, documentation.get("value", "")]])
+    content += table
+    return content
+
+def parse_property(member_type: Type, name: str, documentation: Dict[str, Any], file_path: str):
+    """Generates markdown content for an object's property
+
+    :param Type member_type: The C# type of the member containing the field
+    :param str name: The name of the field
+    :param Dict documentation: A dictionary containing the XML documentation.
+    :param file_path: The file path of the markdown file containing the member.
+    :return: A string containing the field's formatted documentation
+    """
+    assembly = member_type.Assembly
+    cs_property = member_type.GetProperty(name)
+    if cs_property is None:
+        log.warning(f"Property '{name}' not found in assembly.")
+        return ""
+
+    property_type = cs_property.PropertyType
+    type_link = get_link(assembly, cs_type=property_type, current_file=file_path)
+    getter = "" if cs_property.GetMethod is None else "get; "
+    setter = "" if cs_property.SetMethod is None else "set; "
+    # Show a level 3 header with the property's name
+    content = f"### {name}\n"
+    # Show the field's summary if available
+    if "summary" in documentation:
+        content += f"{documentation['summary']}  \n"
+    # Show the property's declaration
+    declaration = f"**Declaration**\n" \
+                  f"```csharp\n" \
+                  f"public {property_type.Name} {name} {{{getter}{setter}}}\n" \
+                  f"```\n"
+    content += declaration
+    # Show a table containing the property's type and value
+    content += "**Property Value**\n"
+    table = build_table(["Type", "Description"], [[type_link, documentation.get("value", "")]])
+    content += table
+    return content
 
 
 def parse_documentation(path):
@@ -152,14 +258,15 @@ def build_documentation(dll_path, hierarchy):
         index_files = []
         for member, content in members.items():
             filename = f"{(namespace+'/'+member).replace('.','/')}.md"
-            filepath = os.path.join(output_dir, filename)
-            os.makedirs(os.path.dirname(filepath), exist_ok=True)
-            with open(filepath, "w") as file:
+            file_path = os.path.join(output_dir, filename)
+            # Ensure intermediary directories exist
+            os.makedirs(os.path.dirname(file_path), exist_ok=True)
+            with open(file_path, "w") as file:
                 log.debug(f"Building {file.name}")
                 index_files.append({member: filename})
-                _type = assembly.GetType(f"{namespace}.{member}")
+                member_type = assembly.GetType(f"{namespace}.{member}")
                 object_type = "Class"
-                if _type.IsEnum:
+                if member_type.IsEnum:
                     object_type = "Enum"
                 file.write(f"# {object_type} {member}\n")
                 file.write(f"{content.get('documentation',{}).get('summary')}\n")
@@ -188,56 +295,23 @@ def build_documentation(dll_path, hierarchy):
                     if subcontent["type"] == "F":
                         if "fields" not in _temp:
                             _temp["fields"] = []
-                        _content = f'### {name}\n'
-                        field = _type.GetField(name)
-                        if "summary" in documentation:
-                            _content += f"{documentation['summary']}\n"
-                        if field is not None:
-                            field_type = field.FieldType
-                            type_link = get_link(assembly, cs_type=field_type, current_file=filepath)
-                            declaration = f"\n**Declaration**\n" \
-                                          f"```csharp\n" \
-                                          f"public {field_type.Name} {name}\n" \
-                                          f"```\n"
-                            _content += declaration
-                            _content += "**Field Value**\n"
-                            table = build_table(["Type", "Description"], [[type_link, documentation.get("value", "")]])
-                            _content += table
-                        _temp["fields"].append(_content)
+                        _temp["fields"].append(parse_field(member_type, name, documentation, file_path))
 
                     if subcontent["type"] == "P":
                         if "properties" not in _temp:
                             _temp["properties"] = []
-                        _content = f"### {name}\n"
-                        prop = _type.GetProperty(name)
-                        if "summary" in documentation:
-                            _content += f"{documentation['summary']}\n"
-                        if prop is not None:
-                            property_type = prop.PropertyType
-                            type_link = get_link(assembly, cs_type=property_type, current_file=filepath)
-                            getter = "" if prop.GetMethod is None else "get; "
-                            setter = "" if prop.SetMethod is None else "set; "
-                            declaration = f"\n**Declaration**\n" \
-                                          f"```csharp\n" \
-                                          f"public {property_type.Name} {name} {{{getter}{setter}}}\n" \
-                                          f"```\n"
-                            _content += declaration
-                            _content += "**Property Value**\n"
-                            table = build_table(["Type", "Description"], [[type_link, documentation.get("value","")]])
-                            _content += table
-
-                        _temp["properties"].append(_content)
+                        _temp["properties"].append(parse_property(member_type, name, documentation, file_path))
 
                     if subcontent["type"] == "M":
                         params = get_params(name)
                         method_name = name.split("(")[0]
                         method = None
                         if len(params) == 0:
-                            method = _type.GetMethod(method_name)
+                            method = member_type.GetMethod(method_name)
                             name += "()"
                         else:
-                            param_types = [get_type(x, assembly) for x in params]
-                            method = _type.GetMethod(method_name, param_types)
+                            param_types = [get_type(assembly, x) for x in params]
+                            method = member_type.GetMethod(method_name, param_types)
                         parameters = method.GetParameters()
                         param_string = " ,".join([f"{x.ParameterType} {x.Name}" for x in parameters])
                         complete_name = f"{method_name}({param_string})"
@@ -256,12 +330,12 @@ def build_documentation(dll_path, hierarchy):
                             rows = []
                             for param in parameters:
                                 description = documentation["param"][param.Name]
-                                param_link = get_link(assembly, cs_type=param.ParameterType, current_file=filepath)
+                                param_link = get_link(assembly, cs_type=param.ParameterType, current_file=file_path)
                                 rows.append([param_link, param.Name, description])
                             _content += build_table(headers, rows)
                         if method is not None:
                             _content += "Returns\n"
-                            type_link = get_link(assembly, cs_type=method.ReturnType, current_file=filepath)
+                            type_link = get_link(assembly, cs_type=method.ReturnType, current_file=file_path)
                             table = build_table(["Type", "Description"], [[type_link, documentation.get("returns", "")]])
                             _content += table
 

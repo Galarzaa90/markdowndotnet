@@ -150,6 +150,7 @@ def parse_field(member_type: Type, name: str, documentation: Dict[str, Any], fil
     content += table
     return content
 
+
 def parse_property(member_type: Type, name: str, documentation: Dict[str, Any], file_path: str):
     """Generates markdown content for an object's property
 
@@ -157,7 +158,7 @@ def parse_property(member_type: Type, name: str, documentation: Dict[str, Any], 
     :param str name: The name of the field
     :param Dict documentation: A dictionary containing the XML documentation.
     :param file_path: The file path of the markdown file containing the member.
-    :return: A string containing the field's formatted documentation
+    :return: A string containing the property's formatted documentation
     """
     assembly = member_type.Assembly
     cs_property = member_type.GetProperty(name)
@@ -184,6 +185,64 @@ def parse_property(member_type: Type, name: str, documentation: Dict[str, Any], 
     content += "**Property Value**\n"
     table = build_table(["Type", "Description"], [[type_link, documentation.get("value", "")]])
     content += table
+    return content
+
+
+def parse_method(member_type: Type, name: str, documentation: Dict[str, Any], file_path: str):
+    """Generates markdown content for an object's method
+
+    :param Type member_type: The C# type of the member containing the method
+    :param str name: The name of the field
+    :param Dict documentation: A dictionary containing the XML documentation.
+    :param file_path: The file path of the markdown file containing the member.
+    :return: A string containing the method's formatted documentation
+    """
+    assembly = member_type.Assembly
+    # Remove any parenthesis from the name if found
+    method_name = name.split("(")[0]
+    # Get a list of the parameter types
+    params = get_params(name)
+    # Get the actual C# types of parameters
+    param_types = [get_type(assembly, x) for x in params]
+    method = member_type.GetMethod(method_name, param_types)
+    # If method doesn't have parameters, we add empty parenthesis to the name
+    if len(params) == 0:
+        name += "()"
+    if method is None:
+        log.warning(f"Method '{name}' not found in assembly.")
+        return ""
+
+    return_type = method.ReturnType
+    parameters = method.GetParameters()
+    # Get a string list containing the parameter's type and name.
+    params_declaration = " ,".join([f"{x.ParameterType.Name} {x.Name}" for x in parameters])
+    # Show a level 3 header with the method's name
+    content = f'### {name}\n'
+    # Show the method's summary if available
+    if "summary" in documentation:
+        content += f"{documentation['summary']}  \n"
+    # Show the method's declaration
+    content += f"**Declaration**\n" \
+               f"```csharp\n" \
+               f"public {return_type.Name} {method_name}({params_declaration})\n" \
+               f"```\n"
+    # If method has parameters, show a table with their type, name and description
+    if len(parameters) > 0 and "param" in documentation:
+        content += "**Parameters**\n"
+        param_documentation = documentation.get('param', {})
+        headers = ["Type", "Name", "Description"]
+        rows = []
+        for param in parameters:
+            description = param_documentation.get(param.Name, "")
+            param_link = get_link(assembly, cs_type=param.ParameterType, current_file=file_path)
+            rows.append([param_link, param.Name, description])
+        content += build_table(headers, rows)
+    # Show table with the returned value, type and description, unless the type is Void.
+    if return_type.Name != "Void":
+        content += "**Returns**\n"
+        type_link = get_link(assembly, cs_type=method.ReturnType, current_file=file_path)
+        table = build_table(["Type", "Description"], [[type_link, documentation.get("returns", "")]])
+        content += table
     return content
 
 
@@ -303,43 +362,9 @@ def build_documentation(dll_path, hierarchy):
                         _temp["properties"].append(parse_property(member_type, name, documentation, file_path))
 
                     if subcontent["type"] == "M":
-                        params = get_params(name)
-                        method_name = name.split("(")[0]
-                        method = None
-                        if len(params) == 0:
-                            method = member_type.GetMethod(method_name)
-                            name += "()"
-                        else:
-                            param_types = [get_type(assembly, x) for x in params]
-                            method = member_type.GetMethod(method_name, param_types)
-                        parameters = method.GetParameters()
-                        param_string = " ,".join([f"{x.ParameterType} {x.Name}" for x in parameters])
-                        complete_name = f"{method_name}({param_string})"
                         if "methods" not in _temp:
                             _temp["methods"] = []
-                        _content = f'### {name}\n'
-                        if "summary" in documentation:
-                            _content += f"{documentation['summary']}\n"
-                        if method is not None:
-                            _content += f"\n```csharp\n" \
-                                        f"public {method.ReturnType.Name} {complete_name}\n" \
-                                        f"```\n"
-                        if len(parameters) > 0 and "param" in documentation:
-                            _content += "**Parameters**\n"
-                            headers = ["Type", "Name", "Description"]
-                            rows = []
-                            for param in parameters:
-                                description = documentation["param"][param.Name]
-                                param_link = get_link(assembly, cs_type=param.ParameterType, current_file=file_path)
-                                rows.append([param_link, param.Name, description])
-                            _content += build_table(headers, rows)
-                        if method is not None:
-                            _content += "Returns\n"
-                            type_link = get_link(assembly, cs_type=method.ReturnType, current_file=file_path)
-                            table = build_table(["Type", "Description"], [[type_link, documentation.get("returns", "")]])
-                            _content += table
-
-                        _temp["methods"].append(_content)
+                        _temp["methods"].append(parse_method(member_type, name, documentation, file_path))
 
                 if "constructors" in _temp:
                     file.write("## Constructors\n----\n")

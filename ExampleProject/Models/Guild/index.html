@@ -436,6 +436,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#methods" title="Methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getchannelsystemint32" title="GetChannel(System.Int32)" class="md-nav__link">
+    GetChannel(System.Int32)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -523,6 +543,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#methods" title="Methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getchannelsystemint32" title="GetChannel(System.Int32)" class="md-nav__link">
+    GetChannel(System.Int32)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -545,8 +585,8 @@
 <h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="id">Id<a class="headerlink" href="#id" title="Permanent link">&para;</a></h3>
-<p>Gets the id.</p>
-<p><strong>Declaration</strong></p>
+<p>Gets the id.<br />
+<strong>Declaration</strong></p>
 <div class="codehilite"><pre><span></span><span class="k">public</span> <span class="n">Int32</span> <span class="n">Id</span> <span class="p">{</span><span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </pre></div>
 
@@ -567,8 +607,8 @@
 </tbody>
 </table>
 <h3 id="name">Name<a class="headerlink" href="#name" title="Permanent link">&para;</a></h3>
-<p>Gets or sets the name.</p>
-<p><strong>Declaration</strong></p>
+<p>Gets or sets the name.<br />
+<strong>Declaration</strong></p>
 <div class="codehilite"><pre><span></span><span class="k">public</span> <span class="n">Int32</span> <span class="n">Name</span> <span class="p">{</span><span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </pre></div>
 
@@ -585,6 +625,46 @@
 <tr>
 <td><a href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
 <td>The name of the guild.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="getchannelsystemint32">GetChannel(System.Int32)<a class="headerlink" href="#getchannelsystemint32" title="Permanent link">&para;</a></h3>
+<p>Gets a channel in the guild with the given ID</p>
+<div class="codehilite"><pre><span></span><span class="k">public</span> <span class="n">Channel</span> <span class="nf">GetChannel</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="n">Int32</span> <span class="n">channelId</span><span class="p">)</span>
+</pre></div>
+
+
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+<td>channelId</td>
+<td>Id of the channel to look for.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../Channel/">Channel</a></td>
+<td>The channel found</td>
 </tr>
 </tbody>
 </table>

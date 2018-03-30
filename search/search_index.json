@@ -27,7 +27,7 @@
         },
         {
             "location": "/ExampleProject/ApiClient/",
-            "text": "Class ApiClient\n\u00b6\n\n\nRepresents a connection to the client\n\n\nConstructors\n\u00b6\n\n\n\n\nApiClient()\n\u00b6\n\n\nInitializes a new instance of the \n class.\n\n\nFields\n\u00b6\n\n\n\n\ntoken\n\u00b6\n\n\nAuthentication token\n\n\nDeclaration\n\n\npublic\n \nString\n \ntoken\n\n\n\n\n\n\nField Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nAuthentication token for the account or Application.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nGetChannelById(System.Int32)\n\u00b6\n\n\nGets a channel with the specified id.\n\n\npublic\n \nChannel\n \nGetChannelById\n(\nSystem\n.\nInt32\n \nchannelId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nchannelId\n\n\nThe id of the channel.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nChannel\n\n\nChannel with the specified id\n\n\n\n\n\n\n\n\nGetGuildById(System.Int32)\n\u00b6\n\n\nGets the guild by id.\n\n\npublic\n \nGuild\n \nGetGuildById\n(\nSystem\n.\nInt32\n \nguildId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nguildId\n\n\nGuild id.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nGuild with the specified id\n\n\n\n\n\n\n\n\nGetMe()\n\u00b6\n\n\nGets the user of the requester's account\n\n\npublic\n \nUser\n \nGetMe\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n\n\nThe current user\n\n\n\n\n\n\n\n\nGetGuilds()\n\u00b6\n\n\nGets the current user's guilds\n\n\npublic\n \nGuild\n[]\n \nGetGuilds\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild[]\n\n\nGuilds the token's user is in",
+            "text": "Class ApiClient\n\u00b6\n\n\nRepresents a connection to the client\n\n\nConstructors\n\u00b6\n\n\n\n\nApiClient()\n\u00b6\n\n\nInitializes a new instance of the \n class.\n\n\nFields\n\u00b6\n\n\n\n\ntoken\n\u00b6\n\n\nAuthentication token\n\n\nDeclaration\n\n\npublic\n \nString\n \ntoken\n;\n\n\n\n\n\n\nField Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nAuthentication token for the account or Application.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nLogin(System.String)\n\u00b6\n\n\nLogs in to the API\n\n\npublic\n \nBoolean\n \nLogin\n(\nSystem\n.\nString\n \ntoken\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\ntoken\n\n\nThe authentication token to use for login.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if login was successful, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nGetChannel(System.Int32)\n\u00b6\n\n\nGets a channel with the specified id.\n\n\npublic\n \nChannel\n \nGetChannel\n(\nSystem\n.\nInt32\n \nchannelId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nchannelId\n\n\nThe id of the channel.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nChannel\n\n\nChannel with the specified id\n\n\n\n\n\n\n\n\nGetGuildById(System.Int32)\n\u00b6\n\n\nGets the guild by id.\n\n\npublic\n \nGuild\n \nGetGuildById\n(\nSystem\n.\nInt32\n \nguildId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nguildId\n\n\nGuild id.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nGuild with the specified id\n\n\n\n\n\n\n\n\nGetMe()\n\u00b6\n\n\nGets the user of the requester's account\n\n\npublic\n \nUser\n \nGetMe\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n\n\nThe current user\n\n\n\n\n\n\n\n\nGetGuilds()\n\u00b6\n\n\nGets the current user's guilds\n\n\npublic\n \nGuild\n[]\n \nGetGuilds\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n[]\n\n\nGuilds the token's user is in",
             "title": "ApiClient"
         },
         {
@@ -52,7 +52,7 @@
         },
         {
             "location": "/ExampleProject/ApiClient/#token",
-            "text": "Authentication token  Declaration  public   String   token   Field Value     Type  Description      String  Authentication token for the account or Application.",
+            "text": "Authentication token  Declaration  public   String   token ;   Field Value     Type  Description      String  Authentication token for the account or Application.",
             "title": "token"
         },
         {
@@ -61,9 +61,14 @@
             "title": "Methods"
         },
         {
-            "location": "/ExampleProject/ApiClient/#getchannelbyidsystemint32",
-            "text": "Gets a channel with the specified id.  public   Channel   GetChannelById ( System . Int32   channelId )   Parameters     Type  Name  Description      Int32  channelId  The id of the channel.     Returns     Type  Description      Channel  Channel with the specified id",
-            "title": "GetChannelById(System.Int32)"
+            "location": "/ExampleProject/ApiClient/#loginsystemstring",
+            "text": "Logs in to the API  public   Boolean   Login ( System . String   token )   Parameters     Type  Name  Description      String  token  The authentication token to use for login.     Returns     Type  Description      Boolean  true  if login was successful,  false  otherwise.",
+            "title": "Login(System.String)"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#getchannelsystemint32",
+            "text": "Gets a channel with the specified id.  public   Channel   GetChannel ( System . Int32   channelId )   Parameters     Type  Name  Description      Int32  channelId  The id of the channel.     Returns     Type  Description      Channel  Channel with the specified id",
+            "title": "GetChannel(System.Int32)"
         },
         {
             "location": "/ExampleProject/ApiClient/#getguildbyidsystemint32",
@@ -77,7 +82,7 @@
         },
         {
             "location": "/ExampleProject/ApiClient/#getguilds",
-            "text": "Gets the current user's guilds  public   Guild []   GetGuilds ()   Returns     Type  Description      Guild[]  Guilds the token's user is in",
+            "text": "Gets the current user's guilds  public   Guild []   GetGuilds ()   Returns     Type  Description      Guild []  Guilds the token's user is in",
             "title": "GetGuilds()"
         },
         {
@@ -122,7 +127,7 @@
         },
         {
             "location": "/ExampleProject/Models/Message/",
-            "text": "Class Message\n\u00b6\n\n\nRepresents a message.\n\n\nFields\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nThe message's id.\n\n\nDeclaration\n\n\npublic\n \nInt32\n \nId\n\n\n\n\n\n\nField Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32",
+            "text": "Class Message\n\u00b6\n\n\nRepresents a message.\n\n\nFields\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nThe message's id.\n\n\nDeclaration\n\n\npublic\n \nInt32\n \nId\n;\n\n\n\n\n\n\nField Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32",
             "title": "Message"
         },
         {
@@ -137,12 +142,12 @@
         },
         {
             "location": "/ExampleProject/Models/Message/#id",
-            "text": "The message's id.  Declaration  public   Int32   Id   Field Value     Type  Description      Int32",
+            "text": "The message's id.  Declaration  public   Int32   Id ;   Field Value     Type  Description      Int32",
             "title": "Id"
         },
         {
             "location": "/ExampleProject/Models/Guild/",
-            "text": "Class Guild\n\u00b6\n\n\nRepresents a guild.\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the id.\n\n\nDeclaration\n\n\npublic\n \nInt32\n \nId\n \n{\nget\n;\n \nset\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe guild's id.\n\n\n\n\n\n\n\n\nName\n\u00b6\n\n\nGets or sets the name.\n\n\nDeclaration\n\n\npublic\n \nInt32\n \nName\n \n{\nget\n;\n \nset\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe name of the guild.",
+            "text": "Class Guild\n\u00b6\n\n\nRepresents a guild.\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the id.\n\n\nDeclaration\n\n\npublic\n \nInt32\n \nId\n \n{\nget\n;\n \nset\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe guild's id.\n\n\n\n\n\n\n\n\nName\n\u00b6\n\n\nGets or sets the name.\n\n\nDeclaration\n\n\npublic\n \nInt32\n \nName\n \n{\nget\n;\n \nset\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe name of the guild.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nGetChannel(System.Int32)\n\u00b6\n\n\nGets a channel in the guild with the given ID\n\n\npublic\n \nChannel\n \nGetChannel\n(\nSystem\n.\nInt32\n \nchannelId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nchannelId\n\n\nId of the channel to look for.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nChannel\n\n\nThe channel found",
             "title": "Guild"
         },
         {
@@ -166,8 +171,18 @@
             "title": "Name"
         },
         {
+            "location": "/ExampleProject/Models/Guild/#methods",
+            "text": "",
+            "title": "Methods"
+        },
+        {
+            "location": "/ExampleProject/Models/Guild/#getchannelsystemint32",
+            "text": "Gets a channel in the guild with the given ID  public   Channel   GetChannel ( System . Int32   channelId )   Parameters     Type  Name  Description      Int32  channelId  Id of the channel to look for.     Returns     Type  Description      Channel  The channel found",
+            "title": "GetChannel(System.Int32)"
+        },
+        {
             "location": "/ExampleProject/Models/User/",
-            "text": "Class User\n\u00b6\n\n\nRepresents a User\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the id.\n\n\nDeclaration\n\n\npublic\n \nInt32\n \nId\n \n{\nget\n;\n \nset\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe user's id.\n\n\n\n\n\n\n\n\nName\n\u00b6\n\n\nGets or sets the name.\n\n\nDeclaration\n\n\npublic\n \nInt32\n \nName\n \n{\nget\n;\n \nset\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe name of the user.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nGetGuilds()\n\u00b6\n\n\nGets all guilds the user is in.\n\n\npublic\n \nGuild\n[]\n \nGetGuilds\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild[]\n\n\nThe guild the user belongs to",
+            "text": "Class User\n\u00b6\n\n\nRepresents a User\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the id.\n\n\nDeclaration\n\n\npublic\n \nInt32\n \nId\n \n{\nget\n;\n \nset\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe user's id.\n\n\n\n\n\n\n\n\nName\n\u00b6\n\n\nGets or sets the name.\n\n\nDeclaration\n\n\npublic\n \nInt32\n \nName\n \n{\nget\n;\n \nset\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe name of the user.\n\n\n\n\n\n\n\n\nCreationDate\n\u00b6\n\n\nGets the user's creation date.\n\n\nDeclaration\n\n\npublic\n \nDateTime\n \nCreationDate\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nDateTime\n\n\nThe creation date in UTC.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nGetGuilds()\n\u00b6\n\n\nGets all guilds the user is in.\n\n\npublic\n \nGuild\n[]\n \nGetGuilds\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n[]\n\n\nThe guild the user belongs to",
             "title": "User"
         },
         {
@@ -191,13 +206,18 @@
             "title": "Name"
         },
         {
+            "location": "/ExampleProject/Models/User/#creationdate",
+            "text": "Gets the user's creation date.  Declaration  public   DateTime   CreationDate   { get ;   }   Property Value     Type  Description      DateTime  The creation date in UTC.",
+            "title": "CreationDate"
+        },
+        {
             "location": "/ExampleProject/Models/User/#methods",
             "text": "",
             "title": "Methods"
         },
         {
             "location": "/ExampleProject/Models/User/#getguilds",
-            "text": "Gets all guilds the user is in.  public   Guild []   GetGuilds ()   Returns     Type  Description      Guild[]  The guild the user belongs to",
+            "text": "Gets all guilds the user is in.  public   Guild []   GetGuilds ()   Returns     Type  Description      Guild []  The guild the user belongs to",
             "title": "GetGuilds()"
         },
         {

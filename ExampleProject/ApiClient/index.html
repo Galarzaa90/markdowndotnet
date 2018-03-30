@@ -398,8 +398,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#getchannelbyidsystemint32" title="GetChannelById(System.Int32)" class="md-nav__link">
-    GetChannelById(System.Int32)
+  <a href="#loginsystemstring" title="Login(System.String)" class="md-nav__link">
+    Login(System.String)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getchannelsystemint32" title="GetChannel(System.Int32)" class="md-nav__link">
+    GetChannel(System.Int32)
   </a>
   
 </li>
@@ -599,8 +606,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#getchannelbyidsystemint32" title="GetChannelById(System.Int32)" class="md-nav__link">
-    GetChannelById(System.Int32)
+  <a href="#loginsystemstring" title="Login(System.String)" class="md-nav__link">
+    Login(System.String)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getchannelsystemint32" title="GetChannel(System.Int32)" class="md-nav__link">
+    GetChannel(System.Int32)
   </a>
   
 </li>
@@ -657,9 +671,9 @@
 <h2 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="token">token<a class="headerlink" href="#token" title="Permanent link">&para;</a></h3>
-<p>Authentication token</p>
-<p><strong>Declaration</strong></p>
-<div class="codehilite"><pre><span></span><span class="k">public</span> <span class="n">String</span> <span class="n">token</span>
+<p>Authentication token<br />
+<strong>Declaration</strong></p>
+<div class="codehilite"><pre><span></span><span class="k">public</span> <span class="n">String</span> <span class="n">token</span><span class="p">;</span>
 </pre></div>
 
 
@@ -680,9 +694,47 @@
 </table>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <hr />
-<h3 id="getchannelbyidsystemint32">GetChannelById(System.Int32)<a class="headerlink" href="#getchannelbyidsystemint32" title="Permanent link">&para;</a></h3>
+<h3 id="loginsystemstring">Login(System.String)<a class="headerlink" href="#loginsystemstring" title="Permanent link">&para;</a></h3>
+<p>Logs in to the API</p>
+<div class="codehilite"><pre><span></span><span class="k">public</span> <span class="n">Boolean</span> <span class="nf">Login</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="n">String</span> <span class="n">token</span><span class="p">)</span>
+</pre></div>
+
+
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+<td>token</td>
+<td>The authentication token to use for login.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+<td><c>true</c> if login was successful, <c>false</c> otherwise.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getchannelsystemint32">GetChannel(System.Int32)<a class="headerlink" href="#getchannelsystemint32" title="Permanent link">&para;</a></h3>
 <p>Gets a channel with the specified id.</p>
-<div class="codehilite"><pre><span></span><span class="k">public</span> <span class="n">Channel</span> <span class="nf">GetChannelById</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="n">Int32</span> <span class="n">channelId</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="k">public</span> <span class="n">Channel</span> <span class="nf">GetChannel</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="n">Int32</span> <span class="n">channelId</span><span class="p">)</span>
 </pre></div>
 
 
@@ -793,7 +845,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="Models/Guild[].md">Guild[]</a></td>
+<td><a href="../Models/Guild/">Guild</a>[]</td>
 <td>Guilds the token's user is in</td>
 </tr>
 </tbody>

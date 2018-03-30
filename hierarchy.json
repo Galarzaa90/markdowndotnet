@@ -9,16 +9,23 @@
                     },
                     "type": "F"
                 },
-                ".ctor(System.String)": {
+                ".ctor": {
                     "documentation": {
-                        "summary": "Initializes a new instance of the <see cref=\"T:ExampleProject.ApiClient\" /> class.",
-                        "param": {
-                            "token": "Authentication token."
-                        }
+                        "summary": "Initializes a new instance of the <see cref=\"T:ExampleProject.ApiClient\" /> class."
                     },
                     "type": "C"
                 },
-                "GetChannelById(System.Int32)": {
+                "Login(System.String)": {
+                    "documentation": {
+                        "summary": "Logs in to the API",
+                        "param": {
+                            "token": "The authentication token to use for login."
+                        },
+                        "returns": "<c>true</c> if login was successful, <c>false</c> otherwise."
+                    },
+                    "type": "M"
+                },
+                "GetChannel(System.Int32)": {
                     "documentation": {
                         "summary": "Gets a channel with the specified id.",
                         "returns": "Channel with the specified id",
@@ -120,6 +127,16 @@
                         "value": "The name of the guild."
                     },
                     "type": "P"
+                },
+                "GetChannel(System.Int32)": {
+                    "documentation": {
+                        "summary": "Gets a channel in the guild with the given ID",
+                        "param": {
+                            "channelId": "Id of the channel to look for."
+                        },
+                        "returns": "The channel found"
+                    },
+                    "type": "M"
                 }
             },
             "documentation": {
@@ -140,6 +157,13 @@
                     "documentation": {
                         "summary": "Gets or sets the name.",
                         "value": "The name of the user."
+                    },
+                    "type": "P"
+                },
+                "CreationDate": {
+                    "documentation": {
+                        "summary": "Gets the user's creation date.",
+                        "value": "The creation date in UTC."
                     },
                     "type": "P"
                 },

@@ -2,11 +2,11 @@ import json
 import logging
 import os
 import re
-import xml.etree.ElementTree as ET
+from xml.etree import ElementTree
 from typing import Dict, List
 
 import click
-# noinspection PyUnresolvedReferences
+# noinspection PyUnresolvedReferences,PyPackageRequirements
 import clr
 import requests
 import yaml
@@ -56,7 +56,8 @@ def get_link(local_assembly, *, type_name: str=None, cs_type=None, current_file=
     if type_name is not None:
         cs_type = get_type(type_name, local_assembly)
     if cs_type is None:
-        return None
+        log.warning(f"Couldn't find type: {type_name}")
+        return type_name
     # Type belongs to the assembly, so link will be relative
     if cs_type.Assembly.FullName == local_assembly.FullName:
         current_path = os.path.dirname(current_file) + "/"
@@ -67,6 +68,7 @@ def get_link(local_assembly, *, type_name: str=None, cs_type=None, current_file=
         r = requests.get('https://xref.docs.microsoft.com/query', params={"uid": cs_type.FullName})
         data = json.loads(r.text)
         if len(data) < 0:
+            log.warning(f"Couldn't find documentation reference for {cs_type.FullName}.")
             return cs_type.FullName
         return f"[{data[0]['name']}]({data[0]['href']})"
 
@@ -81,7 +83,7 @@ def build_table(headers : List[str], rows : List[List[str]]) -> str:
 
 def parse_documentation(path):
     log.info("Parsing documentation")
-    tree = ET.parse(path)
+    tree = ElementTree.parse(path)
     hierarchy = {}
     root = tree.getroot()
     # Explore the XML file to get a structured hierarchy for the project
@@ -90,7 +92,7 @@ def parse_documentation(path):
         documentation = {}
         for child in member_item:
             pattern = r"<(?:\w+:)?%(tag)s(?:[^>]*)>(.*)</(?:\w+:)?%(tag)s" % {"tag": child.tag}
-            content = re.findall(pattern, ET.tostring(child).decode('utf-8'), re.DOTALL)[0].strip()
+            content = re.findall(pattern, ElementTree.tostring(child).decode('utf-8'), re.DOTALL)[0].strip()
             if child.tag == "param":
                 if child.tag not in documentation:
                     documentation[child.tag] = {}

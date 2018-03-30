@@ -140,6 +140,44 @@
                 "summary": "Represents a User"
             },
             "type": "T"
+        },
+        "ChannelTypes": {
+            "children": {
+                "GUILD_TEXT": {
+                    "documentation": {
+                        "summary": "Text channel in a guild."
+                    },
+                    "type": "F"
+                },
+                "DM": {
+                    "documentation": {
+                        "summary": "Private channel between two users."
+                    },
+                    "type": "F"
+                },
+                "GUILD_VOICE": {
+                    "documentation": {
+                        "summary": "Voice channel in a guild."
+                    },
+                    "type": "F"
+                },
+                "GROUP_DM": {
+                    "documentation": {
+                        "summary": "Private group channel."
+                    },
+                    "type": "F"
+                },
+                "GUILD_CATEGORY": {
+                    "documentation": {
+                        "summary": "Channel category in a guild."
+                    },
+                    "type": "F"
+                }
+            },
+            "documentation": {
+                "summary": "Represents the different channel types available."
+            },
+            "type": "T"
         }
     }
 }

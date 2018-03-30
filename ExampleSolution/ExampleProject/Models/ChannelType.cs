@@ -26,5 +26,6 @@ namespace ExampleProject.Models
         /// Channel category in a guild.
         /// </summary>
         GUILD_CATEGORY
+
     }
 }

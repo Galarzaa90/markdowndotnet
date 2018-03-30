@@ -11,6 +11,7 @@ namespace ExampleProject
         /// <summary>
         /// Authentication token
         /// </summary>
+        /// <value>Authentication token for the account or Application.</value>
         public string token;
 
         /// <summary>

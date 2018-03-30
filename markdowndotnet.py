@@ -3,12 +3,14 @@ import logging
 import os
 import re
 import xml.etree.ElementTree as ET
-
-import clr
 from typing import Dict, List
 
 import click
+# noinspection PyUnresolvedReferences
+import clr
+import requests
 import yaml
+
 from System.Reflection import Assembly
 from System.IO import FileInfo
 from System import Type
@@ -41,11 +43,32 @@ def get_params(func) -> List[str]:
         return m.group(1).replace("(", "").replace(")", "").split(",")
 
 
-def get_type(type_str, dll) -> Type:
-    local_type = dll.GetType(type_str)
+def get_type(type_str, assembly) -> Type:
+    local_type = assembly.GetType(type_str)
     if local_type is None:
         return Type.GetType(type_str)
     return local_type
+
+
+def get_link(local_assembly, *, type_name: str=None, cs_type=None, current_file=None):
+    if not type_name and not cs_type:
+        raise ValueError("Both type_name and cs_type can't be None")
+    if type_name is not None:
+        cs_type = get_type(type_name, local_assembly)
+    if cs_type is None:
+        return None
+    # Type belongs to the assembly, so link will be relative
+    if cs_type.Assembly.FullName == local_assembly.FullName:
+        current_path = os.path.dirname(current_file) + "/"
+        target_file = os.path.join(output_dir, str(cs_type).replace('.', '/') + ".md")
+        relative_path = os.path.relpath(target_file, current_path)
+        return f"[{cs_type.Name}]({relative_path})"
+    else:
+        r = requests.get('https://xref.docs.microsoft.com/query', params={"uid": cs_type.FullName})
+        data = json.loads(r.text)
+        if len(data) < 0:
+            return cs_type.FullName
+        return f"[{data[0]['name']}]({data[0]['href']})"
 
 
 def build_table(headers : List[str], rows : List[List[str]]) -> str:
@@ -118,7 +141,7 @@ def parse_documentation(path):
 def build_documentation(dll_path, hierarchy):
     log.info("Building documentation")
     dll_file = FileInfo(dll_path)
-    dll = Assembly.LoadFile(dll_file.FullName)
+    assembly = Assembly.LoadFile(dll_file.FullName)
     # Iterate through all namespaces
     # Each namespace is a folder, each class is a file
     # Also builds a YAML index
@@ -132,7 +155,7 @@ def build_documentation(dll_path, hierarchy):
             with open(filepath, "w") as file:
                 log.debug(f"Building {file.name}")
                 index_files.append({member: filename})
-                _type = dll.GetType(f"{namespace}.{member}")
+                _type = assembly.GetType(f"{namespace}.{member}")
                 object_type = "Class"
                 if _type.IsEnum:
                     object_type = "Enum"
@@ -169,13 +192,14 @@ def build_documentation(dll_path, hierarchy):
                             _content += f"{documentation['summary']}\n"
                         if field is not None:
                             field_type = field.FieldType
+                            type_link = get_link(assembly, cs_type=field_type, current_file=filepath)
                             declaration = f"\n**Declaration**\n" \
                                           f"```csharp\n" \
-                                          f"public {field_type} {name}\n" \
+                                          f"public {field_type.Name} {name}\n" \
                                           f"```\n"
                             _content += declaration
                             _content += "**Field Value**\n"
-                            table = build_table(["Type", "Description"], [[str(field_type), documentation.get("value", "")]])
+                            table = build_table(["Type", "Description"], [[type_link, documentation.get("value", "")]])
                             _content += table
                         _temp["fields"].append(_content)
 
@@ -188,15 +212,16 @@ def build_documentation(dll_path, hierarchy):
                             _content += f"{documentation['summary']}\n"
                         if prop is not None:
                             property_type = prop.PropertyType
+                            type_link = get_link(assembly, cs_type=property_type, current_file=filepath)
                             getter = "" if prop.GetMethod is None else "get; "
                             setter = "" if prop.SetMethod is None else "set; "
                             declaration = f"\n**Declaration**\n" \
                                           f"```csharp\n" \
-                                          f"public {property_type} {name} {{{getter}{setter}}}\n" \
+                                          f"public {property_type.Name} {name} {{{getter}{setter}}}\n" \
                                           f"```\n"
                             _content += declaration
                             _content += "**Property Value**\n"
-                            table = build_table(["Type", "Description"], [[str(property_type), documentation.get("value","")]])
+                            table = build_table(["Type", "Description"], [[type_link, documentation.get("value","")]])
                             _content += table
 
                         _temp["properties"].append(_content)
@@ -209,11 +234,11 @@ def build_documentation(dll_path, hierarchy):
                             method = _type.GetMethod(method_name)
                             name += "()"
                         else:
-                            param_types = [get_type(x, dll) for x in params]
+                            param_types = [get_type(x, assembly) for x in params]
                             method = _type.GetMethod(method_name, param_types)
-                        paramsInfo = method.GetParameters()
-                        paramString = " ,".join([f"{x.ParameterType} {x.Name}" for x in paramsInfo])
-                        complete_name = f"{method_name}({paramString})"
+                        parameters = method.GetParameters()
+                        param_string = " ,".join([f"{x.ParameterType} {x.Name}" for x in parameters])
+                        complete_name = f"{method_name}({param_string})"
                         if "methods" not in _temp:
                             _temp["methods"] = []
                         _content = f'### {name}\n'
@@ -221,19 +246,21 @@ def build_documentation(dll_path, hierarchy):
                             _content += f"{documentation['summary']}\n"
                         if method is not None:
                             _content += f"\n```csharp\n" \
-                                        f"public {method.ReturnType} {complete_name}\n" \
+                                        f"public {method.ReturnType.Name} {complete_name}\n" \
                                         f"```\n"
-                        if len(paramsInfo) > 0 and "param" in documentation:
+                        if len(parameters) > 0 and "param" in documentation:
                             _content += "**Parameters**\n"
                             headers = ["Type", "Name", "Description"]
                             rows = []
-                            for param in paramsInfo:
+                            for param in parameters:
                                 description = documentation["param"][param.Name]
-                                rows.append([str(param.ParameterType), param.Name, description])
+                                param_link = get_link(assembly, cs_type=param.ParameterType, current_file=filepath)
+                                rows.append([param_link, param.Name, description])
                             _content += build_table(headers, rows)
                         if method is not None:
                             _content += "Returns\n"
-                            table = build_table(["Type", "Description"], [[str(method.ReturnType), documentation.get("returns","")]])
+                            type_link = get_link(assembly, cs_type=method.ReturnType, current_file=filepath)
+                            table = build_table(["Type", "Description"], [[type_link, documentation.get("returns", "")]])
                             _content += table
 
                         _temp["methods"].append(_content)

@@ -23,13 +23,15 @@ addons:
 
 install:
   - pip install --upgrade setuptools
-  - pip install pycparser mkdocs mkdocs-material
+  - pip install pycparser
   - pip install --egg git+https://github.com/pythonnet/pythonnet -U --force
+  - pip install -r requirements.txt
 script:
   - xbuild ExampleSolution/ExampleSolution.sln /v:minimal
   - python markdowndotnet.py -v "ExampleSolution/ExampleProject/bin/Debug/ExampleProject.dll" "ExampleSolution/ExampleProject/bin/Debug/ExampleProject.xml"
 
 after_success:
+  - pip install mkdocs mkdocs-material
   - python deploy.py
   - python -m mkdocs build
 

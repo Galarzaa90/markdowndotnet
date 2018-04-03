@@ -1,72 +1,133 @@
 {
-    "ExampleProject": {
-        "ApiClient": {
+    "ExampleProject.Models": {
+        "ClientUser": {
             "children": {
-                "token": {
+                "Friends": {
                     "documentation": {
-                        "summary": "Authentication token",
-                        "value": "Authentication token for the account or Application."
+                        "summary": "Gets the user's friends.",
+                        "value": "An array of Users that are friend with the current user.",
+                        "remark": "Only non-bot users can have friends."
                     },
-                    "type": "F"
-                },
-                ".ctor": {
-                    "documentation": {
-                        "summary": "Initializes a new instance of the <see cref=\"T:ExampleProject.ApiClient\" /> class."
-                    },
-                    "type": "C"
-                },
-                "Login(System.String)": {
-                    "documentation": {
-                        "summary": "Logs in to the API",
-                        "param": {
-                            "token": "The authentication token to use for login."
-                        },
-                        "returns": "<c>true</c> if login was successful, <c>false</c> otherwise."
-                    },
-                    "type": "M"
-                },
-                "GetChannel(System.Int32)": {
-                    "documentation": {
-                        "summary": "Gets a channel with the specified id.",
-                        "returns": "Channel with the specified id",
-                        "param": {
-                            "channelId": "The id of the channel."
-                        }
-                    },
-                    "type": "M"
-                },
-                "GetGuildById(System.Int32)": {
-                    "documentation": {
-                        "summary": "Gets the guild by id.",
-                        "param": {
-                            "guildId": "Guild id."
-                        },
-                        "returns": "Guild with the specified id"
-                    },
-                    "type": "M"
-                },
-                "GetMe": {
-                    "documentation": {
-                        "summary": "Gets the user of the requester's account",
-                        "returns": "The current user"
-                    },
-                    "type": "M"
-                },
-                "GetGuilds": {
-                    "documentation": {
-                        "summary": "Gets the current user's guilds",
-                        "returns": "Guilds the token's user is in"
-                    },
-                    "type": "M"
+                    "type": "P"
                 }
             },
             "documentation": {
-                "summary": "Represents a connection to the client"
+                "summary": "Represents the User that connected to the API."
             },
             "type": "T"
-        }
-    },
-    "ExampleProject.Models": {
+        },
+        "Color": {
+            "children": {
+                "Value": {
+                    "documentation": {
+                        "summary": "Gets or sets the color's raw integer value.",
+                        "value": "The color's integer value."
+                    },
+                    "type": "P"
+                },
+                "R": {
+                    "documentation": {
+                        "summary": "Gets the red component of the color.",
+                        "value": "The red component of the color."
+                    },
+                    "type": "P"
+                },
+                "G": {
+                    "documentation": {
+                        "summary": "Gets the greeb component of the color.",
+                        "value": "The greeb component of the color."
+                    },
+                    "type": "P"
+                },
+                "B": {
+                    "documentation": {
+                        "summary": "Gets the blue component of the color.",
+                        "value": "The blue component of the color."
+                    },
+                    "type": "P"
+                },
+                ".ctor(System.Int32,System.Int32,System.Int32)": {
+                    "documentation": {
+                        "summary": "Creates a color from its red, green and blue components respectively.",
+                        "param": {
+                            "r": "Red component.",
+                            "g": "Green component.",
+                            "b": "Blue component."
+                        }
+                    },
+                    "type": "C"
+                }
+            },
+            "documentation": {
+                "summary": "Represents a <see cref=\"T:ExampleProject.Models.Role\" /> color."
+            },
+            "type": "T"
+        },
+        "Role": {
+            "children": {
+                "Id": {
+                    "documentation": {
+                        "summary": "Gets the unique id of the role",
+                        "value": "The unique id of the role."
+                    },
+                    "type": "P"
+                },
+                "Name": {
+                    "documentation": {
+                        "summary": "Gets the name of the role.",
+                        "value": "The name of the role."
+                    },
+                    "type": "P"
+                },
+                "Guild": {
+                    "documentation": {
+                        "summary": "Gets the <see cref=\"T:ExampleProject.Models.Guild\" /> the role belongs to.",
+                        "value": "The guild the role belongs to."
+                    },
+                    "type": "P"
+                },
+                "Color": {
+                    "documentation": {
+                        "summary": "Gets the color of the role.",
+                        "value": "The role's color."
+                    },
+                    "type": "P"
+                },
+                "Hoist": {
+                    "documentation": {
+                        "summary": "Checks if the role will be displayed separately from other members.",
+                        "value": "<c>true</c> if it will be displayed separately, <c>false</c> otherwise."
+                    },
+                    "type": "P"
+                },
+                "Position": {
+                    "documentation": {
+                        "summary": "Gets the position of the role.",
+                        "value": "The position of the role.",
+                        "remarks": "Bottom role has a position of 0."
+                    },
+                    "type": "P"
+                },
+                "Mentionable": {
+                    "documentation": {
+                        "summary": "Checks if the role can be mentioned by users.",
+                        "value": "<c>true</c> if it's mentionable, <c>false</c> otherwise."
+                    },
+                    "type": "P"
+                },
+                "IsDefault": {
+                    "documentation": {
+                        "summary": "Checks if the role is the guild's default role.",
+                        "value": "<c>true</c> if it is the default role, <c>false</c> otherwise."
+                    },
+                    "type": "P"
+                }
+            },
+            "documentation": {
+                "summary": "Represents a Role in a <see cref=\"P:ExampleProject.Models.Role.Guild\" />."
+            },
+            "type": "T"
+        },
         "Channel": {
             "children": {
                 "Id": {
@@ -102,9 +163,51 @@
             "children": {
                 "Id": {
                     "documentation": {
-                        "summary": "The message's id."
+                        "summary": "Gets the unique id of the message",
+                        "value": "The unique id."
                     },
-                    "type": "F"
+                    "type": "P"
+                },
+                "Author": {
+                    "documentation": {
+                        "summary": "Gets the author of the message.",
+                        "value": "The user that sent the message."
+                    },
+                    "type": "P"
+                },
+                "Guild": {
+                    "documentation": {
+                        "summary": "Gets the message's guild.",
+                        "value": "<see cref=\"T:ExampleProject.Models.Guild\" /> where the message is, if applicable."
+                    },
+                    "type": "P"
+                },
+                "Content": {
+                    "documentation": {
+                        "summary": "Gets the content of the message."
+                    },
+                    "type": "P"
+                },
+                "CreatedAt": {
+                    "documentation": {
+                        "summary": "Gets the date the message was sent.",
+                        "value": "The date and time the message was sent in UTC."
+                    },
+                    "type": "P"
+                },
+                "Pin": {
+                    "documentation": {
+                        "summary": "Pins a message.",
+                        "returns": "<c>true</c> if it was pinned successfully, <c>false</c> otherwise."
+                    },
+                    "type": "M"
+                },
+                "Unpin": {
+                    "documentation": {
+                        "summary": "Unpins a message.",
+                        "returns": "<c>true</c> if it was unpinned successfully, <c>false</c> otherwise."
+                    },
+                    "type": "M"
                 }
             },
             "documentation": {
@@ -157,6 +260,20 @@
                     "documentation": {
                         "summary": "Gets or sets the name.",
                         "value": "The name of the user."
+                    },
+                    "type": "P"
+                },
+                "Discriminator": {
+                    "documentation": {
+                        "summary": "Gets the user's discriminator.",
+                        "value": "A four character numeric discriminator."
+                    },
+                    "type": "P"
+                },
+                "IsBot": {
+                    "documentation": {
+                        "summary": "Checks if the user is a bot user.",
+                        "value": "<c>true</c> if the user is a bot, <c>false</c> otherwise."
                     },
                     "type": "P"
                 },
@@ -215,6 +332,66 @@
             },
             "documentation": {
                 "summary": "Represents the different channel types available."
+            },
+            "type": "T"
+        }
+    },
+    "ExampleProject": {
+        "ApiClient": {
+            "children": {
+                "token": {
+                    "documentation": {
+                        "summary": "Authentication token",
+                        "value": "Authentication token for the account or Application."
+                    },
+                    "type": "F"
+                },
+                "Users": {
+                    "documentation": {
+                        "summary": "Gets a list of all the visible users.",
+                        "value": "Array containing all users the <see cref=\"T:ExampleProject.Models.ClientUser\" /> can see."
+                    },
+                    "type": "P"
+                },
+                ".ctor": {
+                    "documentation": {
+                        "summary": "Initializes a new instance of the <see cref=\"T:ExampleProject.ApiClient\" /> class."
+                    },
+                    "type": "C"
+                },
+                "Login(System.String)": {
+                    "documentation": {
+                        "summary": "Logs in to the API",
+                        "param": {
+                            "token": "The authentication token to use for login."
+                        },
+                        "returns": "<c>true</c> if login was successful, <c>false</c> otherwise."
+                    },
+                    "type": "M"
+                },
+                "GetGuild(System.Int32)": {
+                    "documentation": {
+                        "summary": "Gets a <see cref=\"T:ExampleProject.Models.Guild\" /> with the specified id.",
+                        "param": {
+                            "guildId": "The unique id of the guild."
+                        },
+                        "returns": "The guild found, or <c>null</c>."
+                    },
+                    "type": "M"
+                },
+                "GetUser(System.Int32)": {
+                    "documentation": {
+                        "summary": "Gets a <see cref=\"T:ExampleProject.Models.User\" /> with the specified id.",
+                        "param": {
+                            "userId": "The unique id of the user."
+                        },
+                        "returns": "The user found, or <c>null</c>."
+                    },
+                    "type": "M"
+                }
+            },
+            "documentation": {
+                "summary": "Represents a connection to the client"
             },
             "type": "T"
         }

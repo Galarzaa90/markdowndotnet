@@ -1,8 +1,11 @@
-- ExampleProject:
-  - ApiClient: ExampleProject/ApiClient.md
 - ExampleProject.Models:
+  - ClientUser: ExampleProject/Models/ClientUser.md
+  - Color: ExampleProject/Models/Color.md
+  - Role: ExampleProject/Models/Role.md
   - Channel: ExampleProject/Models/Channel.md
   - Message: ExampleProject/Models/Message.md
   - Guild: ExampleProject/Models/Guild.md
   - User: ExampleProject/Models/User.md
   - ChannelTypes: ExampleProject/Models/ChannelTypes.md
+- ExampleProject:
+  - ApiClient: ExampleProject/ApiClient.md

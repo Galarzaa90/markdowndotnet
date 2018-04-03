@@ -116,6 +116,82 @@ def build_table(headers: List[str], rows : List[List[str]]) -> str:
     return output+'\n'
 
 
+def get_type_name(cs_type: Type) -> str:
+    """Gets a C# type's short name (without namespace)
+
+    The types are first looked up in an aliases dictionary.
+    If an alias is found, the alias is returned, otherwise, the name is returned.
+
+    :param Type cs_type: The C# type
+    :return: The name or alias of the Type
+    :rtype: str
+    """
+    aliases = {
+        "System.String": "string",
+        "System.SByte": "sbyte",
+        "System.Byte": "byte",
+        "System.Int16": "short",
+        "System.UInt16": "ushort",
+        "System.Int32": "int",
+        "System.UInt32": "uint",
+        "System.Int64": "long",
+        "System.UInt64": "ulong",
+        "System.Char": "char",
+        "System.Single": "float",
+        "System.Double": "double",
+        "System.Boolean": "bool",
+        "System.Decimal": "decimal"
+    }
+    return aliases.get(cs_type.FullName, cs_type.Name)
+
+
+def parse_constructor(member_type: Type, name: str, documentation: Dict[str, Any], file_path: str):
+    """Generates markdown content for an object's constructor
+
+    :param Type member_type: The C# type of the member containing the constructor
+    :param str name: The name of the field
+    :param Dict documentation: A dictionary containing the XML documentation.
+    :param file_path: The file path of the markdown file containing the member.
+    :return: A string containing the constructor's formatted documentation
+    """
+    assembly = member_type.Assembly
+    # Get a list of the parameter types
+    params = get_params(name)
+    # Get the actual C# types of parameters
+    param_types = [get_type(assembly, x) for x in params]
+    constructor = member_type.GetConstructor(param_types)
+    if constructor is None:
+        log.warning(f"Constructor '{name.replace('.', '#')}' not found in assembly.")
+        return ""
+
+    parameters = constructor.GetParameters()
+    # Get a string list containing the parameter's type and name.
+    params_declaration = " ,".join([f"{get_type_name(x.ParameterType)} {x.Name}" for x in parameters])
+    # Show a level 3 header with the method's name
+    content = f'### {member_type.Name}({" ,".join([f"{x.ParameterType}" for x in parameters])})\n'
+    # Show the constructor's summary if available
+    if "summary" in documentation:
+        content += f"{documentation['summary']}  \n"
+    # Show the constructor's declaration
+    declaration = f"**Declaration**\n" \
+                  f"```csharp\n" \
+                  f"public {member_type.Name}({params_declaration});\n" \
+                  f"```\n"
+    content += declaration
+    # If the constructor has parameters, show a table with their type, name and description
+    if len(parameters) > 0 and "param" in documentation:
+        content += "**Parameters**\n"
+        param_documentation = documentation.get('param', {})
+        headers = ["Type", "Name", "Description"]
+        rows = []
+        for param in parameters:
+            description = param_documentation.get(param.Name, "")
+            param_link = get_link(assembly, cs_type=param.ParameterType, current_file=file_path)
+            rows.append([param_link, param.Name, description])
+        content += build_table(headers, rows)
+    return content
+
+
 def parse_field(member_type: Type, name: str, documentation: Dict[str, Any], file_path: str):
     """Generates markdown content for an object's field
 
@@ -141,7 +217,7 @@ def parse_field(member_type: Type, name: str, documentation: Dict[str, Any], fil
     # Show the field's declaration
     declaration = f"**Declaration**\n" \
                   f"```csharp\n" \
-                  f"public {field_type.Name} {name};\n" \
+                  f"public {get_type_name(field_type)} {name};\n" \
                   f"```\n"
     content += declaration
     # Show a table containing the field's type and value
@@ -178,7 +254,7 @@ def parse_property(member_type: Type, name: str, documentation: Dict[str, Any], 
     # Show the property's declaration
     declaration = f"**Declaration**\n" \
                   f"```csharp\n" \
-                  f"public {property_type.Name} {name} {{{getter}{setter}}}\n" \
+                  f"public {get_type_name(property_type)} {name} {{{getter}{setter}}}\n" \
                   f"```\n"
     content += declaration
     # Show a table containing the property's type and value
@@ -215,7 +291,7 @@ def parse_method(member_type: Type, name: str, documentation: Dict[str, Any], fi
     return_type = method.ReturnType
     parameters = method.GetParameters()
     # Get a string list containing the parameter's type and name.
-    params_declaration = " ,".join([f"{x.ParameterType.Name} {x.Name}" for x in parameters])
+    params_declaration = " ,".join([f"{get_type_name(x.ParameterType)} {x.Name}" for x in parameters])
     # Show a level 3 header with the method's name
     content = f'### {name}\n'
     # Show the method's summary if available
@@ -224,7 +300,7 @@ def parse_method(member_type: Type, name: str, documentation: Dict[str, Any], fi
     # Show the method's declaration
     content += f"**Declaration**\n" \
                f"```csharp\n" \
-               f"public {return_type.Name} {method_name}({params_declaration})\n" \
+               f"public {get_type_name(return_type)} {method_name}({params_declaration})\n" \
                f"```\n"
     # If method has parameters, show a table with their type, name and description
     if len(parameters) > 0 and "param" in documentation:
@@ -346,10 +422,7 @@ def build_documentation(dll_path, hierarchy):
                     if subcontent["type"] == "C":
                         if "constructors" not in _temp:
                             _temp['constructors'] = []
-                        _content = f"### {member}()\n"
-                        if "summary" in documentation:
-                            _content += f"{documentation['summary']}\n"
-                        _temp["constructors"].append(_content)
+                        _temp["constructors"].append(parse_constructor(member_type, name, documentation, file_path))
 
                     if subcontent["type"] == "F":
                         if "fields" not in _temp:

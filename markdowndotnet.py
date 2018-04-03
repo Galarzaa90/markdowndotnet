@@ -272,8 +272,8 @@ def parse_property(member_type: Type, name: str, documentation: Dict[str, Any], 
 
     property_type = cs_property.PropertyType
     type_link = get_link(assembly, cs_type=property_type, current_file=file_path)
-    getter = "" if cs_property.GetMethod is None else "get; "
-    setter = "" if cs_property.SetMethod is None else "set; "
+    getter = "" if cs_property.GetGetMethod(False) is None else "get; "
+    setter = "" if cs_property.GetSetMethod(False) is None else "set; "
     # Show a level 3 header with the property's name
     content = f"### {name}\n"
     # Show the field's summary if available

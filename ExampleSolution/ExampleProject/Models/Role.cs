@@ -9,7 +9,7 @@ namespace ExampleProject.Models
     /// <summary>
     /// Represents a Role in a <see cref="Guild"/>.
     /// </summary>
-    class Role
+    public class Role
     {
         /// <summary>
         /// Gets the unique id of the role

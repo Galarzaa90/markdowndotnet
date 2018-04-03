@@ -9,7 +9,7 @@ namespace ExampleProject.Models
     /// <summary>
     /// Represents a <see cref="Role"/> color.
     /// </summary>
-    class Color
+    public class Color
     {
         /// <summary>
         /// Gets or sets the color's raw integer value.

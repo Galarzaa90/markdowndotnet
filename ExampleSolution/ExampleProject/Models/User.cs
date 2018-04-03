@@ -16,13 +16,25 @@ namespace ExampleProject.Models
         /// Gets or sets the name.
         /// </summary>
         /// <value>The name of the user.</value>
-        public int Name { get; set; }
+        public string Name { get; private set; }
+
+        /// <summary>
+        /// Gets the user's discriminator.
+        /// </summary>
+        /// <value>A four character numeric discriminator.</value>
+        public string Discriminator { get; private set; }
+
+        /// <summary>
+        /// Checks if the user is a bot user.
+        /// </summary>
+        /// <value><c>true</c> if the user is a bot, <c>false</c> otherwise.</value>
+        public bool IsBot { get; private set; }
 
         /// <summary>
         /// Gets the user's creation date.
         /// </summary>
         /// <value>The creation date in UTC.</value>
-        public DateTime CreationDate { get; }
+        public DateTime CreationDate { get; private set; }
 
         /// <summary>
         /// Gets all guilds the user is in.

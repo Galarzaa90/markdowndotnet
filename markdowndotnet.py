@@ -20,6 +20,9 @@ field_property_pattern = re.compile(r"(?P<namespace>\w.+)\.(?P<class>\w.+)\.(?P<
 method_pattern = re.compile(r"(?P<namespace>\w.+)\.(?P<class>\w.+)\.(?P<name>[\w#]+.\(.*\))")
 parameters_pattern = re.compile(r"(\(.*\))")
 
+see_pattern = re.compile(r'<see\s+cref="(\w):([^"]+)"\s+/>')
+c_pattern = re.compile(r'<c>([^<]+)</c>')
+
 log = logging.getLogger(__name__)
 log.setLevel(logging.WARNING)
 consoleHandler = logging.StreamHandler()
@@ -145,6 +148,30 @@ def get_type_name(cs_type: Type) -> str:
     return aliases.get(cs_type.FullName, cs_type.Name)
 
 
+def parse_content(assembly : Assembly, content: str, current_file: str) -> str:
+    """ Parses the content of a XML tag, converting inner XML tags into markdown format.
+
+    'see' tags are converted into links
+    'c' tags are converted into inline code
+
+    :param assembly: The string's assembly's context
+    :param content: The contents of the xml tag
+    :param current_file: The current file location
+    :return: The string with markdown format
+    """
+    def parse_see_tag(m):
+        member_type = m.group(1)
+        full_name = m.group(2)
+        if member_type == "T":
+            return get_link(assembly, type_name=full_name, current_file=current_file)
+        else:
+            return m.group(0)
+
+    content = see_pattern.sub(lambda match: parse_see_tag(match), content)
+    content = c_pattern.sub("`\g<1>`", content)
+    return content
+
+
 def parse_constructor(member_type: Type, name: str, documentation: Dict[str, Any], file_path: str):
     """Generates markdown content for an object's constructor
 
@@ -171,7 +198,7 @@ def parse_constructor(member_type: Type, name: str, documentation: Dict[str, Any
     content = f'### {member_type.Name}({" ,".join([f"{x.ParameterType}" for x in parameters])})\n'
     # Show the constructor's summary if available
     if "summary" in documentation:
-        content += f"{documentation['summary']}  \n"
+        content += f"{parse_content(assembly, documentation['summary'], current_file=file_path)}  \n"
     # Show the constructor's declaration
     declaration = f"**Declaration**\n" \
                   f"```csharp\n" \
@@ -185,7 +212,7 @@ def parse_constructor(member_type: Type, name: str, documentation: Dict[str, Any
         headers = ["Type", "Name", "Description"]
         rows = []
         for param in parameters:
-            description = param_documentation.get(param.Name, "")
+            description = parse_content(assembly, param_documentation.get(param.Name, ""), file_path)
             param_link = get_link(assembly, cs_type=param.ParameterType, current_file=file_path)
             rows.append([param_link, param.Name, description])
         content += build_table(headers, rows)
@@ -213,7 +240,7 @@ def parse_field(member_type: Type, name: str, documentation: Dict[str, Any], fil
     content = f'### {name}\n'
     # Show the field's summary if available
     if "summary" in documentation:
-        content += f"{documentation['summary']}  \n"
+        content += f"{parse_content(assembly, documentation['summary'], current_file=file_path)}  \n"
     # Show the field's declaration
     declaration = f"**Declaration**\n" \
                   f"```csharp\n" \
@@ -222,7 +249,8 @@ def parse_field(member_type: Type, name: str, documentation: Dict[str, Any], fil
     content += declaration
     # Show a table containing the field's type and value
     content += "**Field Value**\n"
-    table = build_table(["Type", "Description"], [[type_link, documentation.get("value", "")]])
+    field_value = parse_content(assembly, documentation.get("value", ""), file_path)
+    table = build_table(["Type", "Description"], [[type_link, field_value]])
     content += table
     return content
 
@@ -250,7 +278,7 @@ def parse_property(member_type: Type, name: str, documentation: Dict[str, Any], 
     content = f"### {name}\n"
     # Show the field's summary if available
     if "summary" in documentation:
-        content += f"{documentation['summary']}  \n"
+        content += f"{parse_content(assembly, documentation['summary'], current_file=file_path)}  \n"
     # Show the property's declaration
     declaration = f"**Declaration**\n" \
                   f"```csharp\n" \
@@ -259,7 +287,8 @@ def parse_property(member_type: Type, name: str, documentation: Dict[str, Any], 
     content += declaration
     # Show a table containing the property's type and value
     content += "**Property Value**\n"
-    table = build_table(["Type", "Description"], [[type_link, documentation.get("value", "")]])
+    property_value = parse_content(assembly, documentation.get("value", ""), file_path)
+    table = build_table(["Type", "Description"], [[type_link, property_value]])
     content += table
     return content
 
@@ -296,7 +325,7 @@ def parse_method(member_type: Type, name: str, documentation: Dict[str, Any], fi
     content = f'### {name}\n'
     # Show the method's summary if available
     if "summary" in documentation:
-        content += f"{documentation['summary']}  \n"
+        content += f"{parse_content(assembly, documentation['summary'], current_file=file_path)}  \n"
     # Show the method's declaration
     content += f"**Declaration**\n" \
                f"```csharp\n" \
@@ -309,15 +338,16 @@ def parse_method(member_type: Type, name: str, documentation: Dict[str, Any], fi
         headers = ["Type", "Name", "Description"]
         rows = []
         for param in parameters:
-            description = param_documentation.get(param.Name, "")
+            description = parse_content(assembly, param_documentation.get(param.Name, ""), file_path)
             param_link = get_link(assembly, cs_type=param.ParameterType, current_file=file_path)
             rows.append([param_link, param.Name, description])
         content += build_table(headers, rows)
     # Show table with the returned value, type and description, unless the type is Void.
     if return_type.Name != "Void":
         content += "**Returns**\n"
+        description = parse_content(assembly, documentation.get("returns", ""), file_path)
         type_link = get_link(assembly, cs_type=method.ReturnType, current_file=file_path)
-        table = build_table(["Type", "Description"], [[type_link, documentation.get("returns", "")]])
+        table = build_table(["Type", "Description"], [[type_link, description]])
         content += table
     return content
 
@@ -403,6 +433,10 @@ def build_documentation(dll_path, hierarchy):
                 object_type = "Class"
                 if member_type.IsEnum:
                     object_type = "Enum"
+                # Check if member inherits other members:
+                base_type = member_type.BaseType
+                if base_type is not None:
+                    file.write(f"**Inherits**  \n{get_link(assembly, cs_type=base_type, current_file=file_path)}\n")
                 file.write(f"# {object_type} {member}\n")
                 file.write(f"{content.get('documentation',{}).get('summary')}\n")
                 _temp = {}

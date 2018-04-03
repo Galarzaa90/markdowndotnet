@@ -15,6 +15,12 @@ namespace ExampleProject
         public string token;
 
         /// <summary>
+        /// Gets a list of all the visible users.
+        /// </summary>
+        /// <value>Array containing all users the <see cref="ClientUser"/> can see.</value>
+        public User[] Users { get; private set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="T:ExampleProject.ApiClient"/> class.
         /// </summary>
         public ApiClient()
@@ -32,37 +38,23 @@ namespace ExampleProject
         }
 
         /// <summary>
-        /// Gets a channel with the specified id.
+        /// Gets a <see cref="Guild"/> with the specified id.
         /// </summary>
-        /// <returns>Channel with the specified id</returns>
-        /// <param name="channelId">The id of the channel.</param>
-        public Channel GetChannel(int channelId){
-            return new Channel();
-        }
-
-        /// <summary>
-        /// Gets the guild by id.
-        /// </summary>
-        /// <param name="guildId">Guild id.</param>
-        /// <returns>Guild with the specified id</returns>
-        public Guild GetGuildById(int guildId){
+        /// <param name="guildId">The unique id of the guild.</param>
+        /// <returns>The guild found, or <c>null</c>.</returns>
+        public Guild GetGuild(int guildId)
+        {
             return new Guild();
         }
-        /// <summary>
-        /// Gets the user of the requester's account
-        /// </summary>
-        /// <returns>The current user</returns>
-        public User GetMe(){
-            return new User();
-        }
 
         /// <summary>
-        /// Gets the current user's guilds
+        /// Gets a <see cref="User"/> with the specified id.
         /// </summary>
-        /// <returns>Guilds the token's user is in</returns>
-        public Guild[] GetGuilds()
+        /// <param name="userId">The unique id of the user.</param>
+        /// <returns>The user found, or <c>null</c>.</returns>
+        public User GetUser(int userId)
         {
-            return new Guild[0];
+            return new User();
         }
     }
 }

@@ -16,7 +16,7 @@ from System.IO import FileInfo
 from System import Type
 
 class_pattern = re.compile(r"(?P<namespace>\w.+)\.(?P<name>\w.+)")
-field_property_pattern = re.compile(r"(?P<namespace>\w.+)\.(?P<class>\w.+)\.(?P<name>[\w#].+)")
+field_property_pattern = re.compile(r"(?P<namespace>\w.+)\.(?P<class>\w.+)\.(?P<name>[\w#].*)")
 method_pattern = re.compile(r"(?P<namespace>\w.+)\.(?P<class>\w.+)\.(?P<name>[\w#]+.\(.*\))")
 parameters_pattern = re.compile(r"(\(.*\))")
 
@@ -193,9 +193,9 @@ def parse_constructor(member_type: Type, name: str, documentation: Dict[str, Any
 
     parameters = constructor.GetParameters()
     # Get a string list containing the parameter's type and name.
-    params_declaration = " ,".join([f"{get_type_name(x.ParameterType)} {x.Name}" for x in parameters])
+    params_declaration = ", ".join([f"{get_type_name(x.ParameterType)} {x.Name}" for x in parameters])
     # Show a level 3 header with the method's name
-    content = f'### {member_type.Name}({" ,".join([f"{x.ParameterType}" for x in parameters])})\n'
+    content = f'### {member_type.Name}({",".join([f"{x.ParameterType}" for x in parameters])})\n'
     # Show the constructor's summary if available
     if "summary" in documentation:
         content += f"{parse_content(assembly, documentation['summary'], current_file=file_path)}  \n"

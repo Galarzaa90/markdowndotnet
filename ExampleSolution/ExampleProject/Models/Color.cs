@@ -35,9 +35,9 @@ namespace ExampleProject.Models
         /// <summary>
         /// Creates a color from its red, green and blue components respectively.
         /// </summary>
-        /// <param name="r"></param>
-        /// <param name="g"></param>
-        /// <param name="b"></param>
+        /// <param name="r">Red component.</param>
+        /// <param name="g">Green component.</param>
+        /// <param name="b">Blue component.</param>
         public Color(int r, int g, int b)
         {
         }

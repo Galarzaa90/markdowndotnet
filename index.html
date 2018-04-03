@@ -322,6 +322,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-to-use" title="How to use" class="md-nav__link">
+    How to use
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#features" title="Features" class="md-nav__link">
     Features
   </a>
@@ -494,6 +501,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-to-use" title="How to use" class="md-nav__link">
+    How to use
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#features" title="Features" class="md-nav__link">
     Features
   </a>
@@ -524,9 +538,9 @@
               
                 
                 
-                <p><em>This project is currently in early development and is still not usable</em></p>
-<h1 id="markdowndotnet">markdowndotnet<a class="headerlink" href="#markdowndotnet" title="Permanent link">&para;</a></h1>
+                <h1 id="markdowndotnet">markdowndotnet<a class="headerlink" href="#markdowndotnet" title="Permanent link">&para;</a></h1>
 <p>Python command line tool to generate markdown documents from C# Library files and their XML documentation.</p>
+<p><img alt="Python version" src="https://img.shields.io/badge/python-3.6-yellow.svg" /> <a href="https://travis-ci.org/Galarzaa90/markdowndotnet"><img alt="Build Status" src="https://travis-ci.org/Galarzaa90/markdowndotnet.svg?branch=master" /></a>  </p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Python 3.6 or higher</li>
@@ -536,15 +550,31 @@
 </ul>
 <p>The generated files markdown files are meant to be used with <a href="https://github.com/mkdocs/mkdocs">mkdocs</a> 
 (with the <a href="https://github.com/squidfunk/mkdocs-material">material theme</a>), but may be compatible with other site generators.</p>
+<h2 id="how-to-use">How to use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
+<p>The script requires setting the <code>DocumentationFile</code> setting in the project's configuration, e.g.</p>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;DocumentationFile&gt;</span>bin\Debug\ExampleProject.xml<span class="nt">&lt;/DocumentationFile&gt;</span>
+</pre></div>
+
+
+<p>Once this has been set, an XML file will be built along with the library's dll file.</p>
+<p>Now, when running the script, the path to the dll and the xml file must be specified:</p>
+<div class="codehilite"><pre><span></span>python markdowndotnet.py ExampleProject.dll ExampleProject.xml
+</pre></div>
+
+
+<p>By default, the files will be generated in a folder named <code>output/</code> in the working directory.</p>
+<p>This contains markdown files generated for each object found in the assembly, ordered in directories by namespace. Aditionally, a file named <code>index.yml</code> is created, which can be appened to a <code>mkdocs.yml</code> file to use with <a href="https://github.com/mkdocs/mkdocs">mkdocs</a>.</p>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Generates markdown documents from a compiled binary (dll) and it's documentation file.</li>
 <li>Displays all public fields, properties and methods, along with their parameters and return types.</li>
+<li>Generate internal links between members</li>
+<li>External links to system classes</li>
+<li>Partial support for summary, params and returns tags.</li>
 </ul>
 <h2 id="planned-features">Planned features<a class="headerlink" href="#planned-features" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Generate internal links between members</li>
-<li>External links to system classes</li>
+<li>Support for all XML tags</li>
 </ul>
                 
                   

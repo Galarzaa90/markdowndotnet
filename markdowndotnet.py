@@ -143,7 +143,8 @@ def get_type_name(cs_type: Type) -> str:
         "System.Single": "float",
         "System.Double": "double",
         "System.Boolean": "bool",
-        "System.Decimal": "decimal"
+        "System.Decimal": "decimal",
+        "System.Void": "void"
     }
     return aliases.get(cs_type.FullName, cs_type.Name)
 
@@ -205,6 +206,10 @@ def parse_constructor(member_type: Type, name: str, documentation: Dict[str, Any
                   f"public {member_type.Name}({params_declaration});\n" \
                   f"```\n"
     content += declaration
+    # Show the constructor's remarks if available
+    if "remarks" in documentation:
+        content += f"**Remarks**  \n"
+        content += f"{parse_content(assembly, documentation['remarks'], current_file=file_path)}  \n"
     # If the constructor has parameters, show a table with their type, name and description
     if len(parameters) > 0 and "param" in documentation:
         content += "**Parameters**\n"
@@ -247,6 +252,10 @@ def parse_field(member_type: Type, name: str, documentation: Dict[str, Any], fil
                   f"public {get_type_name(field_type)} {name};\n" \
                   f"```\n"
     content += declaration
+    # Show the field's remarks if available
+    if "remarks" in documentation:
+        content += f"**Remarks**  \n"
+        content += f"{parse_content(assembly, documentation['remarks'], current_file=file_path)}  \n"
     # Show a table containing the field's type and value
     content += "**Field Value**\n"
     field_value = parse_content(assembly, documentation.get("value", ""), file_path)
@@ -285,6 +294,10 @@ def parse_property(member_type: Type, name: str, documentation: Dict[str, Any], 
                   f"public {get_type_name(property_type)} {name} {{{getter}{setter}}}\n" \
                   f"```\n"
     content += declaration
+    # Show the property's remarks if available
+    if "remarks" in documentation:
+        content += f"**Remarks**  \n"
+        content += f"{parse_content(assembly, documentation['remarks'], current_file=file_path)}  \n"
     # Show a table containing the property's type and value
     content += "**Property Value**\n"
     property_value = parse_content(assembly, documentation.get("value", ""), file_path)
@@ -331,6 +344,10 @@ def parse_method(member_type: Type, name: str, documentation: Dict[str, Any], fi
                f"```csharp\n" \
                f"public {get_type_name(return_type)} {method_name}({params_declaration})\n" \
                f"```\n"
+    # Show the method's remarks if available
+    if "remarks" in documentation:
+        content += f"**Remarks**  \n"
+        content += f"{parse_content(assembly, documentation['remarks'], current_file=file_path)}  \n"
     # If method has parameters, show a table with their type, name and description
     if len(parameters) > 0 and "param" in documentation:
         content += "**Parameters**\n"
@@ -355,6 +372,7 @@ def parse_method(member_type: Type, name: str, documentation: Dict[str, Any], fi
 def parse_documentation(path):
     log.info("Parsing documentation")
     tree = ElementTree.parse(path)
+    tree = ElementTree.parse(path)
     hierarchy = {}
     root = tree.getroot()
     # Explore the XML file to get a structured hierarchy for the project
@@ -363,7 +381,10 @@ def parse_documentation(path):
         documentation = {}
         for child in member_item:
             pattern = r"<(?:\w+:)?%(tag)s(?:[^>]*)>(.*)</(?:\w+:)?%(tag)s" % {"tag": child.tag}
-            content = re.findall(pattern, ElementTree.tostring(child).decode('utf-8'), re.DOTALL)[0].strip()
+            try:
+                content = re.findall(pattern, ElementTree.tostring(child).decode('utf-8'), re.DOTALL)[0].strip()
+            except IndexError:
+                content = ""
             if child.tag == "param":
                 if child.tag not in documentation:
                     documentation[child.tag] = {}
@@ -402,6 +423,8 @@ def parse_documentation(path):
             hierarchy[namespace][in_class]["children"][name] = {"documentation": documentation, 'type': member_type}
 
     os.makedirs(output_dir, exist_ok=True)
+
+    hierarchy = dict(sorted(hierarchy.items()))
 
     # Generate a json file, for debugging purposes
     with open(os.path.join(output_dir, "hierarchy.json"), 'w') as outfile:

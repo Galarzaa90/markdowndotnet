@@ -31,8 +31,68 @@
             "title": "Planned features"
         },
         {
+            "location": "/ExampleProject/ApiClient/",
+            "text": "Inherits\n\n\nObject\n\n\nClass ApiClient\n\u00b6\n\n\nRepresents a connection to the client\n\n\nConstructors\n\u00b6\n\n\n\n\nApiClient()\n\u00b6\n\n\nInitializes a new instance of the \nApiClient\n class.\n\n\nDeclaration\n\n\npublic\n \nApiClient\n();\n\n\n\n\n\n\nFields\n\u00b6\n\n\n\n\ntoken\n\u00b6\n\n\nAuthentication token\n\n\nDeclaration\n\n\npublic\n \nstring\n \ntoken\n;\n\n\n\n\n\n\nField Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nAuthentication token for the account or Application.\n\n\n\n\n\n\n\n\nProperties\n\u00b6\n\n\n\n\nUsers\n\u00b6\n\n\nGets a list of all the visible users.\n\n\nDeclaration\n\n\npublic\n \nUser\n[]\n \nUsers\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n[]\n\n\nArray containing all users the \nClientUser\n can see.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nLogin(System.String)\n\u00b6\n\n\nLogs in to the API\n\n\nDeclaration\n\n\npublic\n \nbool\n \nLogin\n(\nstring\n \ntoken\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\ntoken\n\n\nThe authentication token to use for login.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if login was successful, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nGetGuild(System.Int32)\n\u00b6\n\n\nGets a \nGuild\n with the specified id.\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGetGuild\n(\nint\n \nguildId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nguildId\n\n\nThe unique id of the guild.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nThe guild found, or \nnull\n.\n\n\n\n\n\n\n\n\nGetUser(System.Int32)\n\u00b6\n\n\nGets a \nUser\n with the specified id.\n\n\nDeclaration\n\n\npublic\n \nUser\n \nGetUser\n(\nint\n \nuserId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nuserId\n\n\nThe unique id of the user.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n\n\nThe user found, or \nnull\n.",
+            "title": "ApiClient"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#class-apiclient",
+            "text": "Represents a connection to the client",
+            "title": "Class ApiClient"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#constructors",
+            "text": "",
+            "title": "Constructors"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#apiclient",
+            "text": "Initializes a new instance of the  ApiClient  class.  Declaration  public   ApiClient ();",
+            "title": "ApiClient()"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#fields",
+            "text": "",
+            "title": "Fields"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#token",
+            "text": "Authentication token  Declaration  public   string   token ;   Field Value     Type  Description      String  Authentication token for the account or Application.",
+            "title": "token"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#properties",
+            "text": "",
+            "title": "Properties"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#users",
+            "text": "Gets a list of all the visible users.  Declaration  public   User []   Users   { get ;   }   Property Value     Type  Description      User []  Array containing all users the  ClientUser  can see.",
+            "title": "Users"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#methods",
+            "text": "",
+            "title": "Methods"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#loginsystemstring",
+            "text": "Logs in to the API  Declaration  public   bool   Login ( string   token )   Parameters     Type  Name  Description      String  token  The authentication token to use for login.     Returns     Type  Description      Boolean  true  if login was successful,  false  otherwise.",
+            "title": "Login(System.String)"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#getguildsystemint32",
+            "text": "Gets a  Guild  with the specified id.  Declaration  public   Guild   GetGuild ( int   guildId )   Parameters     Type  Name  Description      Int32  guildId  The unique id of the guild.     Returns     Type  Description      Guild  The guild found, or  null .",
+            "title": "GetGuild(System.Int32)"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#getusersystemint32",
+            "text": "Gets a  User  with the specified id.  Declaration  public   User   GetUser ( int   userId )   Parameters     Type  Name  Description      Int32  userId  The unique id of the user.     Returns     Type  Description      User  The user found, or  null .",
+            "title": "GetUser(System.Int32)"
+        },
+        {
             "location": "/ExampleProject/Models/ClientUser/",
-            "text": "Inherits\n\n\nUser\n\n\nClass ClientUser\n\u00b6\n\n\nRepresents the User that connected to the API.\n\n\nProperties\n\u00b6\n\n\n\n\nFriends\n\u00b6\n\n\nGets the user's friends.\n\n\nDeclaration\n\n\npublic\n \nUser\n[]\n \nFriends\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n[]\n\n\nAn array of Users that are friend with the current user.",
+            "text": "Inherits\n\n\nUser\n\n\nClass ClientUser\n\u00b6\n\n\nRepresents the User that connected to the API.\n\n\nProperties\n\u00b6\n\n\n\n\nFriends\n\u00b6\n\n\nGets the user's friends.\n\n\nDeclaration\n\n\npublic\n \nUser\n[]\n \nFriends\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nOnly non-bot users can have friends.\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n[]\n\n\nAn array of Users that are friend with the current user.",
             "title": "ClientUser"
         },
         {
@@ -47,7 +107,7 @@
         },
         {
             "location": "/ExampleProject/Models/ClientUser/#friends",
-            "text": "Gets the user's friends.  Declaration  public   User []   Friends   { get ;   }   Property Value     Type  Description      User []  An array of Users that are friend with the current user.",
+            "text": "Gets the user's friends.  Declaration  public   User []   Friends   { get ;   }   Remarks \nOnly non-bot users can have friends.  Property Value     Type  Description      User []  An array of Users that are friend with the current user.",
             "title": "Friends"
         },
         {
@@ -97,7 +157,7 @@
         },
         {
             "location": "/ExampleProject/Models/Role/",
-            "text": "Inherits\n\n\nObject\n\n\nClass Role\n\u00b6\n\n\nRepresents a Role in a \n.\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the unique id of the role\n\n\nDeclaration\n\n\npublic\n \nint\n \nId\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe unique id of the role.\n\n\n\n\n\n\n\n\nName\n\u00b6\n\n\nGets the name of the role.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nName\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe name of the role.\n\n\n\n\n\n\n\n\nGuild\n\u00b6\n\n\nGets the \nGuild\n the role belongs to.\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGuild\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nThe guild the role belongs to.\n\n\n\n\n\n\n\n\nColor\n\u00b6\n\n\nGets the color of the role.\n\n\nDeclaration\n\n\npublic\n \nColor\n \nColor\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nColor\n\n\nThe role's color.\n\n\n\n\n\n\n\n\nHoist\n\u00b6\n\n\nChecks if the role will be displayed separately from other members.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nHoist\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it will be displayed separately, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nPosition\n\u00b6\n\n\nGets the position of the role.\n\n\nDeclaration\n\n\npublic\n \nint\n \nPosition\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe position of the role.\n\n\n\n\n\n\n\n\nMentionable\n\u00b6\n\n\nChecks if the role can be mentioned by users.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nMentionable\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it's mentionable, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nIsDefault\n\u00b6\n\n\nChecks if the role is the guild's default role.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nIsDefault\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it is the default role, \nfalse\n otherwise.",
+            "text": "Inherits\n\n\nObject\n\n\nClass Role\n\u00b6\n\n\nRepresents a Role in a \n.\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the unique id of the role\n\n\nDeclaration\n\n\npublic\n \nint\n \nId\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe unique id of the role.\n\n\n\n\n\n\n\n\nName\n\u00b6\n\n\nGets the name of the role.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nName\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe name of the role.\n\n\n\n\n\n\n\n\nGuild\n\u00b6\n\n\nGets the \nGuild\n the role belongs to.\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGuild\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nThe guild the role belongs to.\n\n\n\n\n\n\n\n\nColor\n\u00b6\n\n\nGets the color of the role.\n\n\nDeclaration\n\n\npublic\n \nColor\n \nColor\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nColor\n\n\nThe role's color.\n\n\n\n\n\n\n\n\nHoist\n\u00b6\n\n\nChecks if the role will be displayed separately from other members.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nHoist\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it will be displayed separately, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nPosition\n\u00b6\n\n\nGets the position of the role.\n\n\nDeclaration\n\n\npublic\n \nint\n \nPosition\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nBottom role has a position of 0.\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe position of the role.\n\n\n\n\n\n\n\n\nMentionable\n\u00b6\n\n\nChecks if the role can be mentioned by users.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nMentionable\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it's mentionable, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nIsDefault\n\u00b6\n\n\nChecks if the role is the guild's default role.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nIsDefault\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it is the default role, \nfalse\n otherwise.",
             "title": "Role"
         },
         {
@@ -137,7 +197,7 @@
         },
         {
             "location": "/ExampleProject/Models/Role/#position",
-            "text": "Gets the position of the role.  Declaration  public   int   Position   { get ;   }   Property Value     Type  Description      Int32  The position of the role.",
+            "text": "Gets the position of the role.  Declaration  public   int   Position   { get ;   }   Remarks \nBottom role has a position of 0.  Property Value     Type  Description      Int32  The position of the role.",
             "title": "Position"
         },
         {
@@ -339,66 +399,6 @@
             "location": "/ExampleProject/Models/ChannelTypes/#enum-channeltypes",
             "text": "Represents the different channel types available.     Field  Description      GUILD_TEXT  Text channel in a guild.    DM  Private channel between two users.    GUILD_VOICE  Voice channel in a guild.    GROUP_DM  Private group channel.    GUILD_CATEGORY  Channel category in a guild.",
             "title": "Enum ChannelTypes"
-        },
-        {
-            "location": "/ExampleProject/ApiClient/",
-            "text": "Inherits\n\n\nObject\n\n\nClass ApiClient\n\u00b6\n\n\nRepresents a connection to the client\n\n\nConstructors\n\u00b6\n\n\n\n\nApiClient()\n\u00b6\n\n\nInitializes a new instance of the \nApiClient\n class.\n\n\nDeclaration\n\n\npublic\n \nApiClient\n();\n\n\n\n\n\n\nFields\n\u00b6\n\n\n\n\ntoken\n\u00b6\n\n\nAuthentication token\n\n\nDeclaration\n\n\npublic\n \nstring\n \ntoken\n;\n\n\n\n\n\n\nField Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nAuthentication token for the account or Application.\n\n\n\n\n\n\n\n\nProperties\n\u00b6\n\n\n\n\nUsers\n\u00b6\n\n\nGets a list of all the visible users.\n\n\nDeclaration\n\n\npublic\n \nUser\n[]\n \nUsers\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n[]\n\n\nArray containing all users the \nClientUser\n can see.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nLogin(System.String)\n\u00b6\n\n\nLogs in to the API\n\n\nDeclaration\n\n\npublic\n \nbool\n \nLogin\n(\nstring\n \ntoken\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\ntoken\n\n\nThe authentication token to use for login.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if login was successful, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nGetGuild(System.Int32)\n\u00b6\n\n\nGets a \nGuild\n with the specified id.\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGetGuild\n(\nint\n \nguildId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nguildId\n\n\nThe unique id of the guild.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nThe guild found, or \nnull\n.\n\n\n\n\n\n\n\n\nGetUser(System.Int32)\n\u00b6\n\n\nGets a \nUser\n with the specified id.\n\n\nDeclaration\n\n\npublic\n \nUser\n \nGetUser\n(\nint\n \nuserId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nuserId\n\n\nThe unique id of the user.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n\n\nThe user found, or \nnull\n.",
-            "title": "ApiClient"
-        },
-        {
-            "location": "/ExampleProject/ApiClient/#class-apiclient",
-            "text": "Represents a connection to the client",
-            "title": "Class ApiClient"
-        },
-        {
-            "location": "/ExampleProject/ApiClient/#constructors",
-            "text": "",
-            "title": "Constructors"
-        },
-        {
-            "location": "/ExampleProject/ApiClient/#apiclient",
-            "text": "Initializes a new instance of the  ApiClient  class.  Declaration  public   ApiClient ();",
-            "title": "ApiClient()"
-        },
-        {
-            "location": "/ExampleProject/ApiClient/#fields",
-            "text": "",
-            "title": "Fields"
-        },
-        {
-            "location": "/ExampleProject/ApiClient/#token",
-            "text": "Authentication token  Declaration  public   string   token ;   Field Value     Type  Description      String  Authentication token for the account or Application.",
-            "title": "token"
-        },
-        {
-            "location": "/ExampleProject/ApiClient/#properties",
-            "text": "",
-            "title": "Properties"
-        },
-        {
-            "location": "/ExampleProject/ApiClient/#users",
-            "text": "Gets a list of all the visible users.  Declaration  public   User []   Users   { get ;   }   Property Value     Type  Description      User []  Array containing all users the  ClientUser  can see.",
-            "title": "Users"
-        },
-        {
-            "location": "/ExampleProject/ApiClient/#methods",
-            "text": "",
-            "title": "Methods"
-        },
-        {
-            "location": "/ExampleProject/ApiClient/#loginsystemstring",
-            "text": "Logs in to the API  Declaration  public   bool   Login ( string   token )   Parameters     Type  Name  Description      String  token  The authentication token to use for login.     Returns     Type  Description      Boolean  true  if login was successful,  false  otherwise.",
-            "title": "Login(System.String)"
-        },
-        {
-            "location": "/ExampleProject/ApiClient/#getguildsystemint32",
-            "text": "Gets a  Guild  with the specified id.  Declaration  public   Guild   GetGuild ( int   guildId )   Parameters     Type  Name  Description      Int32  guildId  The unique id of the guild.     Returns     Type  Description      Guild  The guild found, or  null .",
-            "title": "GetGuild(System.Int32)"
-        },
-        {
-            "location": "/ExampleProject/ApiClient/#getusersystemint32",
-            "text": "Gets a  User  with the specified id.  Declaration  public   User   GetUser ( int   userId )   Parameters     Type  Name  Description      Int32  userId  The unique id of the user.     Returns     Type  Description      User  The user found, or  null .",
-            "title": "GetUser(System.Int32)"
         }
     ]
 }

@@ -1,4 +1,64 @@
 {
+    "ExampleProject": {
+        "ApiClient": {
+            "children": {
+                "token": {
+                    "documentation": {
+                        "summary": "Authentication token",
+                        "value": "Authentication token for the account or Application."
+                    },
+                    "type": "F"
+                },
+                "Users": {
+                    "documentation": {
+                        "summary": "Gets a list of all the visible users.",
+                        "value": "Array containing all users the <see cref=\"T:ExampleProject.Models.ClientUser\" /> can see."
+                    },
+                    "type": "P"
+                },
+                ".ctor": {
+                    "documentation": {
+                        "summary": "Initializes a new instance of the <see cref=\"T:ExampleProject.ApiClient\" /> class."
+                    },
+                    "type": "C"
+                },
+                "Login(System.String)": {
+                    "documentation": {
+                        "summary": "Logs in to the API",
+                        "param": {
+                            "token": "The authentication token to use for login."
+                        },
+                        "returns": "<c>true</c> if login was successful, <c>false</c> otherwise."
+                    },
+                    "type": "M"
+                },
+                "GetGuild(System.Int32)": {
+                    "documentation": {
+                        "summary": "Gets a <see cref=\"T:ExampleProject.Models.Guild\" /> with the specified id.",
+                        "param": {
+                            "guildId": "The unique id of the guild."
+                        },
+                        "returns": "The guild found, or <c>null</c>."
+                    },
+                    "type": "M"
+                },
+                "GetUser(System.Int32)": {
+                    "documentation": {
+                        "summary": "Gets a <see cref=\"T:ExampleProject.Models.User\" /> with the specified id.",
+                        "param": {
+                            "userId": "The unique id of the user."
+                        },
+                        "returns": "The user found, or <c>null</c>."
+                    },
+                    "type": "M"
+                }
+            },
+            "documentation": {
+                "summary": "Represents a connection to the client"
+            },
+            "type": "T"
+        }
+    },
     "ExampleProject.Models": {
         "ClientUser": {
             "children": {
@@ -6,7 +66,7 @@
                     "documentation": {
                         "summary": "Gets the user's friends.",
                         "value": "An array of Users that are friend with the current user.",
-                        "remark": "Only non-bot users can have friends."
+                        "remarks": "Only non-bot users can have friends."
                     },
                     "type": "P"
                 }
@@ -332,66 +392,6 @@
             },
             "documentation": {
                 "summary": "Represents the different channel types available."
-            },
-            "type": "T"
-        }
-    },
-    "ExampleProject": {
-        "ApiClient": {
-            "children": {
-                "token": {
-                    "documentation": {
-                        "summary": "Authentication token",
-                        "value": "Authentication token for the account or Application."
-                    },
-                    "type": "F"
-                },
-                "Users": {
-                    "documentation": {
-                        "summary": "Gets a list of all the visible users.",
-                        "value": "Array containing all users the <see cref=\"T:ExampleProject.Models.ClientUser\" /> can see."
-                    },
-                    "type": "P"
-                },
-                ".ctor": {
-                    "documentation": {
-                        "summary": "Initializes a new instance of the <see cref=\"T:ExampleProject.ApiClient\" /> class."
-                    },
-                    "type": "C"
-                },
-                "Login(System.String)": {
-                    "documentation": {
-                        "summary": "Logs in to the API",
-                        "param": {
-                            "token": "The authentication token to use for login."
-                        },
-                        "returns": "<c>true</c> if login was successful, <c>false</c> otherwise."
-                    },
-                    "type": "M"
-                },
-                "GetGuild(System.Int32)": {
-                    "documentation": {
-                        "summary": "Gets a <see cref=\"T:ExampleProject.Models.Guild\" /> with the specified id.",
-                        "param": {
-                            "guildId": "The unique id of the guild."
-                        },
-                        "returns": "The guild found, or <c>null</c>."
-                    },
-                    "type": "M"
-                },
-                "GetUser(System.Int32)": {
-                    "documentation": {
-                        "summary": "Gets a <see cref=\"T:ExampleProject.Models.User\" /> with the specified id.",
-                        "param": {
-                            "userId": "The unique id of the user."
-                        },
-                        "returns": "The user found, or <c>null</c>."
-                    },
-                    "type": "M"
-                }
-            },
-            "documentation": {
-                "summary": "Represents a connection to the client"
             },
             "type": "T"
         }

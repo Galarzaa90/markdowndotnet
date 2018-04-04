@@ -1,3 +1,5 @@
+- ExampleProject:
+  - ApiClient: ExampleProject/ApiClient.md
 - ExampleProject.Models:
   - ClientUser: ExampleProject/Models/ClientUser.md
   - Color: ExampleProject/Models/Color.md
@@ -7,5 +9,3 @@
   - Guild: ExampleProject/Models/Guild.md
   - User: ExampleProject/Models/User.md
   - ChannelTypes: ExampleProject/Models/ChannelTypes.md
-- ExampleProject:
-  - ApiClient: ExampleProject/ApiClient.md

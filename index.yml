@@ -1,5 +1,7 @@
 - ExampleProject:
   - ApiClient: ExampleProject/ApiClient.md
+- ExampleProject.ApiClient:
+  - OnMessageHandler: ExampleProject/ApiClient/OnMessageHandler.md
 - ExampleProject.Models:
   - ClientUser: ExampleProject/Models/ClientUser.md
   - Color: ExampleProject/Models/Color.md

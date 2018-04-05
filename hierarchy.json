@@ -16,6 +16,12 @@
                     },
                     "type": "P"
                 },
+                "OnMessageReceived": {
+                    "documentation": {
+                        "summary": "Event received every time a <see cref=\"T:ExampleProject.Models.Message\" /> is received on any <see cref=\"T:ExampleProject.Models.Channel\" /> the client sees."
+                    },
+                    "type": "E"
+                },
                 ".ctor": {
                     "documentation": {
                         "summary": "Initializes a new instance of the <see cref=\"T:ExampleProject.ApiClient\" /> class."
@@ -55,6 +61,18 @@
             },
             "documentation": {
                 "summary": "Represents a connection to the client"
+            },
+            "type": "T"
+        }
+    },
+    "ExampleProject.ApiClient": {
+        "OnMessageHandler": {
+            "children": {},
+            "documentation": {
+                "summary": "Delegate for the <see cref=\"E:ExampleProject.ApiClient.OnMessageReceived\" /> event.",
+                "param": {
+                    "message": "The message received"
+                }
             },
             "type": "T"
         }

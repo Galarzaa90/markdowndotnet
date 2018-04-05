@@ -91,6 +91,16 @@
             "title": "GetUser(System.Int32)"
         },
         {
+            "location": "/ExampleProject/ApiClient/OnMessageHandler/",
+            "text": "Inherits\n\n\nMulticastDelegate\n\n\nDelegate OnMessageHandler\n\u00b6\n\n\nDelegate for the \n event.\n\n\nDeclaration\n\n\npublic\n \ndelegate\n \nvoid\n \nOnMessageHandler\n(\nMessage\n \nmessage\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nMessage\n\n\nmessage\n\n\nThe message received",
+            "title": "OnMessageHandler"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/OnMessageHandler/#delegate-onmessagehandler",
+            "text": "Delegate for the   event. \nDeclaration  public   delegate   void   OnMessageHandler ( Message   message )   Parameters     Type  Name  Description      Message  message  The message received",
+            "title": "Delegate OnMessageHandler"
+        },
+        {
             "location": "/ExampleProject/Models/ClientUser/",
             "text": "Inherits\n\n\nUser\n\n\nClass ClientUser\n\u00b6\n\n\nRepresents the User that connected to the API.\n\n\nProperties\n\u00b6\n\n\n\n\nFriends\n\u00b6\n\n\nGets the user's friends.\n\n\nDeclaration\n\n\npublic\n \nUser\n[]\n \nFriends\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nOnly non-bot users can have friends.\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n[]\n\n\nAn array of Users that are friend with the current user.",
             "title": "ClientUser"
@@ -112,12 +122,12 @@
         },
         {
             "location": "/ExampleProject/Models/Color/",
-            "text": "Inherits\n\n\nObject\n\n\nClass Color\n\u00b6\n\n\nRepresents a \n color.\n\n\nConstructors\n\u00b6\n\n\n\n\nColor(System.Int32,System.Int32,System.Int32)\n\u00b6\n\n\nCreates a color from its red, green and blue components respectively.\n\n\nDeclaration\n\n\npublic\n \nColor\n(\nint\n \nr\n,\n \nint\n \ng\n,\n \nint\n \nb\n);\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nr\n\n\nRed component.\n\n\n\n\n\n\nInt32\n\n\ng\n\n\nGreen component.\n\n\n\n\n\n\nInt32\n\n\nb\n\n\nBlue component.\n\n\n\n\n\n\n\n\nProperties\n\u00b6\n\n\n\n\nValue\n\u00b6\n\n\nGets or sets the color's raw integer value.\n\n\nDeclaration\n\n\npublic\n \nint\n \nValue\n \n{\nget\n;\n \nset\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe color's integer value.\n\n\n\n\n\n\n\n\nR\n\u00b6\n\n\nGets the red component of the color.\n\n\nDeclaration\n\n\npublic\n \nbyte\n \nR\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nByte\n\n\nThe red component of the color.\n\n\n\n\n\n\n\n\nG\n\u00b6\n\n\nGets the greeb component of the color.\n\n\nDeclaration\n\n\npublic\n \nbyte\n \nG\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nByte\n\n\nThe greeb component of the color.\n\n\n\n\n\n\n\n\nB\n\u00b6\n\n\nGets the blue component of the color.\n\n\nDeclaration\n\n\npublic\n \nbyte\n \nB\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nByte\n\n\nThe blue component of the color.",
+            "text": "Inherits\n\n\nObject\n\n\nClass Color\n\u00b6\n\n\nRepresents a \nRole\n color.\n\n\nConstructors\n\u00b6\n\n\n\n\nColor(System.Int32,System.Int32,System.Int32)\n\u00b6\n\n\nCreates a color from its red, green and blue components respectively.\n\n\nDeclaration\n\n\npublic\n \nColor\n(\nint\n \nr\n,\n \nint\n \ng\n,\n \nint\n \nb\n);\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nr\n\n\nRed component.\n\n\n\n\n\n\nInt32\n\n\ng\n\n\nGreen component.\n\n\n\n\n\n\nInt32\n\n\nb\n\n\nBlue component.\n\n\n\n\n\n\n\n\nProperties\n\u00b6\n\n\n\n\nValue\n\u00b6\n\n\nGets or sets the color's raw integer value.\n\n\nDeclaration\n\n\npublic\n \nint\n \nValue\n \n{\nget\n;\n \nset\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe color's integer value.\n\n\n\n\n\n\n\n\nR\n\u00b6\n\n\nGets the red component of the color.\n\n\nDeclaration\n\n\npublic\n \nbyte\n \nR\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nByte\n\n\nThe red component of the color.\n\n\n\n\n\n\n\n\nG\n\u00b6\n\n\nGets the greeb component of the color.\n\n\nDeclaration\n\n\npublic\n \nbyte\n \nG\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nByte\n\n\nThe greeb component of the color.\n\n\n\n\n\n\n\n\nB\n\u00b6\n\n\nGets the blue component of the color.\n\n\nDeclaration\n\n\npublic\n \nbyte\n \nB\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nByte\n\n\nThe blue component of the color.",
             "title": "Color"
         },
         {
             "location": "/ExampleProject/Models/Color/#class-color",
-            "text": "Represents a   color.",
+            "text": "Represents a  Role  color.",
             "title": "Class Color"
         },
         {

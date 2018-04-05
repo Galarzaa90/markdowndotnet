@@ -11,7 +11,7 @@ import clr
 import requests
 import yaml
 
-from System.Reflection import Assembly
+from System.Reflection import Assembly, MemberInfo
 from System.IO import FileInfo
 from System import Type
 
@@ -199,7 +199,7 @@ def parse_constructor(member_type: Type, name: str, documentation: Dict[str, Any
     content = f'### {member_type.Name}({",".join([f"{x.ParameterType}" for x in parameters])})\n'
     # Show the constructor's summary if available
     if "summary" in documentation:
-        content += f"{parse_content(assembly, documentation['summary'], current_file=file_path)}  \n"
+        content += f"{parse_content(assembly, documentation['summary'], file_path)}  \n"
     # Show the constructor's declaration
     declaration = f"**Declaration**\n" \
                   f"```csharp\n" \
@@ -209,7 +209,7 @@ def parse_constructor(member_type: Type, name: str, documentation: Dict[str, Any
     # Show the constructor's remarks if available
     if "remarks" in documentation:
         content += f"**Remarks**  \n"
-        content += f"{parse_content(assembly, documentation['remarks'], current_file=file_path)}  \n"
+        content += f"{parse_content(assembly, documentation['remarks'], file_path)}  \n"
     # If the constructor has parameters, show a table with their type, name and description
     if len(parameters) > 0 and "param" in documentation:
         content += "**Parameters**\n"
@@ -245,7 +245,7 @@ def parse_field(member_type: Type, name: str, documentation: Dict[str, Any], fil
     content = f'### {name}\n'
     # Show the field's summary if available
     if "summary" in documentation:
-        content += f"{parse_content(assembly, documentation['summary'], current_file=file_path)}  \n"
+        content += f"{parse_content(assembly, documentation['summary'], file_path)}  \n"
     # Show the field's declaration
     declaration = f"**Declaration**\n" \
                   f"```csharp\n" \
@@ -255,7 +255,7 @@ def parse_field(member_type: Type, name: str, documentation: Dict[str, Any], fil
     # Show the field's remarks if available
     if "remarks" in documentation:
         content += f"**Remarks**  \n"
-        content += f"{parse_content(assembly, documentation['remarks'], current_file=file_path)}  \n"
+        content += f"{parse_content(assembly, documentation['remarks'], file_path)}  \n"
     # Show a table containing the field's type and value
     content += "**Field Value**\n"
     field_value = parse_content(assembly, documentation.get("value", ""), file_path)
@@ -287,7 +287,7 @@ def parse_property(member_type: Type, name: str, documentation: Dict[str, Any], 
     content = f"### {name}\n"
     # Show the field's summary if available
     if "summary" in documentation:
-        content += f"{parse_content(assembly, documentation['summary'], current_file=file_path)}  \n"
+        content += f"{parse_content(assembly, documentation['summary'], file_path)}  \n"
     # Show the property's declaration
     declaration = f"**Declaration**\n" \
                   f"```csharp\n" \
@@ -297,12 +297,62 @@ def parse_property(member_type: Type, name: str, documentation: Dict[str, Any], 
     # Show the property's remarks if available
     if "remarks" in documentation:
         content += f"**Remarks**  \n"
-        content += f"{parse_content(assembly, documentation['remarks'], current_file=file_path)}  \n"
+        content += f"{parse_content(assembly, documentation['remarks'], file_path)}  \n"
     # Show a table containing the property's type and value
     content += "**Property Value**\n"
     property_value = parse_content(assembly, documentation.get("value", ""), file_path)
     table = build_table(["Type", "Description"], [[type_link, property_value]])
     content += table
+    return content
+
+
+def parse_delegate(delegate: Type, documentation: Dict[str, Any], file_path: str):
+    """Generates markdown content for an object's method
+
+    :param Type delegate: The C# type of the member containing the method
+    :param Dict documentation: A dictionary containing the XML documentation.
+    :param file_path: The file path of the markdown file containing the member.
+    :return: A string containing the method's formatted documentation
+    """
+    assembly = delegate.Assembly
+    name = delegate.Name
+    method = delegate.GetMethod('Invoke')
+    # If method doesn't have parameters, we add empty parenthesis to the name
+    if delegate is None or method is None:
+        log.warning(f"Delegate '{name}' not found in assembly.")
+        return ""
+
+    return_type = method.ReturnType
+    parameters = method.GetParameters()
+    # Get a string list containing the parameter's type and name.
+    params_declaration = " ,".join([f"{get_type_name(x.ParameterType)} {x.Name}" for x in parameters])
+    # Show the method's declaration
+    content = f"**\nDeclaration**\n" \
+              f"```csharp\n" \
+              f"public delegate {get_type_name(return_type)} {name}({params_declaration})\n" \
+              f"```\n"
+    # Show the method's remarks if available
+    if "remarks" in documentation:
+        content += f"**Remarks**  \n"
+        content += f"{parse_content(assembly, documentation['remarks'], file_path)}  \n"
+    # If method has parameters, show a table with their type, name and description
+    if len(parameters) > 0 and "param" in documentation:
+        content += "**Parameters**\n"
+        param_documentation = documentation.get('param', {})
+        headers = ["Type", "Name", "Description"]
+        rows = []
+        for param in parameters:
+            description = parse_content(assembly, param_documentation.get(param.Name, ""), file_path)
+            param_link = get_link(assembly, cs_type=param.ParameterType, current_file=file_path)
+            rows.append([param_link, param.Name, description])
+        content += build_table(headers, rows)
+    # Show table with the returned value, type and description, unless the type is Void.
+    if return_type.Name != "Void":
+        content += "**Returns**\n"
+        description = parse_content(assembly, documentation.get("returns", ""), file_path)
+        type_link = get_link(assembly, cs_type=method.ReturnType, current_file=file_path)
+        table = build_table(["Type", "Description"], [[type_link, description]])
+        content += table
     return content
 
 
@@ -338,7 +388,7 @@ def parse_method(member_type: Type, name: str, documentation: Dict[str, Any], fi
     content = f'### {name}\n'
     # Show the method's summary if available
     if "summary" in documentation:
-        content += f"{parse_content(assembly, documentation['summary'], current_file=file_path)}  \n"
+        content += f"{parse_content(assembly, documentation['summary'], file_path)}  \n"
     # Show the method's declaration
     content += f"**Declaration**\n" \
                f"```csharp\n" \
@@ -347,7 +397,7 @@ def parse_method(member_type: Type, name: str, documentation: Dict[str, Any], fi
     # Show the method's remarks if available
     if "remarks" in documentation:
         content += f"**Remarks**  \n"
-        content += f"{parse_content(assembly, documentation['remarks'], current_file=file_path)}  \n"
+        content += f"{parse_content(assembly, documentation['remarks'], file_path)}  \n"
     # If method has parameters, show a table with their type, name and description
     if len(parameters) > 0 and "param" in documentation:
         content += "**Parameters**\n"
@@ -438,6 +488,7 @@ def build_documentation(dll_path, hierarchy):
     log.info("Building documentation")
     dll_file = FileInfo(dll_path)
     assembly = Assembly.LoadFile(dll_file.FullName)
+    assembly_types = assembly.GetTypes()
     # Iterate through all namespaces
     # Each namespace is a folder, each class is a file
     # Also builds a YAML index
@@ -454,6 +505,9 @@ def build_documentation(dll_path, hierarchy):
                 index_files.append({member: filename})
                 member_type = assembly.GetType(f"{namespace}.{member}")
                 object_type = "Class"
+                if member_type is None:
+                    member_type = assembly.GetType(f"{namespace}+{member}")
+                    object_type = "Delegate"
                 if member_type.IsEnum:
                     object_type = "Enum"
                 # Check if member inherits other members:
@@ -461,7 +515,7 @@ def build_documentation(dll_path, hierarchy):
                 if base_type is not None:
                     file.write(f"**Inherits**  \n{get_link(assembly, cs_type=base_type, current_file=file_path)}\n")
                 file.write(f"# {object_type} {member}\n")
-                file.write(f"{content.get('documentation',{}).get('summary')}\n")
+                file.write(f"{parse_content(assembly, content.get('documentation',{}).get('summary'), current_file=file_path)}\n")
                 _temp = {}
                 # Enums are represented differently
                 if object_type == "Enum":
@@ -471,6 +525,9 @@ def build_documentation(dll_path, hierarchy):
                         rows.append([field, documentation.get("summary", "")])
                     enum_table = build_table(["Field", "Description"], rows)
                     file.write(enum_table)
+                    continue
+                if object_type == "Delegate":
+                    file.write(parse_delegate(member_type, content.get('documentation', {}), file_path))
                     continue
                 for name, subcontent in content['children'].items():
                     if "documentation" not in subcontent:

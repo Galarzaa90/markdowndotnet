@@ -21,6 +21,17 @@ namespace ExampleProject
         public User[] Users { get; private set; }
 
         /// <summary>
+        /// Delegate for the <see cref="OnMessageReceived"/> event.
+        /// </summary>
+        /// <param name="message">The message received</param>
+        public delegate void OnMessageHandler(Message message);
+
+        /// <summary>
+        /// Event received every time a <see cref="Message"/> is received on any <see cref="Channel"/> the client sees.
+        /// </summary>
+        public event OnMessageHandler OnMessageReceived;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="T:ExampleProject.ApiClient"/> class.
         /// </summary>
         public ApiClient()

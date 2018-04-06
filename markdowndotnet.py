@@ -312,7 +312,7 @@ def parse_delegate(delegate: Type, documentation: Dict[str, Any], file_path: str
     :param Type delegate: The C# type of the member containing the method
     :param Dict documentation: A dictionary containing the XML documentation.
     :param file_path: The file path of the markdown file containing the member.
-    :return: A string containing the method's formatted documentation
+    :return: A string containing the delegate's formatted documentation
     """
     assembly = delegate.Assembly
     name = delegate.Name
@@ -418,6 +418,43 @@ def parse_method(member_type: Type, name: str, documentation: Dict[str, Any], fi
         content += table
     return content
 
+
+def parse_event(member_type: Type, name: str, documentation: Dict[str, Any], file_path: str):
+    """Generates markdown content for an object's method
+
+    :param Type member_type: The C# type of the member containing the event
+    :param str name: The name of the event
+    :param Dict documentation: A dictionary containing the XML documentation.
+    :param file_path: The file path of the markdown file containing the member.
+    :return: A string containing the event's formatted documentation
+    """
+    assembly = member_type.Assembly
+    event = member_type.GetEvent(name)
+    # If method doesn't have parameters, we add empty parenthesis to the name
+    if event is None:
+        log.warning(f"Event '{name}' not found in assembly.")
+        return ""
+
+    handler_type = event.EventHandlerType
+    # Show a level 3 header with the method's name
+    content = f'### {name}\n'
+    # Show the method's summary if available
+    if "summary" in documentation:
+        content += f"{parse_content(assembly, documentation['summary'], file_path)}  \n"
+    # Show the method's declaration
+    content += f"**Declaration**\n" \
+               f"```csharp\n" \
+               f"public event {get_type_name(handler_type)} {event.Name}\n" \
+               f"```\n"
+    # Show the method's remarks if available
+    if "remarks" in documentation:
+        content += f"**Remarks**  \n"
+        content += f"{parse_content(assembly, documentation['remarks'], file_path)}  \n"
+    # Show table with the handler type and description, unless the type is Void.
+    if handler_type.Name != "Void":
+        content += "**Event Handler**  \n"
+        content += get_link(assembly, cs_type=handler_type, current_file=file_path)
+    return content
 
 def parse_documentation(path):
     log.info("Parsing documentation")
@@ -553,6 +590,11 @@ def build_documentation(dll_path, hierarchy):
                             _temp["methods"] = []
                         _temp["methods"].append(parse_method(member_type, name, documentation, file_path))
 
+                    if subcontent["type"] == "E":
+                        if "events" not in _temp:
+                            _temp["events"] = []
+                        _temp["events"].append(parse_event(member_type, name, documentation, file_path))
+
                 if "constructors" in _temp:
                     file.write("## Constructors\n----\n")
                     file.write("\n".join(_temp["constructors"]))
@@ -568,6 +610,10 @@ def build_documentation(dll_path, hierarchy):
                 if "methods" in _temp:
                     file.write("## Methods\n----\n")
                     file.write("\n".join(_temp["methods"]))
+
+                if "events" in _temp:
+                    file.write("## Events\n----\n")
+                    file.write("\n".join(_temp["events"]))
         index.append({namespace: index_files})
 
     with open(os.path.join(output_dir, "index.yml"), 'w') as yamlfile:

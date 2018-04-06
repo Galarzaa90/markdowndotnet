@@ -32,7 +32,7 @@
         },
         {
             "location": "/ExampleProject/ApiClient/",
-            "text": "Inherits\n\n\nObject\n\n\nClass ApiClient\n\u00b6\n\n\nRepresents a connection to the client\n\n\nConstructors\n\u00b6\n\n\n\n\nApiClient()\n\u00b6\n\n\nInitializes a new instance of the \nApiClient\n class.\n\n\nDeclaration\n\n\npublic\n \nApiClient\n();\n\n\n\n\n\n\nFields\n\u00b6\n\n\n\n\ntoken\n\u00b6\n\n\nAuthentication token\n\n\nDeclaration\n\n\npublic\n \nstring\n \ntoken\n;\n\n\n\n\n\n\nField Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nAuthentication token for the account or Application.\n\n\n\n\n\n\n\n\nProperties\n\u00b6\n\n\n\n\nUsers\n\u00b6\n\n\nGets a list of all the visible users.\n\n\nDeclaration\n\n\npublic\n \nUser\n[]\n \nUsers\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n[]\n\n\nArray containing all users the \nClientUser\n can see.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nLogin(System.String)\n\u00b6\n\n\nLogs in to the API\n\n\nDeclaration\n\n\npublic\n \nbool\n \nLogin\n(\nstring\n \ntoken\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\ntoken\n\n\nThe authentication token to use for login.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if login was successful, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nGetGuild(System.Int32)\n\u00b6\n\n\nGets a \nGuild\n with the specified id.\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGetGuild\n(\nint\n \nguildId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nguildId\n\n\nThe unique id of the guild.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nThe guild found, or \nnull\n.\n\n\n\n\n\n\n\n\nGetUser(System.Int32)\n\u00b6\n\n\nGets a \nUser\n with the specified id.\n\n\nDeclaration\n\n\npublic\n \nUser\n \nGetUser\n(\nint\n \nuserId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nuserId\n\n\nThe unique id of the user.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n\n\nThe user found, or \nnull\n.",
+            "text": "Inherits\n\n\nObject\n\n\nClass ApiClient\n\u00b6\n\n\nRepresents a connection to the client\n\n\nConstructors\n\u00b6\n\n\n\n\nApiClient()\n\u00b6\n\n\nInitializes a new instance of the \nApiClient\n class.\n\n\nDeclaration\n\n\npublic\n \nApiClient\n();\n\n\n\n\n\n\nFields\n\u00b6\n\n\n\n\ntoken\n\u00b6\n\n\nAuthentication token\n\n\nDeclaration\n\n\npublic\n \nstring\n \ntoken\n;\n\n\n\n\n\n\nField Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nAuthentication token for the account or Application.\n\n\n\n\n\n\n\n\nProperties\n\u00b6\n\n\n\n\nUsers\n\u00b6\n\n\nGets a list of all the visible users.\n\n\nDeclaration\n\n\npublic\n \nUser\n[]\n \nUsers\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n[]\n\n\nArray containing all users the \nClientUser\n can see.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nLogin(System.String)\n\u00b6\n\n\nLogs in to the API\n\n\nDeclaration\n\n\npublic\n \nbool\n \nLogin\n(\nstring\n \ntoken\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\ntoken\n\n\nThe authentication token to use for login.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if login was successful, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nGetGuild(System.Int32)\n\u00b6\n\n\nGets a \nGuild\n with the specified id.\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGetGuild\n(\nint\n \nguildId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nguildId\n\n\nThe unique id of the guild.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nThe guild found, or \nnull\n.\n\n\n\n\n\n\n\n\nGetUser(System.Int32)\n\u00b6\n\n\nGets a \nUser\n with the specified id.\n\n\nDeclaration\n\n\npublic\n \nUser\n \nGetUser\n(\nint\n \nuserId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nuserId\n\n\nThe unique id of the user.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n\n\nThe user found, or \nnull\n.\n\n\n\n\n\n\n\n\nEvents\n\u00b6\n\n\n\n\nOnMessageReceived\n\u00b6\n\n\nEvent received every time a \nMessage\n is received on any \nChannel\n the client sees.\n\n\nDeclaration\n\n\npublic\n \nevent\n \nOnMessageHandler\n \nOnMessageReceived\n\n\n\n\n\n\nEvent Handler\n\n\nOnMessageHandler",
             "title": "ApiClient"
         },
         {
@@ -91,14 +91,24 @@
             "title": "GetUser(System.Int32)"
         },
         {
-            "location": "/ExampleProject/ApiClient/OnMessageHandler/",
-            "text": "Inherits\n\n\nMulticastDelegate\n\n\nDelegate OnMessageHandler\n\u00b6\n\n\nDelegate for the \n event.\n\n\nDeclaration\n\n\npublic\n \ndelegate\n \nvoid\n \nOnMessageHandler\n(\nMessage\n \nmessage\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nMessage\n\n\nmessage\n\n\nThe message received",
+            "location": "/ExampleProject/ApiClient/#events",
+            "text": "",
+            "title": "Events"
+        },
+        {
+            "location": "/ExampleProject/ApiClient/#onmessagereceived",
+            "text": "Event received every time a  Message  is received on any  Channel  the client sees.  Declaration  public   event   OnMessageHandler   OnMessageReceived   Event Handler  OnMessageHandler",
+            "title": "OnMessageReceived"
+        },
+        {
+            "location": "/ExampleProject/Models/OnMessageHandler/",
+            "text": "Inherits\n\n\nMulticastDelegate\n\n\nClass OnMessageHandler\n\u00b6\n\n\nDelegate for the \n event.",
             "title": "OnMessageHandler"
         },
         {
-            "location": "/ExampleProject/ApiClient/OnMessageHandler/#delegate-onmessagehandler",
-            "text": "Delegate for the   event. \nDeclaration  public   delegate   void   OnMessageHandler ( Message   message )   Parameters     Type  Name  Description      Message  message  The message received",
-            "title": "Delegate OnMessageHandler"
+            "location": "/ExampleProject/Models/OnMessageHandler/#class-onmessagehandler",
+            "text": "Delegate for the   event.",
+            "title": "Class OnMessageHandler"
         },
         {
             "location": "/ExampleProject/Models/ClientUser/",

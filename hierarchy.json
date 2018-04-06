@@ -65,7 +65,7 @@
             "type": "T"
         }
     },
-    "ExampleProject.ApiClient": {
+    "ExampleProject.Models": {
         "OnMessageHandler": {
             "children": {},
             "documentation": {
@@ -75,9 +75,7 @@
                 }
             },
             "type": "T"
-        }
-    },
-    "ExampleProject.Models": {
+        },
         "ClientUser": {
             "children": {
                 "Friends": {

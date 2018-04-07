@@ -22,6 +22,12 @@
     
         
     <url>
+     <loc>https://galarzaa90.github.io/markdowndotnet//ExampleProject/Models/GuildUser/</loc>
+     <lastmod>2018-04-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>https://galarzaa90.github.io/markdowndotnet//ExampleProject/Models/OnMessageHandler/</loc>
      <lastmod>2018-04-07</lastmod>
      <changefreq>daily</changefreq>
@@ -41,6 +47,12 @@
         
     <url>
      <loc>https://galarzaa90.github.io/markdowndotnet//ExampleProject/Models/Role/</loc>
+     <lastmod>2018-04-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://galarzaa90.github.io/markdowndotnet//ExampleProject/Models/Status/</loc>
      <lastmod>2018-04-07</lastmod>
      <changefreq>daily</changefreq>
     </url>

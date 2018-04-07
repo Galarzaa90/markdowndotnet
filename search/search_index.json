@@ -101,6 +101,46 @@
             "title": "OnMessageReceived"
         },
         {
+            "location": "/ExampleProject/Models/GuildUser/",
+            "text": "Inherits\n\n\nUser\n\n\nClass GuildUser\n\u00b6\n\n\nRepresents a \nUser\n in a \nGuild\n\n\nProperties\n\u00b6\n\n\n\n\nRoles\n\u00b6\n\n\nGets the roles the user has in this guild.\n\n\nDeclaration\n\n\npublic\n \nRole\n[]\n \nRoles\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nRole\n[]\n\n\nAn array of \nRole\ns\n\n\n\n\n\n\n\n\nJoinedAt\n\u00b6\n\n\nGets the date when the user joined this guild.\n\n\nDeclaration\n\n\npublic\n \nDateTime\n \nJoinedAt\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nDateTime\n\n\nThe join date in UTC.\n\n\n\n\n\n\n\n\nGuild\n\u00b6\n\n\nGets the guild where this user belongs to.\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGuild\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nThe guild where this user is.\n\n\n\n\n\n\n\n\nNick\n\u00b6\n\n\nGets the user's nickname.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nNick\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe user's nickname if set, otherwise \nnull\n.\n\n\n\n\n\n\n\n\nDisplayName\n\u00b6\n\n\nGets the user's display name\n\n\nDeclaration\n\n\npublic\n \nstring\n \nDisplayName\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nThe display name consist of the user's \n (if set) or the user's \n.\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe user's display name.",
+            "title": "GuildUser"
+        },
+        {
+            "location": "/ExampleProject/Models/GuildUser/#class-guilduser",
+            "text": "Represents a  User  in a  Guild",
+            "title": "Class GuildUser"
+        },
+        {
+            "location": "/ExampleProject/Models/GuildUser/#properties",
+            "text": "",
+            "title": "Properties"
+        },
+        {
+            "location": "/ExampleProject/Models/GuildUser/#roles",
+            "text": "Gets the roles the user has in this guild.  Declaration  public   Role []   Roles   { get ;   }   Property Value     Type  Description      Role []  An array of  Role s",
+            "title": "Roles"
+        },
+        {
+            "location": "/ExampleProject/Models/GuildUser/#joinedat",
+            "text": "Gets the date when the user joined this guild.  Declaration  public   DateTime   JoinedAt   { get ;   }   Property Value     Type  Description      DateTime  The join date in UTC.",
+            "title": "JoinedAt"
+        },
+        {
+            "location": "/ExampleProject/Models/GuildUser/#guild",
+            "text": "Gets the guild where this user belongs to.  Declaration  public   Guild   Guild   { get ;   }   Property Value     Type  Description      Guild  The guild where this user is.",
+            "title": "Guild"
+        },
+        {
+            "location": "/ExampleProject/Models/GuildUser/#nick",
+            "text": "Gets the user's nickname.  Declaration  public   string   Nick   { get ;   }   Property Value     Type  Description      String  The user's nickname if set, otherwise  null .",
+            "title": "Nick"
+        },
+        {
+            "location": "/ExampleProject/Models/GuildUser/#displayname",
+            "text": "Gets the user's display name  Declaration  public   string   DisplayName   { get ;   }   Remarks \nThe display name consist of the user's   (if set) or the user's  .  Property Value     Type  Description      String  The user's display name.",
+            "title": "DisplayName"
+        },
+        {
             "location": "/ExampleProject/Models/OnMessageHandler/",
             "text": "Inherits\n\n\nMulticastDelegate\n\n\nClass OnMessageHandler\n\u00b6\n\n\nDelegate for the \n event.",
             "title": "OnMessageHandler"
@@ -112,7 +152,7 @@
         },
         {
             "location": "/ExampleProject/Models/ClientUser/",
-            "text": "Inherits\n\n\nUser\n\n\nClass ClientUser\n\u00b6\n\n\nRepresents the User that connected to the API.\n\n\nProperties\n\u00b6\n\n\n\n\nFriends\n\u00b6\n\n\nGets the user's friends.\n\n\nDeclaration\n\n\npublic\n \nUser\n[]\n \nFriends\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nOnly non-bot users can have friends.\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n[]\n\n\nAn array of Users that are friend with the current user.",
+            "text": "Inherits\n\n\nUser\n\n\nClass ClientUser\n\u00b6\n\n\nRepresents the User that connected to the API.\n\n\nProperties\n\u00b6\n\n\n\n\nFriends\n\u00b6\n\n\nGets the user's friends.\n\n\nDeclaration\n\n\npublic\n \nUser\n[]\n \nFriends\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nOnly non-bot users can have friends.\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n[]\n\n\nAn array of Users that are friends with the current user.\n\n\n\n\n\n\n\n\nBlocked\n\u00b6\n\n\nGets the list of users block by this user.\n\n\nDeclaration\n\n\npublic\n \nUser\n[]\n \nBlocked\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nOnly non-bot users can block users.\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n[]\n\n\nAn array of Users that are blocked by the current user.",
             "title": "ClientUser"
         },
         {
@@ -127,12 +167,17 @@
         },
         {
             "location": "/ExampleProject/Models/ClientUser/#friends",
-            "text": "Gets the user's friends.  Declaration  public   User []   Friends   { get ;   }   Remarks \nOnly non-bot users can have friends.  Property Value     Type  Description      User []  An array of Users that are friend with the current user.",
+            "text": "Gets the user's friends.  Declaration  public   User []   Friends   { get ;   }   Remarks \nOnly non-bot users can have friends.  Property Value     Type  Description      User []  An array of Users that are friends with the current user.",
             "title": "Friends"
         },
         {
+            "location": "/ExampleProject/Models/ClientUser/#blocked",
+            "text": "Gets the list of users block by this user.  Declaration  public   User []   Blocked   { get ;   }   Remarks \nOnly non-bot users can block users.  Property Value     Type  Description      User []  An array of Users that are blocked by the current user.",
+            "title": "Blocked"
+        },
+        {
             "location": "/ExampleProject/Models/Color/",
-            "text": "Inherits\n\n\nObject\n\n\nClass Color\n\u00b6\n\n\nRepresents a \nRole\n color.\n\n\nConstructors\n\u00b6\n\n\n\n\nColor(System.Int32,System.Int32,System.Int32)\n\u00b6\n\n\nCreates a color from its red, green and blue components respectively.\n\n\nDeclaration\n\n\npublic\n \nColor\n(\nint\n \nr\n,\n \nint\n \ng\n,\n \nint\n \nb\n);\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nr\n\n\nRed component.\n\n\n\n\n\n\nInt32\n\n\ng\n\n\nGreen component.\n\n\n\n\n\n\nInt32\n\n\nb\n\n\nBlue component.\n\n\n\n\n\n\n\n\nProperties\n\u00b6\n\n\n\n\nValue\n\u00b6\n\n\nGets or sets the color's raw integer value.\n\n\nDeclaration\n\n\npublic\n \nint\n \nValue\n \n{\nget\n;\n \nset\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe color's integer value.\n\n\n\n\n\n\n\n\nR\n\u00b6\n\n\nGets the red component of the color.\n\n\nDeclaration\n\n\npublic\n \nbyte\n \nR\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nByte\n\n\nThe red component of the color.\n\n\n\n\n\n\n\n\nG\n\u00b6\n\n\nGets the greeb component of the color.\n\n\nDeclaration\n\n\npublic\n \nbyte\n \nG\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nByte\n\n\nThe greeb component of the color.\n\n\n\n\n\n\n\n\nB\n\u00b6\n\n\nGets the blue component of the color.\n\n\nDeclaration\n\n\npublic\n \nbyte\n \nB\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nByte\n\n\nThe blue component of the color.",
+            "text": "Inherits\n\n\nObject\n\n\nClass Color\n\u00b6\n\n\nRepresents a \nRole\n color.\n\n\nConstructors\n\u00b6\n\n\n\n\nColor(System.Int32,System.Int32,System.Int32)\n\u00b6\n\n\nCreates a color from its red, green and blue components respectively.\n\n\nDeclaration\n\n\npublic\n \nColor\n(\nint\n \nr\n,\n \nint\n \ng\n,\n \nint\n \nb\n);\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nr\n\n\nRed component.\n\n\n\n\n\n\nInt32\n\n\ng\n\n\nGreen component.\n\n\n\n\n\n\nInt32\n\n\nb\n\n\nBlue component.\n\n\n\n\n\n\n\n\nColor(System.Int32)\n\u00b6\n\n\nCreates a new color with the specified value.\n\n\nDeclaration\n\n\npublic\n \nColor\n(\nint\n \nvalue\n);\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nvalue\n\n\nThe raw integer value.\n\n\n\n\n\n\n\n\nProperties\n\u00b6\n\n\n\n\nValue\n\u00b6\n\n\nGets or sets the color's raw integer value.\n\n\nDeclaration\n\n\npublic\n \nint\n \nValue\n \n{\nget\n;\n \nset\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe color's integer value.\n\n\n\n\n\n\n\n\nR\n\u00b6\n\n\nGets the red component of the color.\n\n\nDeclaration\n\n\npublic\n \nbyte\n \nR\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nByte\n\n\nThe red component of the color.\n\n\n\n\n\n\n\n\nG\n\u00b6\n\n\nGets the greeb component of the color.\n\n\nDeclaration\n\n\npublic\n \nbyte\n \nG\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nByte\n\n\nThe greeb component of the color.\n\n\n\n\n\n\n\n\nB\n\u00b6\n\n\nGets the blue component of the color.\n\n\nDeclaration\n\n\npublic\n \nbyte\n \nB\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nByte\n\n\nThe blue component of the color.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nRed()\n\u00b6\n\n\nCreates a instance of the class with the color red.\n\n\nDeclaration\n\n\npublic\n \nstatic\n \nColor\n \nRed\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nColor\n\n\nColor with the value of \n0xf40404\n\n\n\n\n\n\n\n\nTeal()\n\u00b6\n\n\nCreates a instance of the class with the color teal.\n\n\nDeclaration\n\n\npublic\n \nstatic\n \nColor\n \nTeal\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nColor\n\n\nColor with the value of \n0x1abc9c",
             "title": "Color"
         },
         {
@@ -149,6 +194,11 @@
             "location": "/ExampleProject/Models/Color/#colorsystemint32systemint32systemint32",
             "text": "Creates a color from its red, green and blue components respectively.  Declaration  public   Color ( int   r ,   int   g ,   int   b );   Parameters     Type  Name  Description      Int32  r  Red component.    Int32  g  Green component.    Int32  b  Blue component.",
             "title": "Color(System.Int32,System.Int32,System.Int32)"
+        },
+        {
+            "location": "/ExampleProject/Models/Color/#colorsystemint32",
+            "text": "Creates a new color with the specified value.  Declaration  public   Color ( int   value );   Parameters     Type  Name  Description      Int32  value  The raw integer value.",
+            "title": "Color(System.Int32)"
         },
         {
             "location": "/ExampleProject/Models/Color/#properties",
@@ -174,6 +224,21 @@
             "location": "/ExampleProject/Models/Color/#b",
             "text": "Gets the blue component of the color.  Declaration  public   byte   B   { get ;   }   Property Value     Type  Description      Byte  The blue component of the color.",
             "title": "B"
+        },
+        {
+            "location": "/ExampleProject/Models/Color/#methods",
+            "text": "",
+            "title": "Methods"
+        },
+        {
+            "location": "/ExampleProject/Models/Color/#red",
+            "text": "Creates a instance of the class with the color red.  Declaration  public   static   Color   Red ()   Returns     Type  Description      Color  Color with the value of  0xf40404",
+            "title": "Red()"
+        },
+        {
+            "location": "/ExampleProject/Models/Color/#teal",
+            "text": "Creates a instance of the class with the color teal.  Declaration  public   static   Color   Teal ()   Returns     Type  Description      Color  Color with the value of  0x1abc9c",
+            "title": "Teal()"
         },
         {
             "location": "/ExampleProject/Models/Role/",
@@ -231,8 +296,18 @@
             "title": "IsDefault"
         },
         {
+            "location": "/ExampleProject/Models/Status/",
+            "text": "Inherits\n\n\nEnum\n\n\nEnum Status\n\u00b6\n\n\nRepresents the possible user status\n\n\n\n\n\n\n\n\nField\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nONLINE\n\n\nUser is online.\n\n\n\n\n\n\nOFFLINE\n\n\nUser is offline.\n\n\n\n\n\n\nIDLE\n\n\nUser is idle or set the idle status.\n\n\n\n\n\n\nDO_NOT_DISTURB\n\n\nUser is in do not disturb mode.\n\n\n\n\n\n\nINVISIBLE\n\n\nUser is invisible.",
+            "title": "Status"
+        },
+        {
+            "location": "/ExampleProject/Models/Status/#enum-status",
+            "text": "Represents the possible user status     Field  Description      ONLINE  User is online.    OFFLINE  User is offline.    IDLE  User is idle or set the idle status.    DO_NOT_DISTURB  User is in do not disturb mode.    INVISIBLE  User is invisible.",
+            "title": "Enum Status"
+        },
+        {
             "location": "/ExampleProject/Models/Channel/",
-            "text": "Inherits\n\n\nObject\n\n\nClass Channel\n\u00b6\n\n\nRepresents a channel\n\n\nConstructors\n\u00b6\n\n\n\n\nChannel()\n\u00b6\n\n\nInitializes a new instance of the \nChannel\n class.\n\n\nDeclaration\n\n\npublic\n \nChannel\n();\n\n\n\n\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the channel's id\n\n\nDeclaration\n\n\npublic\n \nint\n \nId\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe channel's id.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nGetMessage(System.Int32)\n\u00b6\n\n\nGets the message with the specified id.\n\n\nDeclaration\n\n\npublic\n \nMessage\n \nGetMessage\n(\nint\n \nmessageId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nmessageId\n\n\nMessage id.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nMessage\n\n\nThe message.",
+            "text": "Inherits\n\n\nObject\n\n\nClass Channel\n\u00b6\n\n\nRepresents a channel\n\n\nConstructors\n\u00b6\n\n\n\n\nChannel()\n\u00b6\n\n\nInitializes a new instance of the \nChannel\n class.\n\n\nDeclaration\n\n\npublic\n \nChannel\n();\n\n\n\n\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the channel's id\n\n\nDeclaration\n\n\npublic\n \nint\n \nId\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe channel's id.\n\n\n\n\n\n\n\n\nType\n\u00b6\n\n\nGets the channel's type\n\n\nDeclaration\n\n\npublic\n \nChannelTypes\n \nType\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nChannelTypes\n\n\nThe type of channel.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nGetMessage(System.Int32)\n\u00b6\n\n\nGets the message with the specified id.\n\n\nDeclaration\n\n\npublic\n \nMessage\n \nGetMessage\n(\nint\n \nmessageId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nmessageId\n\n\nMessage id.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nMessage\n\n\nThe message.",
             "title": "Channel"
         },
         {
@@ -261,6 +336,11 @@
             "title": "Id"
         },
         {
+            "location": "/ExampleProject/Models/Channel/#type",
+            "text": "Gets the channel's type  Declaration  public   ChannelTypes   Type   { get ;   }   Property Value     Type  Description      ChannelTypes  The type of channel.",
+            "title": "Type"
+        },
+        {
             "location": "/ExampleProject/Models/Channel/#methods",
             "text": "",
             "title": "Methods"
@@ -272,7 +352,7 @@
         },
         {
             "location": "/ExampleProject/Models/Message/",
-            "text": "Inherits\n\n\nObject\n\n\nClass Message\n\u00b6\n\n\nRepresents a message.\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the unique id of the message\n\n\nDeclaration\n\n\npublic\n \nint\n \nId\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe unique id.\n\n\n\n\n\n\n\n\nAuthor\n\u00b6\n\n\nGets the author of the message.\n\n\nDeclaration\n\n\npublic\n \nUser\n \nAuthor\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n\n\nThe user that sent the message.\n\n\n\n\n\n\n\n\nGuild\n\u00b6\n\n\nGets the message's guild.\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGuild\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nGuild\n where the message is, if applicable.\n\n\n\n\n\n\n\n\nContent\n\u00b6\n\n\nGets the content of the message.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nContent\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\n\n\n\n\n\n\n\n\nCreatedAt\n\u00b6\n\n\nGets the date the message was sent.\n\n\nDeclaration\n\n\npublic\n \nDateTime\n \nCreatedAt\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nDateTime\n\n\nThe date and time the message was sent in UTC.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nPin()\n\u00b6\n\n\nPins a message.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nPin\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it was pinned successfully, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nUnpin()\n\u00b6\n\n\nUnpins a message.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nUnpin\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it was unpinned successfully, \nfalse\n otherwise.",
+            "text": "Inherits\n\n\nObject\n\n\nClass Message\n\u00b6\n\n\nRepresents a message.\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the unique id of the message\n\n\nDeclaration\n\n\npublic\n \nint\n \nId\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe unique id.\n\n\n\n\n\n\n\n\nAuthor\n\u00b6\n\n\nGets the author of the message.\n\n\nDeclaration\n\n\npublic\n \nUser\n \nAuthor\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n\n\nThe user that sent the message.\n\n\n\n\n\n\n\n\nChannel\n\u00b6\n\n\nGets the message's channel.\n\n\nDeclaration\n\n\npublic\n \nChannel\n \nChannel\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nChannel\n\n\nChannel\n where the message is.\n\n\n\n\n\n\n\n\nGuild\n\u00b6\n\n\nGets the guild that the message belongs to, if applicable\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGuild\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nGuild\n where the message is or \nnull\n.\n\n\n\n\n\n\n\n\nContent\n\u00b6\n\n\nGets the content of the message.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nContent\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\n\n\n\n\n\n\n\n\nCreatedAt\n\u00b6\n\n\nGets the date the message was sent.\n\n\nDeclaration\n\n\npublic\n \nDateTime\n \nCreatedAt\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nDateTime\n\n\nThe date and time the message was sent in UTC.\n\n\n\n\n\n\n\n\nEditedAt\n\u00b6\n\n\nGets the time when the message was edited\n\n\nDeclaration\n\n\npublic\n \nDateTime\n \nEditedAt\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nDateTime\n\n\nThe time when it was edited or \nnull\n if not edited.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nPin()\n\u00b6\n\n\nPins a message.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nPin\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it was pinned successfully, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nUnpin()\n\u00b6\n\n\nUnpins a message.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nUnpin\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it was unpinned successfully, \nfalse\n otherwise.",
             "title": "Message"
         },
         {
@@ -296,8 +376,13 @@
             "title": "Author"
         },
         {
+            "location": "/ExampleProject/Models/Message/#channel",
+            "text": "Gets the message's channel.  Declaration  public   Channel   Channel   { get ;   }   Property Value     Type  Description      Channel  Channel  where the message is.",
+            "title": "Channel"
+        },
+        {
             "location": "/ExampleProject/Models/Message/#guild",
-            "text": "Gets the message's guild.  Declaration  public   Guild   Guild   { get ;   }   Property Value     Type  Description      Guild  Guild  where the message is, if applicable.",
+            "text": "Gets the guild that the message belongs to, if applicable  Declaration  public   Guild   Guild   { get ;   }   Property Value     Type  Description      Guild  Guild  where the message is or  null .",
             "title": "Guild"
         },
         {
@@ -309,6 +394,11 @@
             "location": "/ExampleProject/Models/Message/#createdat",
             "text": "Gets the date the message was sent.  Declaration  public   DateTime   CreatedAt   { get ;   }   Property Value     Type  Description      DateTime  The date and time the message was sent in UTC.",
             "title": "CreatedAt"
+        },
+        {
+            "location": "/ExampleProject/Models/Message/#editedat",
+            "text": "Gets the time when the message was edited  Declaration  public   DateTime   EditedAt   { get ;   }   Property Value     Type  Description      DateTime  The time when it was edited or  null  if not edited.",
+            "title": "EditedAt"
         },
         {
             "location": "/ExampleProject/Models/Message/#methods",
@@ -362,7 +452,7 @@
         },
         {
             "location": "/ExampleProject/Models/User/",
-            "text": "Inherits\n\n\nObject\n\n\nClass User\n\u00b6\n\n\nRepresents a User\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the id.\n\n\nDeclaration\n\n\npublic\n \nint\n \nId\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe user's id.\n\n\n\n\n\n\n\n\nName\n\u00b6\n\n\nGets or sets the name.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nName\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe name of the user.\n\n\n\n\n\n\n\n\nDiscriminator\n\u00b6\n\n\nGets the user's discriminator.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nDiscriminator\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nA four character numeric discriminator.\n\n\n\n\n\n\n\n\nIsBot\n\u00b6\n\n\nChecks if the user is a bot user.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nIsBot\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if the user is a bot, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nCreationDate\n\u00b6\n\n\nGets the user's creation date.\n\n\nDeclaration\n\n\npublic\n \nDateTime\n \nCreationDate\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nDateTime\n\n\nThe creation date in UTC.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nGetGuilds()\n\u00b6\n\n\nGets all guilds the user is in.\n\n\nDeclaration\n\n\npublic\n \nGuild\n[]\n \nGetGuilds\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n[]\n\n\nThe guild the user belongs to",
+            "text": "Inherits\n\n\nObject\n\n\nClass User\n\u00b6\n\n\nRepresents a User\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the id.\n\n\nDeclaration\n\n\npublic\n \nint\n \nId\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe user's id.\n\n\n\n\n\n\n\n\nName\n\u00b6\n\n\nGets or sets the name.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nName\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe name of the user.\n\n\n\n\n\n\n\n\nDiscriminator\n\u00b6\n\n\nGets the user's discriminator.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nDiscriminator\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nA four character numeric discriminator.\n\n\n\n\n\n\n\n\nDisplayName\n\u00b6\n\n\nGets the user's display name\n\n\nDeclaration\n\n\npublic\n \nstring\n \nDisplayName\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nThis property always returns the \n of the user. This property's behaviour changes in \nGuildUser\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe user's display name.\n\n\n\n\n\n\n\n\nIsBot\n\u00b6\n\n\nChecks if the user is a bot user.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nIsBot\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if the user is a bot, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nCreationDate\n\u00b6\n\n\nGets the user's creation date.\n\n\nDeclaration\n\n\npublic\n \nDateTime\n \nCreationDate\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nDateTime\n\n\nThe creation date in UTC.\n\n\n\n\n\n\n\n\nMention\n\u00b6\n\n\nGets a string that allows you to mention the user\n\n\nDeclaration\n\n\npublic\n \nstring\n \nMention\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nString that mentions the user in messages.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nGetGuilds()\n\u00b6\n\n\nGets all guilds the user is in.\n\n\nDeclaration\n\n\npublic\n \nGuild\n[]\n \nGetGuilds\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n[]\n\n\nThe guild the user belongs to",
             "title": "User"
         },
         {
@@ -391,6 +481,11 @@
             "title": "Discriminator"
         },
         {
+            "location": "/ExampleProject/Models/User/#displayname",
+            "text": "Gets the user's display name  Declaration  public   string   DisplayName   { get ;   }   Remarks \nThis property always returns the   of the user. This property's behaviour changes in  GuildUser  Property Value     Type  Description      String  The user's display name.",
+            "title": "DisplayName"
+        },
+        {
             "location": "/ExampleProject/Models/User/#isbot",
             "text": "Checks if the user is a bot user.  Declaration  public   bool   IsBot   { get ;   }   Property Value     Type  Description      Boolean  true  if the user is a bot,  false  otherwise.",
             "title": "IsBot"
@@ -399,6 +494,11 @@
             "location": "/ExampleProject/Models/User/#creationdate",
             "text": "Gets the user's creation date.  Declaration  public   DateTime   CreationDate   { get ;   }   Property Value     Type  Description      DateTime  The creation date in UTC.",
             "title": "CreationDate"
+        },
+        {
+            "location": "/ExampleProject/Models/User/#mention",
+            "text": "Gets a string that allows you to mention the user  Declaration  public   string   Mention   { get ;   }   Property Value     Type  Description      String  String that mentions the user in messages.",
+            "title": "Mention"
         },
         {
             "location": "/ExampleProject/Models/User/#methods",

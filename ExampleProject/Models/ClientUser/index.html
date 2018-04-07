@@ -231,7 +231,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../OnMessageHandler/" title="ExampleProject.Models" class="md-tabs__link md-tabs__link--active">
+        <a href="../GuildUser/" title="ExampleProject.Models" class="md-tabs__link md-tabs__link--active">
           ExampleProject.Models
         </a>
       
@@ -359,6 +359,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../GuildUser/" title="GuildUser" class="md-nav__link">
+      GuildUser
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../OnMessageHandler/" title="OnMessageHandler" class="md-nav__link">
       OnMessageHandler
     </a>
@@ -412,6 +424,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#blocked" title="Blocked" class="md-nav__link">
+    Blocked
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -448,6 +467,18 @@
   <li class="md-nav__item">
     <a href="../Role/" title="Role" class="md-nav__link">
       Role
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Status/" title="Status" class="md-nav__link">
+      Status
     </a>
   </li>
 
@@ -552,6 +583,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#blocked" title="Blocked" class="md-nav__link">
+    Blocked
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -600,7 +638,31 @@ Only non-bot users can have friends.<br />
 <tbody>
 <tr>
 <td><a href="../User/">User</a>[]</td>
-<td>An array of Users that are friend with the current user.</td>
+<td>An array of Users that are friends with the current user.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="blocked">Blocked<a class="headerlink" href="#blocked" title="Permanent link">&para;</a></h3>
+<p>Gets the list of users block by this user.<br />
+<strong>Declaration</strong></p>
+<div class="codehilite"><pre><span></span><span class="k">public</span> <span class="n">User</span><span class="p">[]</span> <span class="n">Blocked</span> <span class="p">{</span><span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+
+
+<p><strong>Remarks</strong><br />
+Only non-bot users can block users.<br />
+<strong>Property Value</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../User/">User</a>[]</td>
+<td>An array of Users that are blocked by the current user.</td>
 </tr>
 </tbody>
 </table>

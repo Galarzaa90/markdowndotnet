@@ -1,10 +1,12 @@
 - ExampleProject:
   - ApiClient: ExampleProject/ApiClient.md
 - ExampleProject.Models:
+  - GuildUser: ExampleProject/Models/GuildUser.md
   - OnMessageHandler: ExampleProject/Models/OnMessageHandler.md
   - ClientUser: ExampleProject/Models/ClientUser.md
   - Color: ExampleProject/Models/Color.md
   - Role: ExampleProject/Models/Role.md
+  - Status: ExampleProject/Models/Status.md
   - Channel: ExampleProject/Models/Channel.md
   - Message: ExampleProject/Models/Message.md
   - Guild: ExampleProject/Models/Guild.md

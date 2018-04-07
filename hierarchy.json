@@ -66,6 +66,50 @@
         }
     },
     "ExampleProject.Models": {
+        "GuildUser": {
+            "children": {
+                "Roles": {
+                    "documentation": {
+                        "summary": "Gets the roles the user has in this guild.",
+                        "value": "An array of <see cref=\"T:ExampleProject.Models.Role\" />s"
+                    },
+                    "type": "P"
+                },
+                "JoinedAt": {
+                    "documentation": {
+                        "summary": "Gets the date when the user joined this guild.",
+                        "value": "The join date in UTC."
+                    },
+                    "type": "P"
+                },
+                "Guild": {
+                    "documentation": {
+                        "summary": "Gets the guild where this user belongs to.",
+                        "value": "The guild where this user is."
+                    },
+                    "type": "P"
+                },
+                "Nick": {
+                    "documentation": {
+                        "summary": "Gets the user's nickname.",
+                        "value": "The user's nickname if set, otherwise <c>null</c>."
+                    },
+                    "type": "P"
+                },
+                "DisplayName": {
+                    "documentation": {
+                        "summary": "Gets the user's display name",
+                        "remarks": "The display name consist of the user's <see cref=\"P:ExampleProject.Models.GuildUser.Nick\" /> (if set) or the user's <see cref=\"P:ExampleProject.Models.User.Name\" />.",
+                        "value": "The user's display name."
+                    },
+                    "type": "P"
+                }
+            },
+            "documentation": {
+                "summary": "Represents a <see cref=\"T:ExampleProject.Models.User\" /> in a <see cref=\"T:ExampleProject.Models.Guild\" />"
+            },
+            "type": "T"
+        },
         "OnMessageHandler": {
             "children": {},
             "documentation": {
@@ -81,8 +125,16 @@
                 "Friends": {
                     "documentation": {
                         "summary": "Gets the user's friends.",
-                        "value": "An array of Users that are friend with the current user.",
+                        "value": "An array of Users that are friends with the current user.",
                         "remarks": "Only non-bot users can have friends."
+                    },
+                    "type": "P"
+                },
+                "Blocked": {
+                    "documentation": {
+                        "summary": "Gets the list of users block by this user.",
+                        "value": "An array of Users that are blocked by the current user.",
+                        "remarks": "Only non-bot users can block users."
                     },
                     "type": "P"
                 }
@@ -132,6 +184,29 @@
                         }
                     },
                     "type": "C"
+                },
+                ".ctor(System.Int32)": {
+                    "documentation": {
+                        "summary": "Creates a new color with the specified value.",
+                        "param": {
+                            "value": "The raw integer value."
+                        }
+                    },
+                    "type": "C"
+                },
+                "Red": {
+                    "documentation": {
+                        "summary": "Creates a instance of the class with the color red.",
+                        "returns": "Color with the value of <c>0xf40404</c>"
+                    },
+                    "type": "M"
+                },
+                "Teal": {
+                    "documentation": {
+                        "summary": "Creates a instance of the class with the color teal.",
+                        "returns": "Color with the value of <c>0x1abc9c</c>"
+                    },
+                    "type": "M"
                 }
             },
             "documentation": {
@@ -204,12 +279,57 @@
             },
             "type": "T"
         },
+        "Status": {
+            "children": {
+                "ONLINE": {
+                    "documentation": {
+                        "summary": "User is online."
+                    },
+                    "type": "F"
+                },
+                "OFFLINE": {
+                    "documentation": {
+                        "summary": "User is offline."
+                    },
+                    "type": "F"
+                },
+                "IDLE": {
+                    "documentation": {
+                        "summary": "User is idle or set the idle status."
+                    },
+                    "type": "F"
+                },
+                "DO_NOT_DISTURB": {
+                    "documentation": {
+                        "summary": "User is in do not disturb mode."
+                    },
+                    "type": "F"
+                },
+                "INVISIBLE": {
+                    "documentation": {
+                        "summary": "User is invisible."
+                    },
+                    "type": "F"
+                }
+            },
+            "documentation": {
+                "summary": "Represents the possible user status"
+            },
+            "type": "T"
+        },
         "Channel": {
             "children": {
                 "Id": {
                     "documentation": {
                         "summary": "Gets the channel's id",
                         "value": "The channel's id."
+                    },
+                    "type": "P"
+                },
+                "Type": {
+                    "documentation": {
+                        "summary": "Gets the channel's type",
+                        "value": "The type of channel."
                     },
                     "type": "P"
                 },
@@ -251,10 +371,17 @@
                     },
                     "type": "P"
                 },
+                "Channel": {
+                    "documentation": {
+                        "summary": "Gets the message's channel.",
+                        "value": "<see cref=\"T:ExampleProject.Models.Channel\" /> where the message is."
+                    },
+                    "type": "P"
+                },
                 "Guild": {
                     "documentation": {
-                        "summary": "Gets the message's guild.",
-                        "value": "<see cref=\"T:ExampleProject.Models.Guild\" /> where the message is, if applicable."
+                        "summary": "Gets the guild that the message belongs to, if applicable",
+                        "value": "<see cref=\"T:ExampleProject.Models.Guild\" /> where the message is or <c>null</c>."
                     },
                     "type": "P"
                 },
@@ -268,6 +395,13 @@
                     "documentation": {
                         "summary": "Gets the date the message was sent.",
                         "value": "The date and time the message was sent in UTC."
+                    },
+                    "type": "P"
+                },
+                "EditedAt": {
+                    "documentation": {
+                        "summary": "Gets the time when the message was edited",
+                        "value": "The time when it was edited or <c>null</c> if not edited."
                     },
                     "type": "P"
                 },
@@ -346,6 +480,14 @@
                     },
                     "type": "P"
                 },
+                "DisplayName": {
+                    "documentation": {
+                        "summary": "Gets the user's display name",
+                        "remarks": "This property always returns the <see cref=\"P:ExampleProject.Models.User.Name\" /> of the user. This property's behaviour changes in <see cref=\"T:ExampleProject.Models.GuildUser\" />",
+                        "value": "The user's display name."
+                    },
+                    "type": "P"
+                },
                 "IsBot": {
                     "documentation": {
                         "summary": "Checks if the user is a bot user.",
@@ -357,6 +499,13 @@
                     "documentation": {
                         "summary": "Gets the user's creation date.",
                         "value": "The creation date in UTC."
+                    },
+                    "type": "P"
+                },
+                "Mention": {
+                    "documentation": {
+                        "summary": "Gets a string that allows you to mention the user",
+                        "value": "String that mentions the user in messages."
                     },
                     "type": "P"
                 },

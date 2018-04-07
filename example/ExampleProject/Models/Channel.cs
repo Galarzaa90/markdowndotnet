@@ -13,6 +13,12 @@ namespace ExampleProject.Models
         public int Id { get; private set; }
 
         /// <summary>
+        /// Gets the channel's type
+        /// </summary>
+        /// <value>The type of channel.</value>
+        public ChannelTypes Type { get; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="T:ExampleProject.Models.Channel"/> class.
         /// </summary>
         public Channel()
@@ -27,6 +33,7 @@ namespace ExampleProject.Models
         public Message GetMessage(int messageId){
             return new Message();
         }
+
 
     }
 }

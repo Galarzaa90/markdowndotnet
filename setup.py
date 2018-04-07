@@ -26,4 +26,17 @@ setup(
         markdowndotnet=markdowndotnet:cli
     ''',
     include_package_data=True,
+    classifiers=[
+        'Development Status :: 3 - Alpha',
+        'Environment :: Console',
+        'Intended Audience :: Developers',
+        'Natural Language :: English',
+        'Operating System :: OS Independent',
+        'Programming Language :: C#'
+        'Programming Language :: Python :: 3 :: Only',
+        'Programming Language :: Python :: 3.6',
+        'Topic :: Documentation',
+        'Topic :: Software Development :: Documentation',
+        'Topic :: Text Processing :: Markup :: XML',
+    ]
 )

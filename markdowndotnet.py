@@ -382,6 +382,15 @@ def parse_method(member_type: Type, name: str, documentation: Dict[str, Any], fi
 
     return_type = method.ReturnType
     parameters = method.GetParameters()
+    modifiers_checks = {
+        'private': method.IsPrivate,
+        'public': method.IsPublic,
+        'static': method.IsStatic,
+        'abstract': method.IsAbstract,
+        'virtual': method.IsVirtual,
+        'sealed': method.IsFinal,
+    }
+    method_modifiers = " ".join([k for k, v in modifiers_checks.items() if v])
     # Get a string list containing the parameter's type and name.
     params_declaration = " ,".join([f"{get_type_name(x.ParameterType)} {x.Name}" for x in parameters])
     # Show a level 3 header with the method's name
@@ -392,7 +401,7 @@ def parse_method(member_type: Type, name: str, documentation: Dict[str, Any], fi
     # Show the method's declaration
     content += f"**Declaration**\n" \
                f"```csharp\n" \
-               f"public {get_type_name(return_type)} {method_name}({params_declaration})\n" \
+               f"{method_modifiers} {get_type_name(return_type)} {method_name}({params_declaration})\n" \
                f"```\n"
     # Show the method's remarks if available
     if "remarks" in documentation:

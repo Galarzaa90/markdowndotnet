@@ -44,10 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\GuildUser.cs" />
     <Compile Include="Models\Delegates.cs" />
     <Compile Include="Models\ClientUser.cs" />
     <Compile Include="Models\Color.cs" />
     <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ApiClient.cs" />
     <Compile Include="Models\Channel.cs" />

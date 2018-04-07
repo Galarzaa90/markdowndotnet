@@ -25,6 +25,13 @@ namespace ExampleProject.Models
         public string Discriminator { get; private set; }
 
         /// <summary>
+        /// Gets the user's display name
+        /// </summary>
+        /// <remarks>This property always returns the <see cref="Name"/> of the user. This property's behaviour changes in <see cref="GuildUser"/></remarks>
+        /// <value>The user's display name.</value>
+        public virtual string DisplayName { get; }
+
+        /// <summary>
         /// Checks if the user is a bot user.
         /// </summary>
         /// <value><c>true</c> if the user is a bot, <c>false</c> otherwise.</value>
@@ -35,6 +42,12 @@ namespace ExampleProject.Models
         /// </summary>
         /// <value>The creation date in UTC.</value>
         public DateTime CreationDate { get; private set; }
+
+        /// <summary>
+        /// Gets a string that allows you to mention the user
+        /// </summary>
+        /// <value>String that mentions the user in messages.</value>
+        public string Mention { get; }
 
         /// <summary>
         /// Gets all guilds the user is in.

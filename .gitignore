@@ -2,8 +2,8 @@ output/
 docs/
 mkdocs.yml
 site/
-
-
+dist/
+*.egg-info
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

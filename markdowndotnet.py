@@ -627,7 +627,7 @@ def build_documentation(dll_path, hierarchy):
 @click.option('-v', '--verbose', is_flag=True, help="Enables verbose output")
 @click.option('-q', '--quiet', is_flag=True, help="Hides warnings")
 @click.option('-o', '--output', type=click.Path(exists=False, file_okay=False), default="output/", help="Folder where files will be generated in")
-def run(dll_path, xml_path, verbose, quiet, output):
+def cli(dll_path, xml_path, verbose, quiet, output):
     global output_dir
     output_dir = output
     if verbose:
@@ -639,4 +639,4 @@ def run(dll_path, xml_path, verbose, quiet, output):
 
 
 if __name__ == '__main__':
-    run()
+    cli()

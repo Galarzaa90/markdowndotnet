@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ExampleProject.Models
+namespace Galarzaa.Api.Models
 {
     /// <summary>
-    /// Represents a <see cref="User"/> in a <see cref="ExampleProject.Models.Guild"/>
+    /// Represents a <see cref="User"/> in a <see cref="Models.Guild"/>
     /// </summary>
     public class GuildUser : User
     {

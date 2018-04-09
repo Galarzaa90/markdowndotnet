@@ -1,5 +1,4 @@
-﻿using System;
-namespace ExampleProject.Models
+﻿namespace Galarzaa.Api.Models
 {
     /// <summary>
     /// Represents the different channel types available.

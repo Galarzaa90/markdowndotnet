@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ExampleProject.Models
+namespace Galarzaa.Api.Models
 {
     /// <summary>
     /// Represents a message.
@@ -23,13 +23,13 @@ namespace ExampleProject.Models
         /// <summary>
         /// Gets the message's channel.
         /// </summary>
-        /// <value><see cref="ExampleProject.Models.Channel"/> where the message is.</value>
+        /// <value><see cref="Galarzaa.Api.Models.Channel"/> where the message is.</value>
         public Channel Channel { get; private set; }
 
         /// <summary>
         /// Gets the guild that the message belongs to, if applicable
         /// </summary>
-        /// <value><see cref="ExampleProject.Models.Guild"/> where the message is or <c>null</c>.</value>
+        /// <value><see cref="Galarzaa.Api.Models.Guild"/> where the message is or <c>null</c>.</value>
         public Guild Guild { get; }
 
 

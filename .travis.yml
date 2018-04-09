@@ -27,8 +27,8 @@ install:
   - pip install --egg git+https://github.com/pythonnet/pythonnet -U --force
   - pip install -r requirements.txt
 script:
-  - xbuild example/ExampleSolution.sln /v:minimal
-  - python markdowndotnet.py -v "example/ExampleProject/bin/Debug/ExampleProject.dll" "example/ExampleProject/bin/Debug/ExampleProject.xml"
+  - xbuild example/Example.sln /v:minimal
+  - python markdowndotnet.py -v "example/ExampleProject/bin/Debug/ApiExample.dll" "example/ExampleProject/bin/Debug/ApiExample.xml"
 
 after_success:
   - pip install mkdocs mkdocs-material

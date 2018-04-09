@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ExampleProject.Models
+﻿namespace Galarzaa.Api.Models
 {
     /// <summary>
     /// Represents a Role in a <see cref="Guild"/>.

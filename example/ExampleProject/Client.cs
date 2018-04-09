@@ -1,11 +1,11 @@
-﻿using ExampleProject.Models;
+﻿using Galarzaa.Api.Models;
 
-namespace ExampleProject
+namespace Galarzaa.Api
 {
     /// <summary>
     /// Represents a connection to the client
     /// </summary>
-    public class ApiClient
+    public class Client
     {
         /// <summary>
         /// Authentication token
@@ -25,9 +25,9 @@ namespace ExampleProject
         public event OnMessageHandler OnMessageReceived;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:ExampleProject.ApiClient"/> class.
+        /// Initializes a new instance of the <see cref="Client"/> class.
         /// </summary>
-        public ApiClient()
+        public Client()
         {
         }
 

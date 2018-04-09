@@ -1,5 +1,4 @@
-﻿using System;
-namespace ExampleProject.Models
+﻿namespace Galarzaa.Api.Models
 {
     /// <summary>
     /// Represents a channel
@@ -19,7 +18,7 @@ namespace ExampleProject.Models
         public ChannelTypes Type { get; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:ExampleProject.Models.Channel"/> class.
+        /// Initializes a new instance of the <see cref="Channel"/> class.
         /// </summary>
         public Channel()
         {

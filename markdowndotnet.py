@@ -166,7 +166,7 @@ def parse_content(assembly : Assembly, content: str, current_file: str) -> str:
         if member_type == "T":
             return get_link(assembly, type_name=full_name, current_file=current_file)
         else:
-            return m.group(0)
+            return f"`{m.group(2)}`"
 
     content = see_pattern.sub(lambda match: parse_see_tag(match), content)
     content = c_pattern.sub("`\g<1>`", content)
@@ -465,9 +465,9 @@ def parse_event(member_type: Type, name: str, documentation: Dict[str, Any], fil
         content += get_link(assembly, cs_type=handler_type, current_file=file_path)
     return content
 
+
 def parse_documentation(path):
     log.info("Parsing documentation")
-    tree = ElementTree.parse(path)
     tree = ElementTree.parse(path)
     hierarchy = {}
     root = tree.getroot()

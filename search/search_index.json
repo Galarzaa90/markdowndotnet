@@ -31,492 +31,492 @@
             "title": "Planned features"
         },
         {
-            "location": "/ExampleProject/ApiClient/",
-            "text": "Inherits\n\n\nObject\n\n\nClass ApiClient\n\u00b6\n\n\nRepresents a connection to the client\n\n\nConstructors\n\u00b6\n\n\n\n\nApiClient()\n\u00b6\n\n\nInitializes a new instance of the \nApiClient\n class.\n\n\nDeclaration\n\n\npublic\n \nApiClient\n();\n\n\n\n\n\n\nFields\n\u00b6\n\n\n\n\ntoken\n\u00b6\n\n\nAuthentication token\n\n\nDeclaration\n\n\npublic\n \nstring\n \ntoken\n;\n\n\n\n\n\n\nField Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nAuthentication token for the account or Application.\n\n\n\n\n\n\n\n\nProperties\n\u00b6\n\n\n\n\nUsers\n\u00b6\n\n\nGets a list of all the visible users.\n\n\nDeclaration\n\n\npublic\n \nUser\n[]\n \nUsers\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n[]\n\n\nArray containing all users the \nClientUser\n can see.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nLogin(System.String)\n\u00b6\n\n\nLogs in to the API\n\n\nDeclaration\n\n\npublic\n \nbool\n \nLogin\n(\nstring\n \ntoken\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\ntoken\n\n\nThe authentication token to use for login.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if login was successful, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nGetGuild(System.Int32)\n\u00b6\n\n\nGets a \nGuild\n with the specified id.\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGetGuild\n(\nint\n \nguildId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nguildId\n\n\nThe unique id of the guild.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nThe guild found, or \nnull\n.\n\n\n\n\n\n\n\n\nGetUser(System.Int32)\n\u00b6\n\n\nGets a \nUser\n with the specified id.\n\n\nDeclaration\n\n\npublic\n \nUser\n \nGetUser\n(\nint\n \nuserId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nuserId\n\n\nThe unique id of the user.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n\n\nThe user found, or \nnull\n.\n\n\n\n\n\n\n\n\nEvents\n\u00b6\n\n\n\n\nOnMessageReceived\n\u00b6\n\n\nEvent received every time a \nMessage\n is received on any \nChannel\n the client sees.\n\n\nDeclaration\n\n\npublic\n \nevent\n \nOnMessageHandler\n \nOnMessageReceived\n\n\n\n\n\n\nEvent Handler\n\n\nOnMessageHandler",
-            "title": "ApiClient"
+            "location": "/Galarzaa/Api/Client/",
+            "text": "Inherits\n\n\nObject\n\n\nClass Client\n\u00b6\n\n\nRepresents a connection to the client\n\n\nConstructors\n\u00b6\n\n\n\n\nClient()\n\u00b6\n\n\nInitializes a new instance of the \nClient\n class.\n\n\nDeclaration\n\n\npublic\n \nClient\n();\n\n\n\n\n\n\nFields\n\u00b6\n\n\n\n\ntoken\n\u00b6\n\n\nAuthentication token\n\n\nDeclaration\n\n\npublic\n \nstring\n \ntoken\n;\n\n\n\n\n\n\nField Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nAuthentication token for the account or Application.\n\n\n\n\n\n\n\n\nProperties\n\u00b6\n\n\n\n\nUsers\n\u00b6\n\n\nGets a list of all the visible users.\n\n\nDeclaration\n\n\npublic\n \nUser\n[]\n \nUsers\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n[]\n\n\nArray containing all users the \nClientUser\n can see.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nLogin(System.String)\n\u00b6\n\n\nLogs in to the API\n\n\nDeclaration\n\n\npublic\n \nbool\n \nLogin\n(\nstring\n \ntoken\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\ntoken\n\n\nThe authentication token to use for login.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if login was successful, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nGetGuild(System.Int32)\n\u00b6\n\n\nGets a \nGuild\n with the specified id.\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGetGuild\n(\nint\n \nguildId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nguildId\n\n\nThe unique id of the guild.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nThe guild found, or \nnull\n.\n\n\n\n\n\n\n\n\nGetUser(System.Int32)\n\u00b6\n\n\nGets a \nUser\n with the specified id.\n\n\nDeclaration\n\n\npublic\n \nUser\n \nGetUser\n(\nint\n \nuserId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nuserId\n\n\nThe unique id of the user.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n\n\nThe user found, or \nnull\n.\n\n\n\n\n\n\n\n\nEvents\n\u00b6\n\n\n\n\nOnMessageReceived\n\u00b6\n\n\nEvent received every time a \nMessage\n is received on any \nChannel\n the client sees.\n\n\nDeclaration\n\n\npublic\n \nevent\n \nOnMessageHandler\n \nOnMessageReceived\n\n\n\n\n\n\nEvent Handler\n\n\nOnMessageHandler",
+            "title": "Client"
         },
         {
-            "location": "/ExampleProject/ApiClient/#class-apiclient",
+            "location": "/Galarzaa/Api/Client/#class-client",
             "text": "Represents a connection to the client",
-            "title": "Class ApiClient"
+            "title": "Class Client"
         },
         {
-            "location": "/ExampleProject/ApiClient/#constructors",
+            "location": "/Galarzaa/Api/Client/#constructors",
             "text": "",
             "title": "Constructors"
         },
         {
-            "location": "/ExampleProject/ApiClient/#apiclient",
-            "text": "Initializes a new instance of the  ApiClient  class.  Declaration  public   ApiClient ();",
-            "title": "ApiClient()"
+            "location": "/Galarzaa/Api/Client/#client",
+            "text": "Initializes a new instance of the  Client  class.  Declaration  public   Client ();",
+            "title": "Client()"
         },
         {
-            "location": "/ExampleProject/ApiClient/#fields",
+            "location": "/Galarzaa/Api/Client/#fields",
             "text": "",
             "title": "Fields"
         },
         {
-            "location": "/ExampleProject/ApiClient/#token",
+            "location": "/Galarzaa/Api/Client/#token",
             "text": "Authentication token  Declaration  public   string   token ;   Field Value     Type  Description      String  Authentication token for the account or Application.",
             "title": "token"
         },
         {
-            "location": "/ExampleProject/ApiClient/#properties",
+            "location": "/Galarzaa/Api/Client/#properties",
             "text": "",
             "title": "Properties"
         },
         {
-            "location": "/ExampleProject/ApiClient/#users",
+            "location": "/Galarzaa/Api/Client/#users",
             "text": "Gets a list of all the visible users.  Declaration  public   User []   Users   { get ;   }   Property Value     Type  Description      User []  Array containing all users the  ClientUser  can see.",
             "title": "Users"
         },
         {
-            "location": "/ExampleProject/ApiClient/#methods",
+            "location": "/Galarzaa/Api/Client/#methods",
             "text": "",
             "title": "Methods"
         },
         {
-            "location": "/ExampleProject/ApiClient/#loginsystemstring",
+            "location": "/Galarzaa/Api/Client/#loginsystemstring",
             "text": "Logs in to the API  Declaration  public   bool   Login ( string   token )   Parameters     Type  Name  Description      String  token  The authentication token to use for login.     Returns     Type  Description      Boolean  true  if login was successful,  false  otherwise.",
             "title": "Login(System.String)"
         },
         {
-            "location": "/ExampleProject/ApiClient/#getguildsystemint32",
+            "location": "/Galarzaa/Api/Client/#getguildsystemint32",
             "text": "Gets a  Guild  with the specified id.  Declaration  public   Guild   GetGuild ( int   guildId )   Parameters     Type  Name  Description      Int32  guildId  The unique id of the guild.     Returns     Type  Description      Guild  The guild found, or  null .",
             "title": "GetGuild(System.Int32)"
         },
         {
-            "location": "/ExampleProject/ApiClient/#getusersystemint32",
+            "location": "/Galarzaa/Api/Client/#getusersystemint32",
             "text": "Gets a  User  with the specified id.  Declaration  public   User   GetUser ( int   userId )   Parameters     Type  Name  Description      Int32  userId  The unique id of the user.     Returns     Type  Description      User  The user found, or  null .",
             "title": "GetUser(System.Int32)"
         },
         {
-            "location": "/ExampleProject/ApiClient/#events",
+            "location": "/Galarzaa/Api/Client/#events",
             "text": "",
             "title": "Events"
         },
         {
-            "location": "/ExampleProject/ApiClient/#onmessagereceived",
+            "location": "/Galarzaa/Api/Client/#onmessagereceived",
             "text": "Event received every time a  Message  is received on any  Channel  the client sees.  Declaration  public   event   OnMessageHandler   OnMessageReceived   Event Handler  OnMessageHandler",
             "title": "OnMessageReceived"
         },
         {
-            "location": "/ExampleProject/Models/GuildUser/",
-            "text": "Inherits\n\n\nUser\n\n\nClass GuildUser\n\u00b6\n\n\nRepresents a \nUser\n in a \nGuild\n\n\nProperties\n\u00b6\n\n\n\n\nRoles\n\u00b6\n\n\nGets the roles the user has in this guild.\n\n\nDeclaration\n\n\npublic\n \nRole\n[]\n \nRoles\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nRole\n[]\n\n\nAn array of \nRole\ns\n\n\n\n\n\n\n\n\nJoinedAt\n\u00b6\n\n\nGets the date when the user joined this guild.\n\n\nDeclaration\n\n\npublic\n \nDateTime\n \nJoinedAt\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nDateTime\n\n\nThe join date in UTC.\n\n\n\n\n\n\n\n\nGuild\n\u00b6\n\n\nGets the guild where this user belongs to.\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGuild\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nThe guild where this user is.\n\n\n\n\n\n\n\n\nNick\n\u00b6\n\n\nGets the user's nickname.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nNick\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe user's nickname if set, otherwise \nnull\n.\n\n\n\n\n\n\n\n\nDisplayName\n\u00b6\n\n\nGets the user's display name\n\n\nDeclaration\n\n\npublic\n \nstring\n \nDisplayName\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nThe display name consist of the user's \n (if set) or the user's \n.\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe user's display name.",
+            "location": "/Galarzaa/Api/Models/GuildUser/",
+            "text": "Inherits\n\n\nUser\n\n\nClass GuildUser\n\u00b6\n\n\nRepresents a \nUser\n in a \nGuild\n\n\nProperties\n\u00b6\n\n\n\n\nRoles\n\u00b6\n\n\nGets the roles the user has in this guild.\n\n\nDeclaration\n\n\npublic\n \nRole\n[]\n \nRoles\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nRole\n[]\n\n\nAn array of \nRole\ns\n\n\n\n\n\n\n\n\nJoinedAt\n\u00b6\n\n\nGets the date when the user joined this guild.\n\n\nDeclaration\n\n\npublic\n \nDateTime\n \nJoinedAt\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nDateTime\n\n\nThe join date in UTC.\n\n\n\n\n\n\n\n\nGuild\n\u00b6\n\n\nGets the guild where this user belongs to.\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGuild\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nThe guild where this user is.\n\n\n\n\n\n\n\n\nNick\n\u00b6\n\n\nGets the user's nickname.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nNick\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe user's nickname if set, otherwise \nnull\n.\n\n\n\n\n\n\n\n\nDisplayName\n\u00b6\n\n\nGets the user's display name\n\n\nDeclaration\n\n\npublic\n \nstring\n \nDisplayName\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nThe display name consist of the user's \nGalarzaa.Api.Models.GuildUser.Nick\n (if set) or the user's \nGalarzaa.Api.Models.User.Name\n.\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe user's display name.",
             "title": "GuildUser"
         },
         {
-            "location": "/ExampleProject/Models/GuildUser/#class-guilduser",
+            "location": "/Galarzaa/Api/Models/GuildUser/#class-guilduser",
             "text": "Represents a  User  in a  Guild",
             "title": "Class GuildUser"
         },
         {
-            "location": "/ExampleProject/Models/GuildUser/#properties",
+            "location": "/Galarzaa/Api/Models/GuildUser/#properties",
             "text": "",
             "title": "Properties"
         },
         {
-            "location": "/ExampleProject/Models/GuildUser/#roles",
+            "location": "/Galarzaa/Api/Models/GuildUser/#roles",
             "text": "Gets the roles the user has in this guild.  Declaration  public   Role []   Roles   { get ;   }   Property Value     Type  Description      Role []  An array of  Role s",
             "title": "Roles"
         },
         {
-            "location": "/ExampleProject/Models/GuildUser/#joinedat",
+            "location": "/Galarzaa/Api/Models/GuildUser/#joinedat",
             "text": "Gets the date when the user joined this guild.  Declaration  public   DateTime   JoinedAt   { get ;   }   Property Value     Type  Description      DateTime  The join date in UTC.",
             "title": "JoinedAt"
         },
         {
-            "location": "/ExampleProject/Models/GuildUser/#guild",
+            "location": "/Galarzaa/Api/Models/GuildUser/#guild",
             "text": "Gets the guild where this user belongs to.  Declaration  public   Guild   Guild   { get ;   }   Property Value     Type  Description      Guild  The guild where this user is.",
             "title": "Guild"
         },
         {
-            "location": "/ExampleProject/Models/GuildUser/#nick",
+            "location": "/Galarzaa/Api/Models/GuildUser/#nick",
             "text": "Gets the user's nickname.  Declaration  public   string   Nick   { get ;   }   Property Value     Type  Description      String  The user's nickname if set, otherwise  null .",
             "title": "Nick"
         },
         {
-            "location": "/ExampleProject/Models/GuildUser/#displayname",
-            "text": "Gets the user's display name  Declaration  public   string   DisplayName   { get ;   }   Remarks \nThe display name consist of the user's   (if set) or the user's  .  Property Value     Type  Description      String  The user's display name.",
+            "location": "/Galarzaa/Api/Models/GuildUser/#displayname",
+            "text": "Gets the user's display name  Declaration  public   string   DisplayName   { get ;   }   Remarks \nThe display name consist of the user's  Galarzaa.Api.Models.GuildUser.Nick  (if set) or the user's  Galarzaa.Api.Models.User.Name .  Property Value     Type  Description      String  The user's display name.",
             "title": "DisplayName"
         },
         {
-            "location": "/ExampleProject/Models/OnMessageHandler/",
-            "text": "Inherits\n\n\nMulticastDelegate\n\n\nClass OnMessageHandler\n\u00b6\n\n\nDelegate for the \n event.",
+            "location": "/Galarzaa/Api/Models/OnMessageHandler/",
+            "text": "Inherits\n\n\nMulticastDelegate\n\n\nClass OnMessageHandler\n\u00b6\n\n\nDelegate for the \nGalarzaa.Api.Client.OnMessageReceived\n event.",
             "title": "OnMessageHandler"
         },
         {
-            "location": "/ExampleProject/Models/OnMessageHandler/#class-onmessagehandler",
-            "text": "Delegate for the   event.",
+            "location": "/Galarzaa/Api/Models/OnMessageHandler/#class-onmessagehandler",
+            "text": "Delegate for the  Galarzaa.Api.Client.OnMessageReceived  event.",
             "title": "Class OnMessageHandler"
         },
         {
-            "location": "/ExampleProject/Models/ClientUser/",
+            "location": "/Galarzaa/Api/Models/ClientUser/",
             "text": "Inherits\n\n\nUser\n\n\nClass ClientUser\n\u00b6\n\n\nRepresents the User that connected to the API.\n\n\nProperties\n\u00b6\n\n\n\n\nFriends\n\u00b6\n\n\nGets the user's friends.\n\n\nDeclaration\n\n\npublic\n \nUser\n[]\n \nFriends\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nOnly non-bot users can have friends.\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n[]\n\n\nAn array of Users that are friends with the current user.\n\n\n\n\n\n\n\n\nBlocked\n\u00b6\n\n\nGets the list of users block by this user.\n\n\nDeclaration\n\n\npublic\n \nUser\n[]\n \nBlocked\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nOnly non-bot users can block users.\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n[]\n\n\nAn array of Users that are blocked by the current user.",
             "title": "ClientUser"
         },
         {
-            "location": "/ExampleProject/Models/ClientUser/#class-clientuser",
+            "location": "/Galarzaa/Api/Models/ClientUser/#class-clientuser",
             "text": "Represents the User that connected to the API.",
             "title": "Class ClientUser"
         },
         {
-            "location": "/ExampleProject/Models/ClientUser/#properties",
+            "location": "/Galarzaa/Api/Models/ClientUser/#properties",
             "text": "",
             "title": "Properties"
         },
         {
-            "location": "/ExampleProject/Models/ClientUser/#friends",
+            "location": "/Galarzaa/Api/Models/ClientUser/#friends",
             "text": "Gets the user's friends.  Declaration  public   User []   Friends   { get ;   }   Remarks \nOnly non-bot users can have friends.  Property Value     Type  Description      User []  An array of Users that are friends with the current user.",
             "title": "Friends"
         },
         {
-            "location": "/ExampleProject/Models/ClientUser/#blocked",
+            "location": "/Galarzaa/Api/Models/ClientUser/#blocked",
             "text": "Gets the list of users block by this user.  Declaration  public   User []   Blocked   { get ;   }   Remarks \nOnly non-bot users can block users.  Property Value     Type  Description      User []  An array of Users that are blocked by the current user.",
             "title": "Blocked"
         },
         {
-            "location": "/ExampleProject/Models/Color/",
+            "location": "/Galarzaa/Api/Models/Color/",
             "text": "Inherits\n\n\nObject\n\n\nClass Color\n\u00b6\n\n\nRepresents a \nRole\n color.\n\n\nConstructors\n\u00b6\n\n\n\n\nColor(System.Int32,System.Int32,System.Int32)\n\u00b6\n\n\nCreates a color from its red, green and blue components respectively.\n\n\nDeclaration\n\n\npublic\n \nColor\n(\nint\n \nr\n,\n \nint\n \ng\n,\n \nint\n \nb\n);\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nr\n\n\nRed component.\n\n\n\n\n\n\nInt32\n\n\ng\n\n\nGreen component.\n\n\n\n\n\n\nInt32\n\n\nb\n\n\nBlue component.\n\n\n\n\n\n\n\n\nColor(System.Int32)\n\u00b6\n\n\nCreates a new color with the specified value.\n\n\nDeclaration\n\n\npublic\n \nColor\n(\nint\n \nvalue\n);\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nvalue\n\n\nThe raw integer value.\n\n\n\n\n\n\n\n\nProperties\n\u00b6\n\n\n\n\nValue\n\u00b6\n\n\nGets or sets the color's raw integer value.\n\n\nDeclaration\n\n\npublic\n \nint\n \nValue\n \n{\nget\n;\n \nset\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe color's integer value.\n\n\n\n\n\n\n\n\nR\n\u00b6\n\n\nGets the red component of the color.\n\n\nDeclaration\n\n\npublic\n \nbyte\n \nR\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nByte\n\n\nThe red component of the color.\n\n\n\n\n\n\n\n\nG\n\u00b6\n\n\nGets the greeb component of the color.\n\n\nDeclaration\n\n\npublic\n \nbyte\n \nG\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nByte\n\n\nThe greeb component of the color.\n\n\n\n\n\n\n\n\nB\n\u00b6\n\n\nGets the blue component of the color.\n\n\nDeclaration\n\n\npublic\n \nbyte\n \nB\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nByte\n\n\nThe blue component of the color.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nRed()\n\u00b6\n\n\nCreates a instance of the class with the color red.\n\n\nDeclaration\n\n\npublic\n \nstatic\n \nColor\n \nRed\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nColor\n\n\nColor with the value of \n0xf40404\n\n\n\n\n\n\n\n\nTeal()\n\u00b6\n\n\nCreates a instance of the class with the color teal.\n\n\nDeclaration\n\n\npublic\n \nstatic\n \nColor\n \nTeal\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nColor\n\n\nColor with the value of \n0x1abc9c",
             "title": "Color"
         },
         {
-            "location": "/ExampleProject/Models/Color/#class-color",
+            "location": "/Galarzaa/Api/Models/Color/#class-color",
             "text": "Represents a  Role  color.",
             "title": "Class Color"
         },
         {
-            "location": "/ExampleProject/Models/Color/#constructors",
+            "location": "/Galarzaa/Api/Models/Color/#constructors",
             "text": "",
             "title": "Constructors"
         },
         {
-            "location": "/ExampleProject/Models/Color/#colorsystemint32systemint32systemint32",
+            "location": "/Galarzaa/Api/Models/Color/#colorsystemint32systemint32systemint32",
             "text": "Creates a color from its red, green and blue components respectively.  Declaration  public   Color ( int   r ,   int   g ,   int   b );   Parameters     Type  Name  Description      Int32  r  Red component.    Int32  g  Green component.    Int32  b  Blue component.",
             "title": "Color(System.Int32,System.Int32,System.Int32)"
         },
         {
-            "location": "/ExampleProject/Models/Color/#colorsystemint32",
+            "location": "/Galarzaa/Api/Models/Color/#colorsystemint32",
             "text": "Creates a new color with the specified value.  Declaration  public   Color ( int   value );   Parameters     Type  Name  Description      Int32  value  The raw integer value.",
             "title": "Color(System.Int32)"
         },
         {
-            "location": "/ExampleProject/Models/Color/#properties",
+            "location": "/Galarzaa/Api/Models/Color/#properties",
             "text": "",
             "title": "Properties"
         },
         {
-            "location": "/ExampleProject/Models/Color/#value",
+            "location": "/Galarzaa/Api/Models/Color/#value",
             "text": "Gets or sets the color's raw integer value.  Declaration  public   int   Value   { get ;   set ;   }   Property Value     Type  Description      Int32  The color's integer value.",
             "title": "Value"
         },
         {
-            "location": "/ExampleProject/Models/Color/#r",
+            "location": "/Galarzaa/Api/Models/Color/#r",
             "text": "Gets the red component of the color.  Declaration  public   byte   R   { get ;   }   Property Value     Type  Description      Byte  The red component of the color.",
             "title": "R"
         },
         {
-            "location": "/ExampleProject/Models/Color/#g",
+            "location": "/Galarzaa/Api/Models/Color/#g",
             "text": "Gets the greeb component of the color.  Declaration  public   byte   G   { get ;   }   Property Value     Type  Description      Byte  The greeb component of the color.",
             "title": "G"
         },
         {
-            "location": "/ExampleProject/Models/Color/#b",
+            "location": "/Galarzaa/Api/Models/Color/#b",
             "text": "Gets the blue component of the color.  Declaration  public   byte   B   { get ;   }   Property Value     Type  Description      Byte  The blue component of the color.",
             "title": "B"
         },
         {
-            "location": "/ExampleProject/Models/Color/#methods",
+            "location": "/Galarzaa/Api/Models/Color/#methods",
             "text": "",
             "title": "Methods"
         },
         {
-            "location": "/ExampleProject/Models/Color/#red",
+            "location": "/Galarzaa/Api/Models/Color/#red",
             "text": "Creates a instance of the class with the color red.  Declaration  public   static   Color   Red ()   Returns     Type  Description      Color  Color with the value of  0xf40404",
             "title": "Red()"
         },
         {
-            "location": "/ExampleProject/Models/Color/#teal",
+            "location": "/Galarzaa/Api/Models/Color/#teal",
             "text": "Creates a instance of the class with the color teal.  Declaration  public   static   Color   Teal ()   Returns     Type  Description      Color  Color with the value of  0x1abc9c",
             "title": "Teal()"
         },
         {
-            "location": "/ExampleProject/Models/Role/",
-            "text": "Inherits\n\n\nObject\n\n\nClass Role\n\u00b6\n\n\nRepresents a Role in a \n.\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the unique id of the role\n\n\nDeclaration\n\n\npublic\n \nint\n \nId\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe unique id of the role.\n\n\n\n\n\n\n\n\nName\n\u00b6\n\n\nGets the name of the role.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nName\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe name of the role.\n\n\n\n\n\n\n\n\nGuild\n\u00b6\n\n\nGets the \nGuild\n the role belongs to.\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGuild\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nThe guild the role belongs to.\n\n\n\n\n\n\n\n\nColor\n\u00b6\n\n\nGets the color of the role.\n\n\nDeclaration\n\n\npublic\n \nColor\n \nColor\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nColor\n\n\nThe role's color.\n\n\n\n\n\n\n\n\nHoist\n\u00b6\n\n\nChecks if the role will be displayed separately from other members.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nHoist\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it will be displayed separately, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nPosition\n\u00b6\n\n\nGets the position of the role.\n\n\nDeclaration\n\n\npublic\n \nint\n \nPosition\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nBottom role has a position of 0.\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe position of the role.\n\n\n\n\n\n\n\n\nMentionable\n\u00b6\n\n\nChecks if the role can be mentioned by users.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nMentionable\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it's mentionable, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nIsDefault\n\u00b6\n\n\nChecks if the role is the guild's default role.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nIsDefault\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it is the default role, \nfalse\n otherwise.",
+            "location": "/Galarzaa/Api/Models/Role/",
+            "text": "Inherits\n\n\nObject\n\n\nClass Role\n\u00b6\n\n\nRepresents a Role in a \nGalarzaa.Api.Models.Role.Guild\n.\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the unique id of the role\n\n\nDeclaration\n\n\npublic\n \nint\n \nId\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe unique id of the role.\n\n\n\n\n\n\n\n\nName\n\u00b6\n\n\nGets the name of the role.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nName\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe name of the role.\n\n\n\n\n\n\n\n\nGuild\n\u00b6\n\n\nGets the \nGuild\n the role belongs to.\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGuild\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nThe guild the role belongs to.\n\n\n\n\n\n\n\n\nColor\n\u00b6\n\n\nGets the color of the role.\n\n\nDeclaration\n\n\npublic\n \nColor\n \nColor\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nColor\n\n\nThe role's color.\n\n\n\n\n\n\n\n\nHoist\n\u00b6\n\n\nChecks if the role will be displayed separately from other members.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nHoist\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it will be displayed separately, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nPosition\n\u00b6\n\n\nGets the position of the role.\n\n\nDeclaration\n\n\npublic\n \nint\n \nPosition\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nBottom role has a position of 0.\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe position of the role.\n\n\n\n\n\n\n\n\nMentionable\n\u00b6\n\n\nChecks if the role can be mentioned by users.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nMentionable\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it's mentionable, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nIsDefault\n\u00b6\n\n\nChecks if the role is the guild's default role.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nIsDefault\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it is the default role, \nfalse\n otherwise.",
             "title": "Role"
         },
         {
-            "location": "/ExampleProject/Models/Role/#class-role",
-            "text": "Represents a Role in a  .",
+            "location": "/Galarzaa/Api/Models/Role/#class-role",
+            "text": "Represents a Role in a  Galarzaa.Api.Models.Role.Guild .",
             "title": "Class Role"
         },
         {
-            "location": "/ExampleProject/Models/Role/#properties",
+            "location": "/Galarzaa/Api/Models/Role/#properties",
             "text": "",
             "title": "Properties"
         },
         {
-            "location": "/ExampleProject/Models/Role/#id",
+            "location": "/Galarzaa/Api/Models/Role/#id",
             "text": "Gets the unique id of the role  Declaration  public   int   Id   { get ;   }   Property Value     Type  Description      Int32  The unique id of the role.",
             "title": "Id"
         },
         {
-            "location": "/ExampleProject/Models/Role/#name",
+            "location": "/Galarzaa/Api/Models/Role/#name",
             "text": "Gets the name of the role.  Declaration  public   string   Name   { get ;   }   Property Value     Type  Description      String  The name of the role.",
             "title": "Name"
         },
         {
-            "location": "/ExampleProject/Models/Role/#guild",
+            "location": "/Galarzaa/Api/Models/Role/#guild",
             "text": "Gets the  Guild  the role belongs to.  Declaration  public   Guild   Guild   { get ;   }   Property Value     Type  Description      Guild  The guild the role belongs to.",
             "title": "Guild"
         },
         {
-            "location": "/ExampleProject/Models/Role/#color",
+            "location": "/Galarzaa/Api/Models/Role/#color",
             "text": "Gets the color of the role.  Declaration  public   Color   Color   { get ;   }   Property Value     Type  Description      Color  The role's color.",
             "title": "Color"
         },
         {
-            "location": "/ExampleProject/Models/Role/#hoist",
+            "location": "/Galarzaa/Api/Models/Role/#hoist",
             "text": "Checks if the role will be displayed separately from other members.  Declaration  public   bool   Hoist   { get ;   }   Property Value     Type  Description      Boolean  true  if it will be displayed separately,  false  otherwise.",
             "title": "Hoist"
         },
         {
-            "location": "/ExampleProject/Models/Role/#position",
+            "location": "/Galarzaa/Api/Models/Role/#position",
             "text": "Gets the position of the role.  Declaration  public   int   Position   { get ;   }   Remarks \nBottom role has a position of 0.  Property Value     Type  Description      Int32  The position of the role.",
             "title": "Position"
         },
         {
-            "location": "/ExampleProject/Models/Role/#mentionable",
+            "location": "/Galarzaa/Api/Models/Role/#mentionable",
             "text": "Checks if the role can be mentioned by users.  Declaration  public   bool   Mentionable   { get ;   }   Property Value     Type  Description      Boolean  true  if it's mentionable,  false  otherwise.",
             "title": "Mentionable"
         },
         {
-            "location": "/ExampleProject/Models/Role/#isdefault",
+            "location": "/Galarzaa/Api/Models/Role/#isdefault",
             "text": "Checks if the role is the guild's default role.  Declaration  public   bool   IsDefault   { get ;   }   Property Value     Type  Description      Boolean  true  if it is the default role,  false  otherwise.",
             "title": "IsDefault"
         },
         {
-            "location": "/ExampleProject/Models/Status/",
+            "location": "/Galarzaa/Api/Models/Status/",
             "text": "Inherits\n\n\nEnum\n\n\nEnum Status\n\u00b6\n\n\nRepresents the possible user status\n\n\n\n\n\n\n\n\nField\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nONLINE\n\n\nUser is online.\n\n\n\n\n\n\nOFFLINE\n\n\nUser is offline.\n\n\n\n\n\n\nIDLE\n\n\nUser is idle or set the idle status.\n\n\n\n\n\n\nDO_NOT_DISTURB\n\n\nUser is in do not disturb mode.\n\n\n\n\n\n\nINVISIBLE\n\n\nUser is invisible.",
             "title": "Status"
         },
         {
-            "location": "/ExampleProject/Models/Status/#enum-status",
+            "location": "/Galarzaa/Api/Models/Status/#enum-status",
             "text": "Represents the possible user status     Field  Description      ONLINE  User is online.    OFFLINE  User is offline.    IDLE  User is idle or set the idle status.    DO_NOT_DISTURB  User is in do not disturb mode.    INVISIBLE  User is invisible.",
             "title": "Enum Status"
         },
         {
-            "location": "/ExampleProject/Models/Channel/",
+            "location": "/Galarzaa/Api/Models/Channel/",
             "text": "Inherits\n\n\nObject\n\n\nClass Channel\n\u00b6\n\n\nRepresents a channel\n\n\nConstructors\n\u00b6\n\n\n\n\nChannel()\n\u00b6\n\n\nInitializes a new instance of the \nChannel\n class.\n\n\nDeclaration\n\n\npublic\n \nChannel\n();\n\n\n\n\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the channel's id\n\n\nDeclaration\n\n\npublic\n \nint\n \nId\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe channel's id.\n\n\n\n\n\n\n\n\nType\n\u00b6\n\n\nGets the channel's type\n\n\nDeclaration\n\n\npublic\n \nChannelTypes\n \nType\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nChannelTypes\n\n\nThe type of channel.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nGetMessage(System.Int32)\n\u00b6\n\n\nGets the message with the specified id.\n\n\nDeclaration\n\n\npublic\n \nMessage\n \nGetMessage\n(\nint\n \nmessageId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nmessageId\n\n\nMessage id.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nMessage\n\n\nThe message.",
             "title": "Channel"
         },
         {
-            "location": "/ExampleProject/Models/Channel/#class-channel",
+            "location": "/Galarzaa/Api/Models/Channel/#class-channel",
             "text": "Represents a channel",
             "title": "Class Channel"
         },
         {
-            "location": "/ExampleProject/Models/Channel/#constructors",
+            "location": "/Galarzaa/Api/Models/Channel/#constructors",
             "text": "",
             "title": "Constructors"
         },
         {
-            "location": "/ExampleProject/Models/Channel/#channel",
+            "location": "/Galarzaa/Api/Models/Channel/#channel",
             "text": "Initializes a new instance of the  Channel  class.  Declaration  public   Channel ();",
             "title": "Channel()"
         },
         {
-            "location": "/ExampleProject/Models/Channel/#properties",
+            "location": "/Galarzaa/Api/Models/Channel/#properties",
             "text": "",
             "title": "Properties"
         },
         {
-            "location": "/ExampleProject/Models/Channel/#id",
+            "location": "/Galarzaa/Api/Models/Channel/#id",
             "text": "Gets the channel's id  Declaration  public   int   Id   { get ;   }   Property Value     Type  Description      Int32  The channel's id.",
             "title": "Id"
         },
         {
-            "location": "/ExampleProject/Models/Channel/#type",
+            "location": "/Galarzaa/Api/Models/Channel/#type",
             "text": "Gets the channel's type  Declaration  public   ChannelTypes   Type   { get ;   }   Property Value     Type  Description      ChannelTypes  The type of channel.",
             "title": "Type"
         },
         {
-            "location": "/ExampleProject/Models/Channel/#methods",
+            "location": "/Galarzaa/Api/Models/Channel/#methods",
             "text": "",
             "title": "Methods"
         },
         {
-            "location": "/ExampleProject/Models/Channel/#getmessagesystemint32",
+            "location": "/Galarzaa/Api/Models/Channel/#getmessagesystemint32",
             "text": "Gets the message with the specified id.  Declaration  public   Message   GetMessage ( int   messageId )   Parameters     Type  Name  Description      Int32  messageId  Message id.     Returns     Type  Description      Message  The message.",
             "title": "GetMessage(System.Int32)"
         },
         {
-            "location": "/ExampleProject/Models/Message/",
+            "location": "/Galarzaa/Api/Models/Message/",
             "text": "Inherits\n\n\nObject\n\n\nClass Message\n\u00b6\n\n\nRepresents a message.\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the unique id of the message\n\n\nDeclaration\n\n\npublic\n \nint\n \nId\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe unique id.\n\n\n\n\n\n\n\n\nAuthor\n\u00b6\n\n\nGets the author of the message.\n\n\nDeclaration\n\n\npublic\n \nUser\n \nAuthor\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nUser\n\n\nThe user that sent the message.\n\n\n\n\n\n\n\n\nChannel\n\u00b6\n\n\nGets the message's channel.\n\n\nDeclaration\n\n\npublic\n \nChannel\n \nChannel\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nChannel\n\n\nChannel\n where the message is.\n\n\n\n\n\n\n\n\nGuild\n\u00b6\n\n\nGets the guild that the message belongs to, if applicable\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGuild\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nGuild\n where the message is or \nnull\n.\n\n\n\n\n\n\n\n\nContent\n\u00b6\n\n\nGets the content of the message.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nContent\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\n\n\n\n\n\n\n\n\nCreatedAt\n\u00b6\n\n\nGets the date the message was sent.\n\n\nDeclaration\n\n\npublic\n \nDateTime\n \nCreatedAt\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nDateTime\n\n\nThe date and time the message was sent in UTC.\n\n\n\n\n\n\n\n\nEditedAt\n\u00b6\n\n\nGets the time when the message was edited\n\n\nDeclaration\n\n\npublic\n \nDateTime\n \nEditedAt\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nDateTime\n\n\nThe time when it was edited or \nnull\n if not edited.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nPin()\n\u00b6\n\n\nPins a message.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nPin\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it was pinned successfully, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nUnpin()\n\u00b6\n\n\nUnpins a message.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nUnpin\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if it was unpinned successfully, \nfalse\n otherwise.",
             "title": "Message"
         },
         {
-            "location": "/ExampleProject/Models/Message/#class-message",
+            "location": "/Galarzaa/Api/Models/Message/#class-message",
             "text": "Represents a message.",
             "title": "Class Message"
         },
         {
-            "location": "/ExampleProject/Models/Message/#properties",
+            "location": "/Galarzaa/Api/Models/Message/#properties",
             "text": "",
             "title": "Properties"
         },
         {
-            "location": "/ExampleProject/Models/Message/#id",
+            "location": "/Galarzaa/Api/Models/Message/#id",
             "text": "Gets the unique id of the message  Declaration  public   int   Id   { get ;   }   Property Value     Type  Description      Int32  The unique id.",
             "title": "Id"
         },
         {
-            "location": "/ExampleProject/Models/Message/#author",
+            "location": "/Galarzaa/Api/Models/Message/#author",
             "text": "Gets the author of the message.  Declaration  public   User   Author   { get ;   }   Property Value     Type  Description      User  The user that sent the message.",
             "title": "Author"
         },
         {
-            "location": "/ExampleProject/Models/Message/#channel",
+            "location": "/Galarzaa/Api/Models/Message/#channel",
             "text": "Gets the message's channel.  Declaration  public   Channel   Channel   { get ;   }   Property Value     Type  Description      Channel  Channel  where the message is.",
             "title": "Channel"
         },
         {
-            "location": "/ExampleProject/Models/Message/#guild",
+            "location": "/Galarzaa/Api/Models/Message/#guild",
             "text": "Gets the guild that the message belongs to, if applicable  Declaration  public   Guild   Guild   { get ;   }   Property Value     Type  Description      Guild  Guild  where the message is or  null .",
             "title": "Guild"
         },
         {
-            "location": "/ExampleProject/Models/Message/#content",
+            "location": "/Galarzaa/Api/Models/Message/#content",
             "text": "Gets the content of the message.  Declaration  public   string   Content   { get ;   }   Property Value     Type  Description      String",
             "title": "Content"
         },
         {
-            "location": "/ExampleProject/Models/Message/#createdat",
+            "location": "/Galarzaa/Api/Models/Message/#createdat",
             "text": "Gets the date the message was sent.  Declaration  public   DateTime   CreatedAt   { get ;   }   Property Value     Type  Description      DateTime  The date and time the message was sent in UTC.",
             "title": "CreatedAt"
         },
         {
-            "location": "/ExampleProject/Models/Message/#editedat",
+            "location": "/Galarzaa/Api/Models/Message/#editedat",
             "text": "Gets the time when the message was edited  Declaration  public   DateTime   EditedAt   { get ;   }   Property Value     Type  Description      DateTime  The time when it was edited or  null  if not edited.",
             "title": "EditedAt"
         },
         {
-            "location": "/ExampleProject/Models/Message/#methods",
+            "location": "/Galarzaa/Api/Models/Message/#methods",
             "text": "",
             "title": "Methods"
         },
         {
-            "location": "/ExampleProject/Models/Message/#pin",
+            "location": "/Galarzaa/Api/Models/Message/#pin",
             "text": "Pins a message.  Declaration  public   bool   Pin ()   Returns     Type  Description      Boolean  true  if it was pinned successfully,  false  otherwise.",
             "title": "Pin()"
         },
         {
-            "location": "/ExampleProject/Models/Message/#unpin",
+            "location": "/Galarzaa/Api/Models/Message/#unpin",
             "text": "Unpins a message.  Declaration  public   bool   Unpin ()   Returns     Type  Description      Boolean  true  if it was unpinned successfully,  false  otherwise.",
             "title": "Unpin()"
         },
         {
-            "location": "/ExampleProject/Models/Guild/",
+            "location": "/Galarzaa/Api/Models/Guild/",
             "text": "Inherits\n\n\nObject\n\n\nClass Guild\n\u00b6\n\n\nRepresents a guild.\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the id.\n\n\nDeclaration\n\n\npublic\n \nint\n \nId\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe guild's id.\n\n\n\n\n\n\n\n\nName\n\u00b6\n\n\nGets or sets the name.\n\n\nDeclaration\n\n\npublic\n \nint\n \nName\n \n{\nget\n;\n \nset\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe name of the guild.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nGetChannel(System.Int32)\n\u00b6\n\n\nGets a channel in the guild with the given ID\n\n\nDeclaration\n\n\npublic\n \nChannel\n \nGetChannel\n(\nint\n \nchannelId\n)\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nType\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nchannelId\n\n\nId of the channel to look for.\n\n\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nChannel\n\n\nThe channel found",
             "title": "Guild"
         },
         {
-            "location": "/ExampleProject/Models/Guild/#class-guild",
+            "location": "/Galarzaa/Api/Models/Guild/#class-guild",
             "text": "Represents a guild.",
             "title": "Class Guild"
         },
         {
-            "location": "/ExampleProject/Models/Guild/#properties",
+            "location": "/Galarzaa/Api/Models/Guild/#properties",
             "text": "",
             "title": "Properties"
         },
         {
-            "location": "/ExampleProject/Models/Guild/#id",
+            "location": "/Galarzaa/Api/Models/Guild/#id",
             "text": "Gets the id.  Declaration  public   int   Id   { get ;   }   Property Value     Type  Description      Int32  The guild's id.",
             "title": "Id"
         },
         {
-            "location": "/ExampleProject/Models/Guild/#name",
+            "location": "/Galarzaa/Api/Models/Guild/#name",
             "text": "Gets or sets the name.  Declaration  public   int   Name   { get ;   set ;   }   Property Value     Type  Description      Int32  The name of the guild.",
             "title": "Name"
         },
         {
-            "location": "/ExampleProject/Models/Guild/#methods",
+            "location": "/Galarzaa/Api/Models/Guild/#methods",
             "text": "",
             "title": "Methods"
         },
         {
-            "location": "/ExampleProject/Models/Guild/#getchannelsystemint32",
+            "location": "/Galarzaa/Api/Models/Guild/#getchannelsystemint32",
             "text": "Gets a channel in the guild with the given ID  Declaration  public   Channel   GetChannel ( int   channelId )   Parameters     Type  Name  Description      Int32  channelId  Id of the channel to look for.     Returns     Type  Description      Channel  The channel found",
             "title": "GetChannel(System.Int32)"
         },
         {
-            "location": "/ExampleProject/Models/User/",
-            "text": "Inherits\n\n\nObject\n\n\nClass User\n\u00b6\n\n\nRepresents a User\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the id.\n\n\nDeclaration\n\n\npublic\n \nint\n \nId\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe user's id.\n\n\n\n\n\n\n\n\nName\n\u00b6\n\n\nGets or sets the name.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nName\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe name of the user.\n\n\n\n\n\n\n\n\nDiscriminator\n\u00b6\n\n\nGets the user's discriminator.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nDiscriminator\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nA four character numeric discriminator.\n\n\n\n\n\n\n\n\nDisplayName\n\u00b6\n\n\nGets the user's display name\n\n\nDeclaration\n\n\npublic\n \nstring\n \nDisplayName\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nThis property always returns the \n of the user. This property's behaviour changes in \nGuildUser\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe user's display name.\n\n\n\n\n\n\n\n\nIsBot\n\u00b6\n\n\nChecks if the user is a bot user.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nIsBot\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if the user is a bot, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nCreationDate\n\u00b6\n\n\nGets the user's creation date.\n\n\nDeclaration\n\n\npublic\n \nDateTime\n \nCreationDate\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nDateTime\n\n\nThe creation date in UTC.\n\n\n\n\n\n\n\n\nMention\n\u00b6\n\n\nGets a string that allows you to mention the user\n\n\nDeclaration\n\n\npublic\n \nstring\n \nMention\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nString that mentions the user in messages.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nGetGuilds()\n\u00b6\n\n\nGets all guilds the user is in.\n\n\nDeclaration\n\n\npublic\n \nGuild\n[]\n \nGetGuilds\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n[]\n\n\nThe guild the user belongs to",
+            "location": "/Galarzaa/Api/Models/User/",
+            "text": "Inherits\n\n\nObject\n\n\nClass User\n\u00b6\n\n\nRepresents a User\n\n\nProperties\n\u00b6\n\n\n\n\nId\n\u00b6\n\n\nGets the id.\n\n\nDeclaration\n\n\npublic\n \nint\n \nId\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nInt32\n\n\nThe user's id.\n\n\n\n\n\n\n\n\nName\n\u00b6\n\n\nGets or sets the name.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nName\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe name of the user.\n\n\n\n\n\n\n\n\nDiscriminator\n\u00b6\n\n\nGets the user's discriminator.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nDiscriminator\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nA four character numeric discriminator.\n\n\n\n\n\n\n\n\nDisplayName\n\u00b6\n\n\nGets the user's display name\n\n\nDeclaration\n\n\npublic\n \nstring\n \nDisplayName\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nThis property always returns the \nGalarzaa.Api.Models.User.Name\n of the user. This property's behaviour changes in \nGuildUser\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe user's display name.\n\n\n\n\n\n\n\n\nIsBot\n\u00b6\n\n\nChecks if the user is a bot user.\n\n\nDeclaration\n\n\npublic\n \nbool\n \nIsBot\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nBoolean\n\n\ntrue\n if the user is a bot, \nfalse\n otherwise.\n\n\n\n\n\n\n\n\nCreationDate\n\u00b6\n\n\nGets the user's creation date.\n\n\nDeclaration\n\n\npublic\n \nDateTime\n \nCreationDate\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nDateTime\n\n\nThe creation date in UTC.\n\n\n\n\n\n\n\n\nMention\n\u00b6\n\n\nGets a string that allows you to mention the user\n\n\nDeclaration\n\n\npublic\n \nstring\n \nMention\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nString that mentions the user in messages.\n\n\n\n\n\n\n\n\nMethods\n\u00b6\n\n\n\n\nGetGuilds()\n\u00b6\n\n\nGets all guilds the user is in.\n\n\nDeclaration\n\n\npublic\n \nGuild\n[]\n \nGetGuilds\n()\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n[]\n\n\nThe guild the user belongs to",
             "title": "User"
         },
         {
-            "location": "/ExampleProject/Models/User/#class-user",
+            "location": "/Galarzaa/Api/Models/User/#class-user",
             "text": "Represents a User",
             "title": "Class User"
         },
         {
-            "location": "/ExampleProject/Models/User/#properties",
+            "location": "/Galarzaa/Api/Models/User/#properties",
             "text": "",
             "title": "Properties"
         },
         {
-            "location": "/ExampleProject/Models/User/#id",
+            "location": "/Galarzaa/Api/Models/User/#id",
             "text": "Gets the id.  Declaration  public   int   Id   { get ;   }   Property Value     Type  Description      Int32  The user's id.",
             "title": "Id"
         },
         {
-            "location": "/ExampleProject/Models/User/#name",
+            "location": "/Galarzaa/Api/Models/User/#name",
             "text": "Gets or sets the name.  Declaration  public   string   Name   { get ;   }   Property Value     Type  Description      String  The name of the user.",
             "title": "Name"
         },
         {
-            "location": "/ExampleProject/Models/User/#discriminator",
+            "location": "/Galarzaa/Api/Models/User/#discriminator",
             "text": "Gets the user's discriminator.  Declaration  public   string   Discriminator   { get ;   }   Property Value     Type  Description      String  A four character numeric discriminator.",
             "title": "Discriminator"
         },
         {
-            "location": "/ExampleProject/Models/User/#displayname",
-            "text": "Gets the user's display name  Declaration  public   string   DisplayName   { get ;   }   Remarks \nThis property always returns the   of the user. This property's behaviour changes in  GuildUser  Property Value     Type  Description      String  The user's display name.",
+            "location": "/Galarzaa/Api/Models/User/#displayname",
+            "text": "Gets the user's display name  Declaration  public   string   DisplayName   { get ;   }   Remarks \nThis property always returns the  Galarzaa.Api.Models.User.Name  of the user. This property's behaviour changes in  GuildUser  Property Value     Type  Description      String  The user's display name.",
             "title": "DisplayName"
         },
         {
-            "location": "/ExampleProject/Models/User/#isbot",
+            "location": "/Galarzaa/Api/Models/User/#isbot",
             "text": "Checks if the user is a bot user.  Declaration  public   bool   IsBot   { get ;   }   Property Value     Type  Description      Boolean  true  if the user is a bot,  false  otherwise.",
             "title": "IsBot"
         },
         {
-            "location": "/ExampleProject/Models/User/#creationdate",
+            "location": "/Galarzaa/Api/Models/User/#creationdate",
             "text": "Gets the user's creation date.  Declaration  public   DateTime   CreationDate   { get ;   }   Property Value     Type  Description      DateTime  The creation date in UTC.",
             "title": "CreationDate"
         },
         {
-            "location": "/ExampleProject/Models/User/#mention",
+            "location": "/Galarzaa/Api/Models/User/#mention",
             "text": "Gets a string that allows you to mention the user  Declaration  public   string   Mention   { get ;   }   Property Value     Type  Description      String  String that mentions the user in messages.",
             "title": "Mention"
         },
         {
-            "location": "/ExampleProject/Models/User/#methods",
+            "location": "/Galarzaa/Api/Models/User/#methods",
             "text": "",
             "title": "Methods"
         },
         {
-            "location": "/ExampleProject/Models/User/#getguilds",
+            "location": "/Galarzaa/Api/Models/User/#getguilds",
             "text": "Gets all guilds the user is in.  Declaration  public   Guild []   GetGuilds ()   Returns     Type  Description      Guild []  The guild the user belongs to",
             "title": "GetGuilds()"
         },
         {
-            "location": "/ExampleProject/Models/ChannelTypes/",
+            "location": "/Galarzaa/Api/Models/ChannelTypes/",
             "text": "Inherits\n\n\nEnum\n\n\nEnum ChannelTypes\n\u00b6\n\n\nRepresents the different channel types available.\n\n\n\n\n\n\n\n\nField\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGUILD_TEXT\n\n\nText channel in a guild.\n\n\n\n\n\n\nDM\n\n\nPrivate channel between two users.\n\n\n\n\n\n\nGUILD_VOICE\n\n\nVoice channel in a guild.\n\n\n\n\n\n\nGROUP_DM\n\n\nPrivate group channel.\n\n\n\n\n\n\nGUILD_CATEGORY\n\n\nChannel category in a guild.",
             "title": "ChannelTypes"
         },
         {
-            "location": "/ExampleProject/Models/ChannelTypes/#enum-channeltypes",
+            "location": "/Galarzaa/Api/Models/ChannelTypes/#enum-channeltypes",
             "text": "Represents the different channel types available.     Field  Description      GUILD_TEXT  Text channel in a guild.    DM  Private channel between two users.    GUILD_VOICE  Voice channel in a guild.    GROUP_DM  Private group channel.    GUILD_CATEGORY  Channel category in a guild.",
             "title": "Enum ChannelTypes"
         }

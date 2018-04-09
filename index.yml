@@ -1,14 +1,14 @@
-- ExampleProject:
-  - ApiClient: ExampleProject/ApiClient.md
-- ExampleProject.Models:
-  - GuildUser: ExampleProject/Models/GuildUser.md
-  - OnMessageHandler: ExampleProject/Models/OnMessageHandler.md
-  - ClientUser: ExampleProject/Models/ClientUser.md
-  - Color: ExampleProject/Models/Color.md
-  - Role: ExampleProject/Models/Role.md
-  - Status: ExampleProject/Models/Status.md
-  - Channel: ExampleProject/Models/Channel.md
-  - Message: ExampleProject/Models/Message.md
-  - Guild: ExampleProject/Models/Guild.md
-  - User: ExampleProject/Models/User.md
-  - ChannelTypes: ExampleProject/Models/ChannelTypes.md
+- Galarzaa.Api:
+  - Client: Galarzaa/Api/Client.md
+- Galarzaa.Api.Models:
+  - GuildUser: Galarzaa/Api/Models/GuildUser.md
+  - OnMessageHandler: Galarzaa/Api/Models/OnMessageHandler.md
+  - ClientUser: Galarzaa/Api/Models/ClientUser.md
+  - Color: Galarzaa/Api/Models/Color.md
+  - Role: Galarzaa/Api/Models/Role.md
+  - Status: Galarzaa/Api/Models/Status.md
+  - Channel: Galarzaa/Api/Models/Channel.md
+  - Message: Galarzaa/Api/Models/Message.md
+  - Guild: Galarzaa/Api/Models/Guild.md
+  - User: Galarzaa/Api/Models/User.md
+  - ChannelTypes: Galarzaa/Api/Models/ChannelTypes.md

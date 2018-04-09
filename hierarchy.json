@@ -1,6 +1,6 @@
 {
-    "ExampleProject": {
-        "ApiClient": {
+    "Galarzaa.Api": {
+        "Client": {
             "children": {
                 "token": {
                     "documentation": {
@@ -12,19 +12,19 @@
                 "Users": {
                     "documentation": {
                         "summary": "Gets a list of all the visible users.",
-                        "value": "Array containing all users the <see cref=\"T:ExampleProject.Models.ClientUser\" /> can see."
+                        "value": "Array containing all users the <see cref=\"T:Galarzaa.Api.Models.ClientUser\" /> can see."
                     },
                     "type": "P"
                 },
                 "OnMessageReceived": {
                     "documentation": {
-                        "summary": "Event received every time a <see cref=\"T:ExampleProject.Models.Message\" /> is received on any <see cref=\"T:ExampleProject.Models.Channel\" /> the client sees."
+                        "summary": "Event received every time a <see cref=\"T:Galarzaa.Api.Models.Message\" /> is received on any <see cref=\"T:Galarzaa.Api.Models.Channel\" /> the client sees."
                     },
                     "type": "E"
                 },
                 ".ctor": {
                     "documentation": {
-                        "summary": "Initializes a new instance of the <see cref=\"T:ExampleProject.ApiClient\" /> class."
+                        "summary": "Initializes a new instance of the <see cref=\"T:Galarzaa.Api.Client\" /> class."
                     },
                     "type": "C"
                 },
@@ -40,7 +40,7 @@
                 },
                 "GetGuild(System.Int32)": {
                     "documentation": {
-                        "summary": "Gets a <see cref=\"T:ExampleProject.Models.Guild\" /> with the specified id.",
+                        "summary": "Gets a <see cref=\"T:Galarzaa.Api.Models.Guild\" /> with the specified id.",
                         "param": {
                             "guildId": "The unique id of the guild."
                         },
@@ -50,7 +50,7 @@
                 },
                 "GetUser(System.Int32)": {
                     "documentation": {
-                        "summary": "Gets a <see cref=\"T:ExampleProject.Models.User\" /> with the specified id.",
+                        "summary": "Gets a <see cref=\"T:Galarzaa.Api.Models.User\" /> with the specified id.",
                         "param": {
                             "userId": "The unique id of the user."
                         },
@@ -65,13 +65,13 @@
             "type": "T"
         }
     },
-    "ExampleProject.Models": {
+    "Galarzaa.Api.Models": {
         "GuildUser": {
             "children": {
                 "Roles": {
                     "documentation": {
                         "summary": "Gets the roles the user has in this guild.",
-                        "value": "An array of <see cref=\"T:ExampleProject.Models.Role\" />s"
+                        "value": "An array of <see cref=\"T:Galarzaa.Api.Models.Role\" />s"
                     },
                     "type": "P"
                 },
@@ -99,21 +99,21 @@
                 "DisplayName": {
                     "documentation": {
                         "summary": "Gets the user's display name",
-                        "remarks": "The display name consist of the user's <see cref=\"P:ExampleProject.Models.GuildUser.Nick\" /> (if set) or the user's <see cref=\"P:ExampleProject.Models.User.Name\" />.",
+                        "remarks": "The display name consist of the user's <see cref=\"P:Galarzaa.Api.Models.GuildUser.Nick\" /> (if set) or the user's <see cref=\"P:Galarzaa.Api.Models.User.Name\" />.",
                         "value": "The user's display name."
                     },
                     "type": "P"
                 }
             },
             "documentation": {
-                "summary": "Represents a <see cref=\"T:ExampleProject.Models.User\" /> in a <see cref=\"T:ExampleProject.Models.Guild\" />"
+                "summary": "Represents a <see cref=\"T:Galarzaa.Api.Models.User\" /> in a <see cref=\"T:Galarzaa.Api.Models.Guild\" />"
             },
             "type": "T"
         },
         "OnMessageHandler": {
             "children": {},
             "documentation": {
-                "summary": "Delegate for the <see cref=\"E:ExampleProject.ApiClient.OnMessageReceived\" /> event.",
+                "summary": "Delegate for the <see cref=\"E:Galarzaa.Api.Client.OnMessageReceived\" /> event.",
                 "param": {
                     "message": "The message received"
                 }
@@ -210,7 +210,7 @@
                 }
             },
             "documentation": {
-                "summary": "Represents a <see cref=\"T:ExampleProject.Models.Role\" /> color."
+                "summary": "Represents a <see cref=\"T:Galarzaa.Api.Models.Role\" /> color."
             },
             "type": "T"
         },
@@ -232,7 +232,7 @@
                 },
                 "Guild": {
                     "documentation": {
-                        "summary": "Gets the <see cref=\"T:ExampleProject.Models.Guild\" /> the role belongs to.",
+                        "summary": "Gets the <see cref=\"T:Galarzaa.Api.Models.Guild\" /> the role belongs to.",
                         "value": "The guild the role belongs to."
                     },
                     "type": "P"
@@ -275,7 +275,7 @@
                 }
             },
             "documentation": {
-                "summary": "Represents a Role in a <see cref=\"P:ExampleProject.Models.Role.Guild\" />."
+                "summary": "Represents a Role in a <see cref=\"P:Galarzaa.Api.Models.Role.Guild\" />."
             },
             "type": "T"
         },
@@ -335,7 +335,7 @@
                 },
                 ".ctor": {
                     "documentation": {
-                        "summary": "Initializes a new instance of the <see cref=\"T:ExampleProject.Models.Channel\" /> class."
+                        "summary": "Initializes a new instance of the <see cref=\"T:Galarzaa.Api.Models.Channel\" /> class."
                     },
                     "type": "C"
                 },
@@ -374,14 +374,14 @@
                 "Channel": {
                     "documentation": {
                         "summary": "Gets the message's channel.",
-                        "value": "<see cref=\"T:ExampleProject.Models.Channel\" /> where the message is."
+                        "value": "<see cref=\"T:Galarzaa.Api.Models.Channel\" /> where the message is."
                     },
                     "type": "P"
                 },
                 "Guild": {
                     "documentation": {
                         "summary": "Gets the guild that the message belongs to, if applicable",
-                        "value": "<see cref=\"T:ExampleProject.Models.Guild\" /> where the message is or <c>null</c>."
+                        "value": "<see cref=\"T:Galarzaa.Api.Models.Guild\" /> where the message is or <c>null</c>."
                     },
                     "type": "P"
                 },
@@ -483,7 +483,7 @@
                 "DisplayName": {
                     "documentation": {
                         "summary": "Gets the user's display name",
-                        "remarks": "This property always returns the <see cref=\"P:ExampleProject.Models.User.Name\" /> of the user. This property's behaviour changes in <see cref=\"T:ExampleProject.Models.GuildUser\" />",
+                        "remarks": "This property always returns the <see cref=\"P:Galarzaa.Api.Models.User.Name\" /> of the user. This property's behaviour changes in <see cref=\"T:Galarzaa.Api.Models.GuildUser\" />",
                         "value": "The user's display name."
                     },
                     "type": "P"

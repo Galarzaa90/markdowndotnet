@@ -1,4 +1,6 @@
-﻿namespace Galarzaa.Api.Models
+﻿using Galarzaa.Api.Models;
+
+namespace Galarzaa.Api.Delegates
 {
     /// <summary>
     /// Delegate for the <see cref="Client.OnMessageReceived"/> event.

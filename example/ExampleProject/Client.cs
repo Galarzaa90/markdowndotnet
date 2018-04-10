@@ -1,4 +1,5 @@
-﻿using Galarzaa.Api.Models;
+﻿using Galarzaa.Api.Delegates;
+using Galarzaa.Api.Models;
 
 namespace Galarzaa.Api
 {

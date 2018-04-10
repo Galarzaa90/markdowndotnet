@@ -6,7 +6,16 @@ cache:
   apt: true
 
 python:
+  - "3.4"
+  - "3.5"
   - "3.6"
+  - "3.7-dev"
+
+matrix:
+  allow_failures:
+  - python: "3.7-dev"
+
+
 addons:
   apt:
     sources:
@@ -46,3 +55,4 @@ deploy:
   verbose: true
   on:
     branch: master
+    python: "3.6"

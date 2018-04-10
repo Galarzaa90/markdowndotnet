@@ -65,6 +65,18 @@
             "type": "T"
         }
     },
+    "Galarzaa.Api.Delegates": {
+        "OnMessageHandler": {
+            "children": {},
+            "documentation": {
+                "summary": "Delegate for the <see cref=\"E:Galarzaa.Api.Client.OnMessageReceived\" /> event.",
+                "param": {
+                    "message": "The message received"
+                }
+            },
+            "type": "T"
+        }
+    },
     "Galarzaa.Api.Models": {
         "GuildUser": {
             "children": {
@@ -107,16 +119,6 @@
             },
             "documentation": {
                 "summary": "Represents a <see cref=\"T:Galarzaa.Api.Models.User\" /> in a <see cref=\"T:Galarzaa.Api.Models.Guild\" />"
-            },
-            "type": "T"
-        },
-        "OnMessageHandler": {
-            "children": {},
-            "documentation": {
-                "summary": "Delegate for the <see cref=\"E:Galarzaa.Api.Client.OnMessageReceived\" /> event.",
-                "param": {
-                    "message": "The message received"
-                }
             },
             "type": "T"
         },

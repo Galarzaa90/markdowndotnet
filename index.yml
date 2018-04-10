@@ -1,8 +1,9 @@
 - Galarzaa.Api:
   - Client: Galarzaa/Api/Client.md
+- Galarzaa.Api.Delegates:
+  - OnMessageHandler: Galarzaa/Api/Delegates/OnMessageHandler.md
 - Galarzaa.Api.Models:
   - GuildUser: Galarzaa/Api/Models/GuildUser.md
-  - OnMessageHandler: Galarzaa/Api/Models/OnMessageHandler.md
   - ClientUser: Galarzaa/Api/Models/ClientUser.md
   - Color: Galarzaa/Api/Models/Color.md
   - Role: Galarzaa/Api/Models/Role.md

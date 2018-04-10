@@ -91,6 +91,16 @@
             "title": "OnMessageReceived"
         },
         {
+            "location": "/Galarzaa/Api/Delegates/OnMessageHandler/",
+            "text": "Inherits\n\n\nMulticastDelegate\n\n\nClass OnMessageHandler\n\u00b6\n\n\nDelegate for the \nGalarzaa.Api.Client.OnMessageReceived\n event.",
+            "title": "OnMessageHandler"
+        },
+        {
+            "location": "/Galarzaa/Api/Delegates/OnMessageHandler/#class-onmessagehandler",
+            "text": "Delegate for the  Galarzaa.Api.Client.OnMessageReceived  event.",
+            "title": "Class OnMessageHandler"
+        },
+        {
             "location": "/Galarzaa/Api/Models/GuildUser/",
             "text": "Inherits\n\n\nUser\n\n\nClass GuildUser\n\u00b6\n\n\nRepresents a \nUser\n in a \nGuild\n\n\nProperties\n\u00b6\n\n\n\n\nRoles\n\u00b6\n\n\nGets the roles the user has in this guild.\n\n\nDeclaration\n\n\npublic\n \nRole\n[]\n \nRoles\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nRole\n[]\n\n\nAn array of \nRole\ns\n\n\n\n\n\n\n\n\nJoinedAt\n\u00b6\n\n\nGets the date when the user joined this guild.\n\n\nDeclaration\n\n\npublic\n \nDateTime\n \nJoinedAt\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nDateTime\n\n\nThe join date in UTC.\n\n\n\n\n\n\n\n\nGuild\n\u00b6\n\n\nGets the guild where this user belongs to.\n\n\nDeclaration\n\n\npublic\n \nGuild\n \nGuild\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nGuild\n\n\nThe guild where this user is.\n\n\n\n\n\n\n\n\nNick\n\u00b6\n\n\nGets the user's nickname.\n\n\nDeclaration\n\n\npublic\n \nstring\n \nNick\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe user's nickname if set, otherwise \nnull\n.\n\n\n\n\n\n\n\n\nDisplayName\n\u00b6\n\n\nGets the user's display name\n\n\nDeclaration\n\n\npublic\n \nstring\n \nDisplayName\n \n{\nget\n;\n \n}\n\n\n\n\n\n\nRemarks\n\nThe display name consist of the user's \nGalarzaa.Api.Models.GuildUser.Nick\n (if set) or the user's \nGalarzaa.Api.Models.User.Name\n.\n\n\nProperty Value\n\n\n\n\n\n\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nString\n\n\nThe user's display name.",
             "title": "GuildUser"
@@ -129,16 +139,6 @@
             "location": "/Galarzaa/Api/Models/GuildUser/#displayname",
             "text": "Gets the user's display name  Declaration  public   string   DisplayName   { get ;   }   Remarks \nThe display name consist of the user's  Galarzaa.Api.Models.GuildUser.Nick  (if set) or the user's  Galarzaa.Api.Models.User.Name .  Property Value     Type  Description      String  The user's display name.",
             "title": "DisplayName"
-        },
-        {
-            "location": "/Galarzaa/Api/Models/OnMessageHandler/",
-            "text": "Inherits\n\n\nMulticastDelegate\n\n\nClass OnMessageHandler\n\u00b6\n\n\nDelegate for the \nGalarzaa.Api.Client.OnMessageReceived\n event.",
-            "title": "OnMessageHandler"
-        },
-        {
-            "location": "/Galarzaa/Api/Models/OnMessageHandler/#class-onmessagehandler",
-            "text": "Delegate for the  Galarzaa.Api.Client.OnMessageReceived  event.",
-            "title": "Class OnMessageHandler"
         },
         {
             "location": "/Galarzaa/Api/Models/ClientUser/",

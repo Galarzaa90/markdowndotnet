@@ -1,9 +1,12 @@
 output/
-docs/
 mkdocs.yml
 site/
 dist/
 *.egg-info
+
+# Most documentation is generated on CI from the example project
+docs/
+!/docs/index.md
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

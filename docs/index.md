@@ -32,13 +32,3 @@ python markdowndotnet.py ExampleProject.dll ExampleProject.xml
 By default, the files will be generated in a folder named `output/` in the working directory.
 
 This contains markdown files generated for each object found in the assembly, ordered in directories by namespace. Aditionally, a file named `index.yml` is created, which can be appened to a `mkdocs.yml` file to use with [mkdocs](https://github.com/mkdocs/mkdocs).
-
-## Features
-* Generates markdown documents from a compiled binary (dll) and it's documentation file.
-* Displays all public fields, properties and methods, along with their parameters and return types.
-* Generate internal links between members
-* External links to system classes
-* Partial support for summary, params and returns tags.
-
-## Planned features
-* Support for all XML tags

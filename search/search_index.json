@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "markdowndotnet\n\u00b6\n\n\nPython command line tool to generate markdown documents from C# Library files and their XML documentation.\n\n\n \n  \n\n\nRequirements\n\u00b6\n\n\n\n\nPython 3.6 or higher\n\n\npythonnet\n\n\nPyYAML\n\n\nclick\n\n\n\n\nThe generated files markdown files are meant to be used with \nmkdocs\n \n(with the \nmaterial theme\n), but may be compatible with other site generators.\n\n\nHow to use\n\u00b6\n\n\nThe script requires setting the \nDocumentationFile\n setting in the project's configuration, e.g.\n\n\n<DocumentationFile>\nbin\\Debug\\ExampleProject.xml\n</DocumentationFile>\n\n\n\n\n\n\nOnce this has been set, an XML file will be built along with the library's dll file.\n\n\nNow, when running the script, the path to the dll and the xml file must be specified:\n\n\npython markdowndotnet.py ExampleProject.dll ExampleProject.xml\n\n\n\n\n\nBy default, the files will be generated in a folder named \noutput/\n in the working directory.\n\n\nThis contains markdown files generated for each object found in the assembly, ordered in directories by namespace. Aditionally, a file named \nindex.yml\n is created, which can be appened to a \nmkdocs.yml\n file to use with \nmkdocs\n.\n\n\nFeatures\n\u00b6\n\n\n\n\nGenerates markdown documents from a compiled binary (dll) and it's documentation file.\n\n\nDisplays all public fields, properties and methods, along with their parameters and return types.\n\n\nGenerate internal links between members\n\n\nExternal links to system classes\n\n\nPartial support for summary, params and returns tags.\n\n\n\n\nPlanned features\n\u00b6\n\n\n\n\nSupport for all XML tags",
+            "text": "markdowndotnet\n\u00b6\n\n\nPython command line tool to generate markdown documents from C# Library files and their XML documentation.\n\n\n \n  \n\n\nRequirements\n\u00b6\n\n\n\n\nPython 3.6 or higher\n\n\npythonnet\n\n\nPyYAML\n\n\nclick\n\n\n\n\nThe generated files markdown files are meant to be used with \nmkdocs\n \n(with the \nmaterial theme\n), but may be compatible with other site generators.\n\n\nHow to use\n\u00b6\n\n\nThe script requires setting the \nDocumentationFile\n setting in the project's configuration, e.g.\n\n\n<DocumentationFile>\nbin\\Debug\\ExampleProject.xml\n</DocumentationFile>\n\n\n\n\n\n\nOnce this has been set, an XML file will be built along with the library's dll file.\n\n\nNow, when running the script, the path to the dll and the xml file must be specified:\n\n\npython markdowndotnet.py ExampleProject.dll ExampleProject.xml\n\n\n\n\n\nBy default, the files will be generated in a folder named \noutput/\n in the working directory.\n\n\nThis contains markdown files generated for each object found in the assembly, ordered in directories by namespace. Aditionally, a file named \nindex.yml\n is created, which can be appened to a \nmkdocs.yml\n file to use with \nmkdocs\n.",
             "title": "Home"
         },
         {
@@ -19,16 +19,6 @@
             "location": "/#how-to-use",
             "text": "The script requires setting the  DocumentationFile  setting in the project's configuration, e.g.  <DocumentationFile> bin\\Debug\\ExampleProject.xml </DocumentationFile>   Once this has been set, an XML file will be built along with the library's dll file.  Now, when running the script, the path to the dll and the xml file must be specified:  python markdowndotnet.py ExampleProject.dll ExampleProject.xml  By default, the files will be generated in a folder named  output/  in the working directory.  This contains markdown files generated for each object found in the assembly, ordered in directories by namespace. Aditionally, a file named  index.yml  is created, which can be appened to a  mkdocs.yml  file to use with  mkdocs .",
             "title": "How to use"
-        },
-        {
-            "location": "/#features",
-            "text": "Generates markdown documents from a compiled binary (dll) and it's documentation file.  Displays all public fields, properties and methods, along with their parameters and return types.  Generate internal links between members  External links to system classes  Partial support for summary, params and returns tags.",
-            "title": "Features"
-        },
-        {
-            "location": "/#planned-features",
-            "text": "Support for all XML tags",
-            "title": "Planned features"
         },
         {
             "location": "/Galarzaa/Api/Client/",

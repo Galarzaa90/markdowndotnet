@@ -2,8 +2,8 @@ import sys
 
 from setuptools import setup
 
-if sys.version_info < (3, 6):
-    sys.exit('Sorry, Python < 3.6 is not supported')
+if sys.version_info < (3, 4):
+    sys.exit('Sorry, Python < 3.4 is not supported')
 
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
@@ -34,6 +34,8 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: C#'
         'Programming Language :: Python :: 3 :: Only',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Topic :: Documentation',
         'Topic :: Software Development :: Documentation',

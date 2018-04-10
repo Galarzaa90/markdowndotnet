@@ -8,12 +8,12 @@ if sys.version_info < (3, 6):
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
-with open('README.md') as f:
+with open('README.rst') as f:
     readme = f.read()
 
 setup(
     name='markdowndotnet',
-    version='0.1.0a1',
+    version='0.1.0a2',
     author='Galarzaa90',
     author_email="allan.galarza@gmail.com",
     description='A Python markdown generator for C# libraries documentation.',

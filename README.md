@@ -2,7 +2,7 @@
 # markdowndotnet
 Python command line tool to generate markdown documents from C# Library files and their XML documentation.
 
-![Python version](https://img.shields.io/badge/python-3.6-yellow.svg) [![Build Status](https://travis-ci.org/Galarzaa90/markdowndotnet.svg?branch=master)](https://travis-ci.org/Galarzaa90/markdowndotnet)  [![PyPI](https://img.shields.io/pypi/v/tibiawikisql.svg)](https://pypi.python.org/pypi/tibiawikisql/)
+![Python version](https://img.shields.io/badge/python-3.6-yellow.svg) [![Build Status](https://travis-ci.org/Galarzaa90/markdowndotnet.svg?branch=master)](https://travis-ci.org/Galarzaa90/markdowndotnet)  [![PyPI](https://img.shields.io/pypi/v/markdowndotnet.svg)](https://pypi.python.org/pypi/markdowndotnet/)
 ## Requirements
 * Python 3.6 or higher
 * [pythonnet](https://github.com/pythonnet/pythonnet)

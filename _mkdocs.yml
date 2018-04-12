@@ -17,8 +17,6 @@ theme:
     icon: assignment
 
 markdown_extensions:
-  - toc:
-      permalink: true
   - codehilite
 
 extra:

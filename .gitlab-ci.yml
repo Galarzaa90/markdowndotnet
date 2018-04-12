@@ -17,7 +17,7 @@ build:
     paths:
       - output
 
-deploy:
+pages:
   stage: deploy
   script:
     - python deploy.py

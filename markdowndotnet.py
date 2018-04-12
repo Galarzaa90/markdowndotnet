@@ -65,7 +65,7 @@ def get_type(local_assembly, type_name):
     return local_type
 
 
-def get_link(local_assembly, *, type_name=None, cs_type=None, current_file=None):
+def get_link(local_assembly, *, type_name=None, cs_type=None, current_file=None, anchor=None):
     """Gets a link in markdown format for the type
 
     If type_name is supplied, cs_type will be obtained from it.
@@ -96,7 +96,12 @@ def get_link(local_assembly, *, type_name=None, cs_type=None, current_file=None)
         current_path = os.path.dirname(current_file) + "/"
         target_file = os.path.join(output_dir, str(cs_type).replace('.', '/') + ".md")
         relative_path = os.path.relpath(target_file, current_path)
-        return "[{0}]({1}){2}".format(cs_type.Name, relative_path, suffix)
+        if anchor is not None:
+            name = anchor
+            relative_path += "#"+anchor.lower()
+        else:
+            name = cs_type.Name
+        return "[{0}]({1}){2}".format(name, relative_path, suffix)
     else:
         r = requests.get('https://xref.docs.microsoft.com/query', params={"uid": cs_type.FullName})
         data = json.loads(r.text)
@@ -167,6 +172,12 @@ def parse_content(assembly, content, current_file):
         full_name = m.group(2)
         if member_type == "T":
             return get_link(assembly, type_name=full_name, current_file=current_file)
+        if member_type == "P" or member_type == "F":
+            m = field_property_pattern.search(full_name)
+            namespace = m.group("namespace")
+            in_class = m.group("class")
+            name = m.group("name")
+            return get_link(assembly, type_name=namespace+"."+in_class, current_file=current_file, anchor=name)
         else:
             return "`{0}`".format(m.group(2))
 

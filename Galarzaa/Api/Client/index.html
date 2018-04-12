@@ -825,20 +825,20 @@
                 
                 <p><strong>Inherits</strong><br />
 <a href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></p>
-<h1 id="class-client">Class Client<a class="headerlink" href="#class-client" title="Permanent link">&para;</a></h1>
+<h1 id="class-client">Class Client</h1>
 <p>Represents a connection to the client</p>
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
+<h2 id="constructors">Constructors</h2>
 <hr />
-<h3 id="client">Client()<a class="headerlink" href="#client" title="Permanent link">&para;</a></h3>
+<h3 id="client">Client()</h3>
 <p>Initializes a new instance of the <a href="./">Client</a> class.<br />
 <strong>Declaration</strong></p>
 <div class="codehilite"><pre><span></span><span class="k">public</span> <span class="nf">Client</span><span class="p">();</span>
 </pre></div>
 
 
-<h2 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h2>
+<h2 id="fields">Fields</h2>
 <hr />
-<h3 id="token">token<a class="headerlink" href="#token" title="Permanent link">&para;</a></h3>
+<h3 id="token">token</h3>
 <p>Authentication token<br />
 <strong>Declaration</strong></p>
 <div class="codehilite"><pre><span></span><span class="k">public</span> <span class="kt">string</span> <span class="n">token</span><span class="p">;</span>
@@ -860,9 +860,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
+<h2 id="properties">Properties</h2>
 <hr />
-<h3 id="users">Users<a class="headerlink" href="#users" title="Permanent link">&para;</a></h3>
+<h3 id="users">Users</h3>
 <p>Gets a list of all the visible users.<br />
 <strong>Declaration</strong></p>
 <div class="codehilite"><pre><span></span><span class="k">public</span> <span class="n">User</span><span class="p">[]</span> <span class="n">Users</span> <span class="p">{</span><span class="k">get</span><span class="p">;</span> <span class="p">}</span>
@@ -884,9 +884,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<h2 id="methods">Methods</h2>
 <hr />
-<h3 id="loginsystemstring">Login(System.String)<a class="headerlink" href="#loginsystemstring" title="Permanent link">&para;</a></h3>
+<h3 id="loginsystemstring">Login(System.String)</h3>
 <p>Logs in to the API<br />
 <strong>Declaration</strong></p>
 <div class="codehilite"><pre><span></span><span class="k">public</span> <span class="kt">bool</span> <span class="nf">Login</span><span class="p">(</span><span class="kt">string</span> <span class="n">token</span><span class="p">)</span>
@@ -925,7 +925,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="getguildsystemint32">GetGuild(System.Int32)<a class="headerlink" href="#getguildsystemint32" title="Permanent link">&para;</a></h3>
+<h3 id="getguildsystemint32">GetGuild(System.Int32)</h3>
 <p>Gets a <a href="../Models/Guild/">Guild</a> with the specified id.<br />
 <strong>Declaration</strong></p>
 <div class="codehilite"><pre><span></span><span class="k">public</span> <span class="n">Guild</span> <span class="nf">GetGuild</span><span class="p">(</span><span class="kt">int</span> <span class="n">guildId</span><span class="p">)</span>
@@ -964,7 +964,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="getusersystemint32">GetUser(System.Int32)<a class="headerlink" href="#getusersystemint32" title="Permanent link">&para;</a></h3>
+<h3 id="getusersystemint32">GetUser(System.Int32)</h3>
 <p>Gets a <a href="../Models/User/">User</a> with the specified id.<br />
 <strong>Declaration</strong></p>
 <div class="codehilite"><pre><span></span><span class="k">public</span> <span class="n">User</span> <span class="nf">GetUser</span><span class="p">(</span><span class="kt">int</span> <span class="n">userId</span><span class="p">)</span>
@@ -1003,9 +1003,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
+<h2 id="events">Events</h2>
 <hr />
-<h3 id="onmessagereceived">OnMessageReceived<a class="headerlink" href="#onmessagereceived" title="Permanent link">&para;</a></h3>
+<h3 id="onmessagereceived">OnMessageReceived</h3>
 <p>Event received every time a <a href="../Models/Message/">Message</a> is received on any <a href="../Models/Channel/">Channel</a> the client sees.<br />
 <strong>Declaration</strong></p>
 <div class="codehilite"><pre><span></span><span class="k">public</span> <span class="k">event</span> <span class="n">OnMessageHandler</span> <span class="n">OnMessageReceived</span>

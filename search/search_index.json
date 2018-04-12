@@ -92,12 +92,12 @@
         },
         {
             "location": "/Galarzaa/Api/Delegates/OnMessageHandler/",
-            "text": "Inherits\n\n\nMulticastDelegate\n\n\nClass OnMessageHandler\n\n\nDelegate for the \nGalarzaa.Api.Client.OnMessageReceived\n event.",
+            "text": "Inherits\n\n\nMulticastDelegate\n\n\nClass OnMessageHandler\n\n\nDelegate for the \nOnMessageReceived\n event.",
             "title": "OnMessageHandler"
         },
         {
             "location": "/Galarzaa/Api/Delegates/OnMessageHandler/#class-onmessagehandler",
-            "text": "Delegate for the  Galarzaa.Api.Client.OnMessageReceived  event.",
+            "text": "Delegate for the  OnMessageReceived  event.",
             "title": "Class OnMessageHandler"
         },
         {

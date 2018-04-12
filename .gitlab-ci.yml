@@ -18,7 +18,7 @@ build:
 deploy:
   stage: deploy
   before_script:
-    - python -m install mkdocs mkdocs-material yaml
+    - python -m pip install mkdocs mkdocs-material yaml
   script:
     - python deploy.py
     - python -m mkdocs build -d public

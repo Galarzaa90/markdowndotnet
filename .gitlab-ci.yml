@@ -1,0 +1,27 @@
+image: pythonnet/pythonnet:python3.5-mono4.8.0-pythonnet2.3.0
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  before_script:
+    - python -m pip install -r requirements.txt
+  script:
+    - xbuild example/Example.sln /v:minimal
+    - python markdowndotnet.py -v "example/ExampleProject/bin/Debug/ApiExample.dll" "example/ExampleProject/bin/Debug/ApiExample.xml"
+  artifacts:
+    paths:
+      - output
+
+deploy:
+  stage: deploy
+  before_script:
+    - python -m install mkdocs mkdocs-material yaml
+  script:
+    - python deploy.py
+    - python -m mkdocs build -d public
+  artifacts:
+    paths:
+      - public

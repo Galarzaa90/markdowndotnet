@@ -172,7 +172,7 @@ def parse_content(assembly, content, current_file):
         full_name = m.group(2)
         if member_type == "T":
             return get_link(assembly, type_name=full_name, current_file=current_file)
-        if member_type == "P" or member_type == "F":
+        if member_type == "P" or member_type == "F" or member_type == "E":
             m = field_property_pattern.search(full_name)
             namespace = m.group("namespace")
             in_class = m.group("class")
@@ -534,7 +534,7 @@ def parse_documentation(path):
 
     os.makedirs(output_dir, exist_ok=True)
 
-    hierarchy = dict(sorted(hierarchy.items()))
+    hierarchy = collections.OrderedDict(sorted(hierarchy.items()))
 
     # Generate a json file, for debugging purposes
     with open(os.path.join(output_dir, "hierarchy.json"), 'w') as outfile:

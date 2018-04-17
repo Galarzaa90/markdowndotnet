@@ -1,21 +1,32 @@
 image: pythonnet/pythonnet:python3.5-mono4.8.0-pythonnet2.3.0
 
 stages:
-  - build
+  - test
+  - dist
   - deploy
 
 before_script:
     - python -m pip install -r requirements.txt
     - python -m pip install mkdocs mkdocs-material
 
-build:
-  stage: build
+test:
+  stage: test
   script:
+    - python -m pip install coverage
     - xbuild example/Example.sln /v:minimal
-    - python markdowndotnet.py -v "example/ExampleProject/bin/Debug/ApiExample.dll" "example/ExampleProject/bin/Debug/ApiExample.xml"
+    - python -m coverage run markdowndotnet.py -v "example/ExampleProject/bin/Debug/ApiExample.dll" "example/ExampleProject/bin/Debug/ApiExample.xml"
+    - python -m coverage report
   artifacts:
     paths:
       - output
+
+dist:
+  stage: dist
+  script:
+    - python setup.py sdist
+  artifacts:
+    paths:
+      - dist
 
 pages:
   stage: deploy
